@@ -1,0 +1,42 @@
+.container{
+margin-top:80px;
+margin-left:0px;
+padding-left:0px;
+padding-right:0px;
+width:100%;
+}
+
+.content{
+padding-left:20px;
+padding-right:20px;
+}
+.page-links
+{
+  text-align:center;
+  margin-bottom:11px;
+  color:#2376ae;
+}
+.box-links
+{
+  padding:5px 5px 5px 4px;
+  margin:2px;
+  color: black;
+}
+
+
+@media only screen and (min-width: 1021px) {
+    .admobile{
+        display:none;
+    } 
+	.addesktop img {
+		 
+	     width: 100%;
+	}
+}
+@media only screen and (max-width: 1020px) {
+    .addesktop{
+      display:none;
+  }   
+
+}
+
