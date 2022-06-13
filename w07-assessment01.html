@@ -1,0 +1,338 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<title>w07-assessment-Normal-CI </title>
+
+<link href="bootstrap.css" rel="stylesheet">
+<link href="homedesign.css" rel="stylesheet">
+<link href="mcqcheck.css" rel="stylesheet">
+<style>
+ *{
+    margin:0px;
+    padding:0px;
+  } 
+
+body{
+  background-color:#EAEAEA;
+}
+
+#myDIV a:hover {
+    background-color: #337ab7;
+    color: white;
+  }
+ .active {
+  background-color: #337ab7;
+  color: white;
+ }
+  .btn.active
+  {
+  color: white;
+}
+</style>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  js code to control answers and explanations MMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+
+<script>let mainNav=document.getElementById("js-menu");let navBarToggle=document.getElementById("js-navbar-toggle");navBarToggle.addEventListener("click",function(){mainNav.classList.toggle("active")});</script>
+
+<script type="text/javascript">function toggle_visibility(b){var a=document.getElementById(b);if(a.style.display=="block"){a.style.display="none"}else{a.style.display="block"}}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122097904-1"></script>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","UA-122097904-1");</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-5912385878283070",enable_page_level_ads:true});</script>
+
+</head>
+
+<!--MMMMMMMM  HTML BODY STARTS HERE  MMMMM-->
+<body>
+
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN  Quiz Begins Here    NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+
+<!--div class = "col-md-7">
+<div class="content"-->
+
+<center>
+
+<!--XXXXXXXXXXXXXXXXXXXX outer table: for titles XXXXXXXXXXXXXXXXXX-->
+<table align = center width="700" border="1" cellpadding="0" cellspacing="0"  bordercolor=purple>
+<tr><td>
+
+<!--VVVVVVVVVVVVVVV   Assessment Title Information     VVVVVVVVVVVVVVVV-->
+
+<h4 style="text-align: center; padding-top:10px;padding-bottom:0px;"><b>MAT121 Practice Exercises</b></h4> 
+<h3 style="text-align: center; padding-top:0px;padding-bottom:10px;"><b>Normal Confidence Intervals for Means</b></h3> 
+<h5 style="text-align: center; padding-top:0px;padding-bottom:10px;">Instr. C. Peng</h5> 
+
+<!--XXXXXXXXXXXXXXXXXXX inner table: HTML contents XXXXXXXXXXXXXXXXXXXXXX-->
+  <center>
+  <div class="container sec">
+  <table align = center width="600" border="0" cellpadding="0" cellspacing="0"  bordercolor=purple>
+  <tbody>
+    <tr>
+    <td>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVVVVVVV         Quiz Description        VVVVVVVVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<p style="text-align: left; padding-top:15px; padding-bottom:10px; font-size:15px; color:navy;">Please show your work before checking the answer and explanations. </p>
+
+<p style="text-align: left; padding-top:15px; padding-bottom:10px; font-size:15px; color:red;">
+<b> An Important Tip</b>. Please draw a density curve and label all given in information on the curve before use the standard normal distribution table to find answers for any normal distribution related problems.
+</p>
+<br>
+<b> Find the confidence interval specified</b>.
+</p>
+<br>
+
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem1      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 1.</b> &nbsp; A random sample of 105 light bulbs had a mean life of  x&#772;=401 hours. Assume that &sigma;=39 hours. Construct a 90% confidence interval for the mean life, &mu;, of all light bulbs of this type.
+. 
+<BR>
+<p class = "options"><BR>
+A) 394.7 to 407.3 hours <BR>
+B) 391.2 to 410.8 hours <BR>
+C) 392.1 to 409.9 hours <BR>
+D) 393.5 to 408.5 hours <BR>
+</p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q1');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q1" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<b>Explanation</b>: CI=(x&#772;-z(&sigma;/&#8730;n), x&#772;+z(&sigma;/&#8730;n)) <BR>
+x&#772;=401, &sigma;=39, and n=105. It is a 90% CI, therefore z=z<sub>0.05</sub>=1.6449. Therefore, the CI is (394.7, 407.3) and the answer is A.</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 2      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 2.</b> &nbsp; A sample of 32 people were randomly selected from among the workers in a shoe factory. The time taken for each person to polish a finsihed shoe was measured. The sample mean was 3.1 minutes. Assume that &sigma;=0.94 minutes. Construct a 90% confidence interval for the true mean time , &mu;, to polish a shoe.
+<BR>
+</span>
+<BR>
+<p>
+<p class = "options"><BR>
+</p>
+</p>
+<BR>
+A) 2.71 to 3.49 minutes<BR>
+B) 2.83 t0 3.37 minutes <BR>
+C) 2.67 to 3.53 minutes <BR>
+D) 2.77 to 3.43 minutes <BR>
+</p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q2');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q2" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>:CI=(x&#772;-z(&sigma;/&#8730;n) ,x&#772;+z(&sigma;/&#8730;n))<BR>
+x&#772;=3.1, &sigma;=0.94, and n=32. It is a 90% CI, therefore z=z<sub>0.05</sub>=1.6449. Therefore, the CI is (2.83, 3.37) and the answer is B. </p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+     <b> Solve the problem.</b>.
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 3      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 3.</b> &nbsp; Based on a sample of 40 randomly selected years, a 90% confidence interval for the mean annual precipitation in one city is from 42.7 inches to 45.3 inches. Find the margin of errror. 
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) 2.6 inches <BR>
+B) 0.34 <BR>
+C) There is not enough information to find the margin of error <BR>
+D) 1.3 inches <BR>
+<p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q3');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q3" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>:CI=(x&#772-E, x&#772+E)<br>
+45.3-42.7=2.6. E=2.6/2=1.3.</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 4      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 4.</b> &nbsp;  Based on a sample size of 44, a 95% confidence interval for the mean score of all students, &mu;, on an aptitude test is from 62.3 to 69.7. Find the margin of error. <BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) There is not enough information to find the the margin of error. <BR>
+B) 3.7 <BR>
+C) 1.09 <BR>
+D) 7.4 <BR>
+<p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q4');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q4" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: CI=(x&#772-E, x&#772+E).<br>
+ 69.7-62.3=7.4. E=7.4/2=3.7. 
+</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 5      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 5.</b> &nbsp; A sample of 51 eggs yields a mean weight of 1.58 ounces. &sigma;=0.58 ounces, find the margin of error in estimating , &mu;, at the 95% level of confidence.
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) 0.43 oz <BR>
+B) 0.02 oz <BR>
+C) 0.13 oz<BR>
+D) 0.16 oz<BR>
+<p>
+<BR>
+
+<!---<p class = "options"><BR>
+<center><img src="w01/w01-assess-q05.2.jpg" alt="w01-q5.2" width="450" height="250"></center>
+</p>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q5');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q5" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>: E=z(&sigma;/&#8730;n). z<sub>0.025</sub> as it is a CI of 95%. &sigma;=0.58 and n=51. Therefore E=1.96(0.58/&#8730;51)=0.16.</p></div><br/>
+</font>
+</p>
+<BR>
+     
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 6      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 6.</b> &nbsp;  A sample of 80 college students yields a mean annual income of $3673. Assuming that &sigma;= $812,  find the margin of error in estimating &mu; at the 99% level of confidence.
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) $234 <BR>
+B) $212 <BR>
+C) $1057 <BR>
+D) $178 <BR>
+<p>
+<BR>
+
+<!--<center><img src="w01/w01-assess-q06.jpg" alt="w01-q6" width="300" height="180"></center>
+</span>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q6');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q6" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<p> <b>Explanation</b>: E=z(&sigma;/&#8730;n). z<sub>0.005</sub> as it is a CI of 99%. &sigma;=812 and n=80. Therefore E=2.5758(812/&#8730;80)=234.
+</p></div><br/>
+</font>
+</p>
+<BR>
+<b> Provide an appropiate response</b>.
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 7      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 7.</b> &nbsp;  A confidence interval for a population mean has a margin of error of 2.3. If the sample mean is 69.7, obtain the confidence interval. <BR>
+</span>
+<BR>
+A) From 67.4 to 69.7  <BR>
+B) From 69.7 to 72 <BR>
+C) From 67.4 to 72 <BR>
+D) From 68.55 to 70.85 <BR>
+<p>
+<BR>
+
+<!---
+<p class = "options"><BR>
+<center><img src="w04/w04-assess-q08.1.jpg" alt="w04-q8.1" width="480" height="330"></center>
+</p>
+<BR>
+--->
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q7');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q7" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: CI=(x&#772;-E, x&#772;+E) x&#772;=69.7, E=2.3 therefore CI: (69.7-2.3, 69.7+2.3), which is (67.4,72). </p></div><br/>
+</font>
+</p>
+<BR>
+
+     
+
+<!-- inner table-->  
+</td></tr>
+</tbody>
+</table>
+</div>
+</center>
+<BR>
+
+<!-- outer table -->
+</td> </tr> <tbody></table>
+</center>
+<BR>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX  FOOTER  XXXXXXXXXXXXXXXXXXXXXXX-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<footer class="col-md-12">
+<center><font color = "navy" size =2>
+    <p class="text-center">Copyright &copy; 
+        <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+       C. Peng. Last updated: 
+         <script> 
+            document.write(new Date().toLocaleDateString()); 
+         </script> 
+      </font>
+ <a href='http://www.freevisitorcounters.com'>.</a> 
+<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script></p>
+<center>
+<BR><BR><BR>
+</body>
+</html>

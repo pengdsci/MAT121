@@ -150,7 +150,9 @@
                        
                     <li class="navitem active"> <a href="https://wcu-peng.shinyapps.io/oneMean-ttest/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-ttest/','name','width=900,height=500')"  class="dropdown-item">10. t Test for One Mean</a></li>                      
                        
-                    <li class="navitem active"> <a href="https://cpeng.shinyapps.io/oneProp-z-testR/"  target="popup" onclick="window.open('https://cpeng.shinyapps.io/oneProp-z-testR/','name','width=900,height=500')"  class="dropdown-item">11. Normal Test for One Proportion</a></li>                        
+                    <li class="navitem active"> <a href="https://cpeng.shinyapps.io/oneProp-z-testR/"  target="popup" onclick="window.open('https://cpeng.shinyapps.io/oneProp-z-testR/','name','width=900,height=500')"  class="dropdown-item">11. Normal Test for One Proportion</a></li>  
+                    
+                   <li class="navitem active"> <a href="https://chpeng.shinyapps.io/twoSampleTests/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/twoSampleTests/','name','width=900,height=500')"  class="dropdown-item">12. Two-sample Tests of Population Means</a></li> 
                      </ul>
                </li>
                    
@@ -198,13 +200,17 @@
                     <br>
                    <li class="nav-item" data-level="2"><a href="#week04" class="nav-link">4. Normal Distributions</a></li>
                    <li class="nav-item" data-level="2"><a href="#week05" class="nav-link">5. Sampling Distribution of Means and Proportions</a> </li>
-
-                  <!--font color = "darkred"><b>Week Three</b></font>    
-                   <li class="nav-item" data-level="2"><a href="#week07" class="nav-link">7. Concepts of Confidence Intervals </a></li>    
-				   <li class="nav-item" data-level="2"><a href="#week08" class="nav-link">8. Confidence Intervals for Means and Proportions</a></li>  
                        
+                      <br><center><font color = "darkred"><b>Week Three</b></font></center><br>                      
+
+                   <li class="nav-item" data-level="2"><a href="#week07" class="nav-link">6. Normal Confidence Intervals </a></li>    
+				   <li class="nav-item" data-level="2"><a href="#week08" class="nav-link">7. t-confidence Intervals </a></li>  
+                       
+                                         <!--font color = "darkred"><b>Week Three</b></font>  
                    <font color = "darkred"><b>Week Four</b></font>     
                    <li class="nav-item" data-level="2"><a href="#week09" class="nav-link">9. t-CI and Concepts of Hypothesis Tests </a></li>
+
+
                    <li class="nav-item" data-level="2"><a href="#week10" class="nav-link">10. hypothesis Testing: Critical Value Method</a> </li>	  
                    <li class="nav-item" data-level="2"><a href="#week11" class="nav-link">11. Two-sample Tests: Means</a> </li>
                    
@@ -472,103 +478,106 @@
      </ul> 
 <hr>
 
-
+ <center><font color ="darkred" size = 5><b> Week Three Topics</b></font></center>  
+ <hr>  
 <!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
 <!-- VVVVVVVVVVVVVVVVV     Week #06    VVVVVVVVVVVVVVVVVV-->
-<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV --
-<h3 id="week06"  class="section">Week 06: Sampling Distribution of Sample Means and Proportions </h3>
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV -->
+  <h6 id="week06"  class="section" style="text-align:left"><font size = 4><b> Topic 06: Normal Confidence Intervals</b></font></h6>   
+<left>
 
-<hr><left>
-<b>TOPICS:</b> The following topics will be covered this week.<br>
 <ul>
-    <li> Review of Central Limit Theorem (CLT) <br>
-    <a href="w05_SamplingCLT.pdf" target="popup" 
-                          onclick="window.open('w05_SamplingCLT.pdf','name','width=900,height=500')">
-                          <font color = "red"><b>Class Note From Previous Week</b></font></a>
-      <ul>
-	    <li> Sampling distribution of sample means
-	        <ul>
-		      <li>  case 1: normal population with given variance 
-			  <li>  case 2: large sample size
-		   </ul>
-	    <li> Assplications of the sampling distribution of sample means	 
-	       <ul>
-		      <li> Finding probability of a <font color = "red">sample mean</font> to be in an interval
-			   <li> Finding percentiles of the distribution of <font color = "red">sample means</font>.
-		   </ul>
-      </ul>
-   <li> Concept of confidence interval for population mean: logic and definitions </li>
-   <li> Steps for constructing confidence interval for the mean: large sample case </li>    	 
-   <li> Weekly note: <a href="w06-CI4PopMean.pdf" target="popup" 
-                   onclick="window.open('w06-CI4PopMean.pdf','name','width=900,height=500')"> 
-				    Conceptual understanding of confidence interval of population means </a></li>
-    
+   <li> Concept of confidence interval for population mean </li>
+    <ul>
+      <li> Issues of points estimates</li>
+      <li> The logic and framework of confidence intervals</li>
+    </ul>
+   <li> Confidence interval for the mean: large sample case </li>    
+    <ul>
+      <li> Large sample confidence interval of means</li>
+    </ul>
+   <li> Study Materials</li>
+           <ul>
+            <li>Confidence Intervals: Logic and Framework  [Lecture Note] <br>
+                 <a href="notes/w06-ConfIntervals4Means.html" target="popup" 
+                          onclick="window.open('notes/w06-ConfIntervals4Means.html','name','width=900,height=500')">
+                         [HTML] </a> <BR>
+                 <a href="notes/w06-ConfIntervals4Means.pdf" target="popup" 
+                          onclick="window.open('notes/w06-ConfIntervals4Means.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w07-assessment01.html" target="popup" 
+                          onclick="window.open('w07-assessment01.html','name','width=900,height=500')">
+                          Practice exercises #06</a>
+          
+            <li>  <font color = "red">[Optional]</font>Read section 8.1 and 8.2 of Navidi's textbook </li>  
+        </ul>    
+
     <li><font color = "red"><b>IntroStatsApps:</b></font>
         <ul>
-       <li> <a href="https://wcupeng.shinyapps.io/AppsCLT4Means/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/AppsCLT4Means/','name','width=900,height=500')" >Applications of CLT for Means</a></li>                       
-       <li> <a href="https://wcupeng.shinyapps.io/AppsCLT4Prop/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/AppsCLT4Prop/','name','width=900,height=500')" >Applications of CLT for Proportions</a></li>
+       <li> <a href="https://wcu-peng.shinyapps.io/NormalCI4MeanProp/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/NormalCI4MeanProp/','name','width=900,height=500')" >Normal CI for Means and Proportions</a></li>               
         </ul>
     </li>
+    </ul>
     
-       <li> <font color = "red"><b>Answers to Weekly Quizzes </b></font></li>
-              <ul>
-	             <li> <a href="w06-quiz-key.pdf" target="popup" 
-                   onclick="window.open('w06-quiz-key.pdf','name','width=900,height=500')"> 
-				   <b>Answers to Weekly Quiz #6</b></a></li>
-	          </ul>
-
-  </ul>
-
-<b> SELFASSESSMENT</b>: Complete the multiple problems related to the topics this week. <br>
-               <ul>
-                  <li> <a href="w06-assessment.html" target="popup" 
-                          onclick="window.open('w06-assessment.html','name','width=900,height=500')">
-                          Self-assessment for Week #6</a> <font color = "blue"></font>
-               </ul>
-
-<b>ASSIGNMENTS:</b> 
-       <ul>
-            <li> Read sections 7.1 and 8.2 of <font color = "red">Navidi's textbook</font>.
-            <li> Weekly Quiz via <a href="https://d2l.wcupa.edu/d2l/login" target="popup" 
-                   onclick="window.open('https://d2l.wcupa.edu/d2l/login','name','width=900,height=500')"> <b>D2L (login)</b></a></li>
-                <font color = "darkblue"><b> Open on Thursday</b>: 12:00 PM </font> <br>
-                <font color = "red"><b> Close on Sunday </b>: 11:30 PM </font>
-       </ul>
-
-</left><hr>
-
-
-<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+ <hr>   
+    <!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
 <!-- VVVVVVVVVVVVVVVVV     Week #07    VVVVVVVVVVVVVVVVVV-->
-<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV--
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV -->
+  <h6 id="week07"  class="section" style="text-align:left"><font size = 4><b> Topic 07: t Confidence Intervals and Confidence Interval for Proportions</b></font></h6>   
+<left>
 
-<h3 id="week07"  class="section">Week 07: Review for Exam #2 and Concepts Confidence Intervals of Population Mean</h3>
-<hr><left>
-    
-<b>TOPICS:</b> The following topics will be covered this week.<br>
 <ul>
-    <li> Review of Exam #2: <font color = "red"><b>Thursday, 3/10/2022</b></font>
-    <li> The logic of constructing confidence interval for population means</li>
- 
-   <li> Weekly note: <a href="w07-CI-Estimation.pdf" target="popup" 
-                   onclick="window.open('w07-CI-Estimation.pdf','name','width=900,height=500')"> 
-				    Confidence interval of population means and proportions </a></li>
-   <li> <a href="w07-MidtermExam02-key.pdf" target="popup" 
-                   onclick="window.open('w07-MidtermExam02-key.pdf','name','width=900,height=500')"> 
-				    <font color = "red"><b>Answer Key to Midterm #2</b></font> </a></li>
-    </ul>  
-<b> SELFASSESSMENT</b>: There is no self-assessment for this week due to the midterm exam. <br>
+   <li> Confidence interval of normal population mean - t confidence intervals </li>
+    <ul>
+      <li> Test statistic - unknown population variance</li>
+      <li>  Sampling distribution of the test statistic: t-distribution</li>
+    </ul>
+   <li> Confidence interval for proportions </li>    
+    <ul>
+      <li> Formulation of the test statistic</li>
+      <li> Sampling distribution</li>
+    </ul>
+   <li> Study Materials</li>
+           <ul>
+            <li>CI for normal population mean and population proportions [Lecture Note] <br>
+                 <a href="notes/w07-CI4MeansProportions.html" target="popup" 
+                          onclick="window.open('notes/w07-CI4MeansProportions.html','name','width=900,height=500')">
+                         [HTML] </a> <BR>
+                 <a href="notes/w07-CI4MeansProportions.pdf" target="popup" 
+                          onclick="window.open('notes/w07-CI4MeansProportions.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w07-assessment02.html" target="popup" 
+                          onclick="window.open('w07-assessment02.html','name','width=900,height=500')">
+                          Practice exercises #07</a>
+          
+            <li>  <font color = "red">[Optional]</font>Read section 8.3 of Navidi's textbook </li>  
+        </ul>    
 
-<b>ASSIGNMENTS:</b> 
-       <ul>
-           <li> Read section 8.2 of <font color = "red">Navidi's textbook</font>.
-           <li> Weekly Quiz:<font color = "red"><b> No weekly quiz for this week due to the midterm exam. </b></font>
-       </ul>
-
-</left><hr>
-    
-    
-    
+    <li><font color = "red"><b>IntroStatsApps:</b></font>
+        <ul>
+       <li> <a href="https://wcu-peng.shinyapps.io/NormalCI4MeanProp/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/NormalCI4MeanProp/','name','width=900,height=500')" >Normal CI for Means and Proportions</a></li>               
+       <li> <a href="https://wcu-peng.shinyapps.io/oneMean-ttest/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-ttest/','name','width=900,height=500')" >t-CI for Normal Population Means</a></li>                
+        </ul>
+    </li>
+    </ul>
+    <hr>
+    <font color = "darkred" size = 4><b>Weekly Exam #3</b> </font>
+        <ul>
+         <li> Weekly Exam via <a href="https://d2l.wcupa.edu/d2l/login" target="popup" 
+               onclick="window.open('https://d2l.wcupa.edu/d2l/login','name','width=900,height=500')"> 
+                <b>D2L (login)</b></a></li>
+                 <ul>
+                     <li><font color = "darkblue"><b> Available on Thursday</b>: 12:00 PM. </font> </li>    
+                     <li><font color = "red"><b> Due on Sunday </b>: 11:30 PM </font></li>
+                </ul>
+            
+          <!--li> <a href="w03-quiz-key.pdf" target="popup" 
+                   onclick="window.open('w03-quiz-key.pdf','name','width=900,height=500')">
+                <font color = "red" size = 4> <b> Answer Key to Week #03 Quiz </b> </font></a-->
+     </ul> 
+<hr>
 
 <!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
 <!-- VVVVVVVVVVVVVVVVV     Week #08    VVVVVVVVVVVVVVVVVV-->
