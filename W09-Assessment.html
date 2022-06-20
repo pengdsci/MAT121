@@ -1,0 +1,439 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<title>w10-assessment </title>
+
+<link href="bootstrap.css" rel="stylesheet">
+<link href="homedesign.css" rel="stylesheet">
+<link href="mcqcheck.css" rel="stylesheet">
+<style>
+ *{
+    margin:0px;
+    padding:0px;
+  } 
+
+body{
+  background-color:#EAEAEA;
+}
+
+#myDIV a:hover {
+    background-color: #337ab7;
+    color: white;
+  }
+ .active {
+  background-color: #337ab7;
+  color: white;
+ }
+  .btn.active
+  {
+  color: white;
+}
+</style>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  js code to control answers and explanations MMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+
+<script>let mainNav=document.getElementById("js-menu");let navBarToggle=document.getElementById("js-navbar-toggle");navBarToggle.addEventListener("click",function(){mainNav.classList.toggle("active")});</script>
+
+<script type="text/javascript">function toggle_visibility(b){var a=document.getElementById(b);if(a.style.display=="block"){a.style.display="none"}else{a.style.display="block"}}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122097904-1"></script>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","UA-122097904-1");</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-5912385878283070",enable_page_level_ads:true});</script>
+
+</head>
+
+<!--MMMMMMMM  HTML BODY STARTS HERE  MMMMM-->
+<body>
+
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN  Quiz Begins Here    NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+
+<!--div class = "col-md-7">
+<div class="content"-->
+
+<center>
+
+<!--XXXXXXXXXXXXXXXXXXXX outer table: for titles XXXXXXXXXXXXXXXXXX-->
+<table align = center width="700" border="1" cellpadding="0" cellspacing="0"  bordercolor=purple>
+<tr><td>
+
+<!--VVVVVVVVVVVVVVV   Assessment Title Information     VVVVVVVVVVVVVVVV-->
+
+<h4 style="text-align: center; padding-top:10px;padding-bottom:0px;"><b>MAT121 Practice Exercises</b></h4> 
+<h3 style="text-align: center; padding-top:0px;padding-bottom:10px;"><b>Normal Tests for Means and Proportions</b></h3> 
+<h5 style="text-align: center; padding-top:0px;padding-bottom:10px;">Instr. C. Peng</h5> 
+
+<!--XXXXXXXXXXXXXXXXXXX inner table: HTML contents XXXXXXXXXXXXXXXXXXXXXX-->
+  <center>
+  <div class="container sec">
+  <table align = center width="600" border="0" cellpadding="0" cellspacing="0"  bordercolor=purple>
+  <tbody>
+    <tr>
+    <td>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVVVVVVV         Quiz Description        VVVVVVVVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<p style="text-align: left; padding-top:15px; padding-bottom:10px; font-size:15px; color:navy;"> Please show your work before checking the short answer and explanations or generating full solutions using <font color = "red"><b>StatsApps</b></font>. </p>
+
+
+<br>
+<br>
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem1      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 1.</b> &nbsp;  The National Weather Service says that the mean daily high temperature for October in a large midwestern city is 56 &#8457;. A local weather service suspects that this value is not accurate and wants to perform a hypothesis test to determine whether the mean is actually lower than 56 &#8457;. A sample of mean daily high temperatures for October over the past 34 years (n = 34) yields x&#772; = 54 &#8457;. Assume that the population standard deviation is 5.6 &#8457;. Perform the hypothesis test at the 1% significance level.
+<BR>
+</span>
+<BR>
+<!---<p class = "options"><BR>
+A) <BR>
+B) <BR>
+C) <BR>
+D) <BR>
+</p>
+<BR>-->
+<font color = "red">
+<span  onclick="toggle_visibility('q1');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q1" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<b>Explanation</b>:
+ H<sub>0</sub>: &mu; = 56 &#8457; H<sub>a</sub>: &mu; < 56 &#8457;
+&alpha;= 0.01 <BR> 
+Test statistic: z = -2.08. Critical value z = -2.33. <BR>
+Since -2.08. > -2.33, do not reject H<sub>0</sub>: &mu; = 56&#8457;.  At the 1% significance level, the data does not provide sufficient evidence to conclude that the mean daily high temperature for October is less than 56 &#8457;</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 2      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 2.</b> &nbsp; A newspaper in a large midwestern city reported that the National Association of Realtors said that the mean home price last year was $116,800. The city housing department feels that this figure is too low. They randomly selected 55 home sales and obtained a sample mean price of $118,900. Assume that the population standard deviation is $3,700. Using a 5% level of significance, perform a hypothesis test to determine whether the population mean is higher than $116,800.<BR>
+</span>
+<BR>
+<p>
+<!--<p class = "options"><BR>
+</p>
+</p>
+<BR>
+A) 2.71 to 3.49 minutes<BR>
+B) 2.83 t0 3.37 minutes <BR>
+C) 2.67 to 3.53 minutes <BR>
+D) 2.77 to 3.43 minutes <BR>
+</p>-->
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q2');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q2" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<p> <b>Explanation</b>:  
+H<sub>0</sub>: &mu; = $116,800 H<sub>a</sub>: &mu;>$116,800 &alpha; = 0.05
+<BR>
+Test statistic: z = 4.21. Critical value: z = 1.645. 
+<Br>
+Since 4.21 > 1.645, reject H<sub>0</sub>: &mu; = $116,800.At the 5% significance level, the data does provide sufficient evidence to conclude that the mean home price is higher than $116,800. </p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 3      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 3.</b> &nbsp; A manufacturer makes steel bars that are supposed to have a mean length of 50 cm. A retailer suspects that the bars are running too long. A sample of 55 bars is taken and their mean length is determined to be 51 cm. Using a 1% level of significance, perform a hypothesis test to determine whether the population mean is greater than 50 cm. Assume that the population standard deviation is 3.6 cm.
+<BR>
+</span>
+<!---<p class = "options"><BR>
+</p>
+<BR>
+A) 2.6 inches <BR>
+B) 0.34 <BR>
+C) There is not enough information to find the margin of error <BR>
+D) 1.3 inches <BR>---->
+<p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q3');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q3" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<p> <b>Explanation</b>: 
+H<sub>0</sub>: &mu;=50 cm  H<sub>a</sub>: &mu;.50 cm. &alpha;=0.01
+<BR>
+Test statistic: z = 2.06.  Critical value z = 2.33.  Since 2.06. < 2.33, do not reject H<sub>0</sub>: &mu; = 50 cm. 
+At the 1% significance level, the data does not provide sufficient evidence to conclude that the mean length of the steel bars is greater than 50 cm. </p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 4      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 4.</b> &nbsp;   In tests of a computer component, it is found that the mean time between failures is 983 hours. A modification is made which is supposed to increase reliability by increasing the time between failures. Tests on a sample of 36 modified components produce a mean time between failures of 983 hours. Using a 1% level of significance, perform a hypothesis test to determine whether the mean time between failures for the modified components is greater than 937 hours. Assume that the population standard deviation is 52 hours. <BR>
+</span>
+<!---<p class = "options"><BR>
+</p>
+<BR>
+A) There is not enough information to find the the margin of error. <BR>
+B) 3.7 <BR>
+C) 1.09 <BR>
+D) 7.4 <BR>--->
+<p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q4');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q4" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<p> <b>Explanation</b>: 
+H<sub>0</sub>: &mu;=937 H<sub>a</sub>: &mu;>937.  &alpha;=0.01.
+<BR>
+Test statistic: z = 5.31. Critical value: z = 2.33.  Since 5.31 > 2.33, reject the null hypothesis. At the 1% significance level, the data does provide sufficient evidence to conclude that the mean time between failures for the modified components is greater than 937 hours 
+</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 5      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 5.</b> &nbsp; In one city, convicted burglars are sentenced to an average of 18.7 months in prison. A researcher wants to perform a hypothesis test to determine whether the mean sentence handed down by one particular judge for burglars differs from 18.7 months. She takes a random sample of 38 such cases from the court files of this judge and finds that x = 17  months. Assume that the population standard deviation is 7.1 months. Test the hypothesis at the 5% significance level.
+<BR>
+</span>
+<!---<p class = "options"><BR>
+</p>
+<BR>
+A) 0.43 oz <BR>
+B) 0.02 oz <BR>
+C) 0.13 oz<BR>
+D) 0.16 oz<BR>--->
+<p>
+<BR>
+
+<!---<p class = "options"><BR>
+<center><img src="w01/w01-assess-q05.2.jpg" alt="w01-q5.2" width="450" height="250"></center>
+</p>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q5');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q5" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<p> <b>Explanation</b>: 
+H<sub>0</sub>: &mu;=18.7 H<sub>a</sub>: &mu; &ne;937.  &alpha;=0.05.
+<Br>
+Test statistic: z = -1.48. Critical values: z = &#177; 1.96. Since -1.96 < -1.48 < 1.96, do not reject H<sub>0</sub>. At the 5% significance level, the data does not provide sufficient evidence to conclude that the mean sentence handed down by this judge is different from 18.7 months.</p></div><br/>
+</font>
+</p>
+<BR>
+    
+    
+    
+    
+    
+<br>
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem6      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 6.</b> &nbsp;  A poll of 1,068 adult Americans reveals that 48% of the voters surveyed prefer the Democratic candidate for the presidency. At the 0.05 level of significance, do the data provide sufficient evidence that the percentage of all voters who prefer the Democrat is less than 50%? 
+<BR>
+</p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q6');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q6" class="showanswer" style="display: none;" > <b>Ans</b> : <br/>
+<b>Explanation</b>: H<sub>0</sub>: p= 0.5,  H<sub>a</sub>: p<0.5,
+&alpha;= 0.05 <BR> 
+Test statistic: TS = -1.31. Critical value TS = -1.645. <BR>
+Do not reject the null hypothesis. At the 5% level of significance, the data does not provide sufficient evidence to conclude that the percentage of voters who prefer the Democrat is less than 50%</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 7      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 7.</b> &nbsp;   In a sample of 89 adults selected randomly from one town, it is found that 8 of them have been exposed to a particular strain of the flu. At the 0.01 significance level, test whether the proportion of all adults in the town that have been exposed to this strain of the flu differs from the nationwide percentage of 8%.<BR>
+</span>
+<BR>
+<p>
+<p class = "options"><BR>
+</p>
+</p>
+<BR>
+<!---
+A) <BR>
+B)  <BR>
+C)  <BR>
+D)  <BR>
+-->
+</p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q7');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q7" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<p> <b>Explanation</b>:  H<sub>0</sub>: p= 0.08,  H<sub>a</sub>: p&ne;0.08,
+&alpha;= 0.01 <BR> 
+Test statistic: TS = 0.34. Critical value TS = -2.575, 2.575 <BR>
+Do not reject the null hypothesis. At the 1% level of significance, the data does not provide sufficient evidence to conclude that the proportion of all adults in the town that have been exposed to this strain of the flu differs from 8%.
+</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+     
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 8      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 8.</b> &nbsp;  A research group claims that fewer than 28% of students at one medical school plan to go into general practice. It is found that among a random sample of 120 of the school's students, 20% of them plan to go into general practice. At the 0.10 significance level, test the research group's claim.
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+<!---
+A) <BR>
+B)  <BR>
+C)  <BR>
+D)  <BR>
+-->
+<p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q8');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q8" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<p> <b>Explanation</b>: H<sub>0</sub>: p= 0.28,  H<sub>a</sub>: p<0.28,
+&alpha;= 0.10 <BR> 
+Test statistic: TS = -1.95. Critical value TS = -1.28 <BR>
+Reject the null hypothesis. There is sufficient evidence at the 10% significance level to conclude that the proportion of the student at this school school planning to go into general practice is less than 28%.
+</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<b> Use the one-proportion z-test to perform the required hypothesis test. Use the P-value approach.</b>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 9      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 9.</b> &nbsp;  A poll of 1000 adult Americans reveals that 48% of the voters surveyed prefer the Democratic candidate for the presidency. At the 0.05 level of significance, do the data provide sufficient evidence to conclude that the percentage of voters who prefer the Democrat is less than 50%?<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+<!---
+A) 1.75 <BR>
+B) -1.38 <BR>
+C) 1.82 <BR>
+D) 1.03 <BR>
+-->
+<p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q9');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q9" class="showanswer" style="display: none;" > <b>Ans</b> : <br/>
+<p> <b>Explanation</b>: </p> H<sub>0</sub>: p= 0.28,  H<sub>a</sub>: p<0.28,
+&alpha;= 0.05 <BR> 
+Test Statistic: TS=-1.26. P-value = 0.1038 <BR>
+Do not reject the null hypothesis. At the 0.05 level of significance, the data does not provide sufficient evidence to conclude that the percentage of voters who prefer the Democrat is less than 50%.  </div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 10      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 10.</b> &nbsp;  In a sample of 165 children selected randomly from one town, it is found that 30 of them suffer from asthma. At the 0.05 significance level, do the data provide sufficient evidence to conclude that the percentage of all children in the town who suffer from asthma is different from 11%?
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+<p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q10');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q10" class="showanswer" style="display: none;" > <b>Ans</b> :  <br/>
+<p> <b>Explanation</b>: </p>H<sub>0</sub>: p= 0.11,  H<sub>a</sub>: p &ne;=0.11,
+&alpha;= 0.05 <BR> 
+Test Statistic: TS =2.95. P-value=0.0032<BR>
+Reject the null hypothesis. At the 0.05 significance level, the data does not provide sufficient evidence to conclude that the percentage of all children in the town who suffer from asthma is different from 11%.  </div><br/>
+</font>
+</p>
+<BR>
+         
+    
+    
+<!---
+<center><img src="w01/w01-assess-q09.3.jpg" alt="w01-q9.3" width="500" height="250"></center>--->
+</p></div><br/>
+</font>
+</p>
+<BR>
+<!-------------
+</p>
+<br>
+
+<!-- inner table-->  
+</td></tr>
+</tbody>
+</table>
+</div>
+</center>
+<BR>
+
+<!-- outer table -->
+</td> </tr> <tbody></table>
+</center>
+<BR>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX  FOOTER  XXXXXXXXXXXXXXXXXXXXXXX-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<footer class="col-md-12">
+<center><font color = "navy" size =2>
+    <p class="text-center">Copyright &copy; 
+        <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+       C. Peng. Last updated: 
+         <script> 
+            document.write(new Date().toLocaleDateString()); 
+         </script> 
+      </font>
+ <a href='http://www.freevisitorcounters.com'>.</a> 
+<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script></p>
+<center>
+<BR><BR><BR>
+</body>
+</html>
