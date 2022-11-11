@@ -95,7 +95,7 @@ knitr::opts_chunk$set(echo = FALSE,
 
 # Introduction
 
-In this note, we discuss the hypothesis test of the means of **normal populations** with the assumption that the population variances are unknown. Unlike the normal test we discussed earlier, the sampling distribution of the sample means is NOT a normal distribution. We will introduce a new distribution to characterize the random behavior of the test statistic.
+In this note, we discuss the hypothesis test of the means of **normal populations** with the assumption that the population variances are unknown. Unlike the normal test we discussed earlier, the sampling distribution of the sample means is NOT a moral distribution. We will introduce a new distribution to characterize the random behavior of the test statistic.
 
 As an application, we also introduce a special procedure to test the difference between paired samples based on the t-test.
 
@@ -108,13 +108,13 @@ $$
 TS = \frac{\bar{x} - \mu}{s/\sqrt{n}} \to t_{n-1}
 $$
 
-We have introduced t-distribution when we constructed confidence intervals for normal population means in an earlier topic. The critical value(s) used to define rejection region(s) are found from the t-table.
+We introduced t-distribution when we constructed confidence intervals for normal population means in an earlier topic. The critical value(s) used to define rejection region(s) are found from the t-table.
 
 Next, we use a numerical example to show the steps for a t-test.
 
 <font color = "darkred">**Example 1.** </font> The yield of alfalfa from a random sample of six test plots is 1.4, 1.6, 0.9, 1.9, 2.2 and 1.2 tons per acre. Assume that the random sample comes from a normal population. Test at the 0.05 level of significance whether this supports the contention that the average yield for this kind of alfalfa is 1.5 tons per acre.
 
-**Solution**: We are given a small raw data set of alfalfa yields $\{ 1.4, 1.6, 0.9, 1.9, 2.2, 1.2 \}$. To perform the test, we calculate the sample statistics from the sample. $n = 6$, $\bar{x} = (1.4 + 1.6 + 0.9 + 1.9 + 2.2 + 1.2)/6 = 1.533$, and $s = 0.472$.
+**Solution**: We are given a small raw data set of alfalfa yields $\{ 1.4, 1.6, 0.9, 1.9, 2.2, 1.2 \}$. To perform the test, we calculate the sample statistics from the sample. $n = 6$, $\bar{x} = (1.4 + 1.6 + 0.9 + 1.9 + 2.2 + 1.2)/5 = 1.533$, and $s = 0.472$.
 
 **Step 1**: The claim is clearly specified in the question **" the average yield for this kind of alfalfa is 1.5 tons per acre"**, that is, $\mu = 1.5$.        
 
@@ -153,6 +153,7 @@ include_graphics("week10/example01.png")
 3. If the sample size is small and the normal population variance is unknown, we must use the t-test.
 
 4. If the small size is small and the population is NOT normal, we cannot perform any test in this course.
+
 
 \
 
@@ -216,7 +217,7 @@ However, the test based on $\Delta$ only needs to use the single sample data of 
 
 The steps for paired t-test are the same as those we used before except for the data preparation step added to the 6-step procedure. Due to the nature of the design of the paired sample problems, the size of the sample is usually small. We need to assume the differences of paired measurements, $\{d_1, d_2, d_3, \cdots, d_n \}$, are normally distributed. 
 
-In the initial step of data preparation, we need to culculte the mean and standard deviation of the data:
+In the initial step of data preparation, we need to calculate the mean and standard deviation of the data:
 
 $$D=\frac{d_1 + d_2 + \cdots + d_n}{n}, \ \ s_d = \sqrt{\frac{(d_1 - D)^2 + (d_2 - D)^2 + \cdots + (d_n - D)^2}{n-1}}$$
 
@@ -251,7 +252,7 @@ TS = \frac{D - 0}{s_d/\sqrt{n}} = \frac{2-0}{2.28/\sqrt{6}} \approx 2.15.
 $$
 
 **Step 4**. The critical value of this right-tailed test is given by
-$CV =t_{5,0.05} = 2.015$.  This means that the rejection region is $RR = (2.015,\infty)$. All information is summarized in the  following figure.
+$CV =t_{5,0.05} = 2.015$.  This means that the rejection region is $RR = (2.015,\infty)$. All information is summarized in the following figure.
 
 ```{r fig.align='center', out.width = '70%'}
 include_graphics("week10/example02.png")
@@ -263,16 +264,8 @@ include_graphics("week10/example02.png")
 
 
 
-<font color = "red">**A Cautionary Remark**</font>. When calculating the differences of paired measurements,  we take the form of either *before - after* or *after-before*. However, the form of the difference will impact the form of the claim. In the above example, the claim is **coating increases the mean operating temperature**,  if <font color = "red">*d = coating - no.coating*,</font>  the form of the claim is $\Delta > 0$; if <font color = "blue"> *d = no.coating - coating*,</font> the form of the claim is $\Delta < 0$.
+<font color = "red">**A Cautionary Remark**</font>. When calculating the differences in paired measurements, we take the form of either *before - after* or *after-before*. However, the form of the difference will impact the form of the claim. In the above example, the claim is **coating increases the mean operating temperature**,  if <font color = "red">*d = coating - no.coating*,</font>  the form of the claim is $\Delta > 0$; if <font color = "blue"> *d = no.coating - coating*,</font> the form of the claim is $\Delta < 0$.
 
-\
-
-The following video summarizes the above discussions with an example <font color = red">**[20 minutes]**</font>. 
-
-<center>
-  <a href="https://wcumat121.s3.amazonaws.com/MAT121-HT-Paired.mp4">
-  <img src="videoImg.png" width="200" height="200"></a>
-</center>
 
 \
 
@@ -283,7 +276,7 @@ Stats App *one sample t-test* is available at: (https://wcu-peng.shinyapps.io/on
 
 ## One-sample t-test
 
-We use the Apps to generate the solution of the above **example 1**. Since we have raw data (i.e., individual data values), we need to type in all values with adjacent values separated by a comma.
+We use the Apps to generate the solution of the above **Example 1**. Since we have raw data (i.e., individual data values), we need to type in all values with adjacent values separated by a comma.
 
 ```{r fig.align='center', out.width = '100%'}
 include_graphics("week10/techOneSample.png")
@@ -339,12 +332,3 @@ include_graphics("week10/ex03Data.png")
 ```{r fig.align='center', out.width = '20%'}
 include_graphics("week10/ex04Data.png")
 ```
-
-
-
-
-
-
-
-
-
