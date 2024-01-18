@@ -1,0 +1,562 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<title>w07-assessment </title>
+
+<link href="bootstrap.css" rel="stylesheet">
+<link href="homedesign.css" rel="stylesheet">
+<link href="mcqcheck.css" rel="stylesheet">
+<style>
+ *{
+    margin:0px;
+    padding:0px;
+  } 
+
+body{
+  background-color:#EAEAEA;
+}
+
+#myDIV a:hover {
+    background-color: #337ab7;
+    color: white;
+  }
+ .active {
+  background-color: #337ab7;
+  color: white;
+ }
+  .btn.active
+  {
+  color: white;
+}
+</style>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  js code to control answers and explanations MMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+
+<script>let mainNav=document.getElementById("js-menu");let navBarToggle=document.getElementById("js-navbar-toggle");navBarToggle.addEventListener("click",function(){mainNav.classList.toggle("active")});</script>
+
+<script type="text/javascript">function toggle_visibility(b){var a=document.getElementById(b);if(a.style.display=="block"){a.style.display="none"}else{a.style.display="block"}}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122097904-1"></script>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","UA-122097904-1");</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-5912385878283070",enable_page_level_ads:true});</script>
+
+</head>
+
+<!--MMMMMMMM  HTML BODY STARTS HERE  MMMMM-->
+<body>
+
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN  Quiz Begins Here    NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+
+<!--div class = "col-md-7">
+<div class="content"-->
+
+<center>
+
+<!--XXXXXXXXXXXXXXXXXXXX outer table: for titles XXXXXXXXXXXXXXXXXX-->
+<table align = center width="700" border="1" cellpadding="0" cellspacing="0"  bordercolor=purple>
+<tr><td>
+
+<!--VVVVVVVVVVVVVVV   Assessment Title Information     VVVVVVVVVVVVVVVV-->
+
+<h4 style="text-align: center; padding-top:10px;padding-bottom:0px;"><b>MAT121 Practice Exercises</b></h4> 
+<h3 style="text-align: center; padding-top:0px;padding-bottom:10px;"><b>Normal Confidence Intervals</b></h3> 
+<h5 style="text-align: center; padding-top:0px;padding-bottom:10px;">Instr. C. Peng</h5> 
+
+<!--XXXXXXXXXXXXXXXXXXX inner table: HTML contents XXXXXXXXXXXXXXXXXXXXXX-->
+  <center>
+  <div class="container sec">
+  <table align = center width="600" border="0" cellpadding="0" cellspacing="0"  bordercolor=purple>
+  <tbody>
+    <tr>
+    <td>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVVVVVVV         Quiz Description        VVVVVVVVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<p style="text-align: left; padding-top:15px; padding-bottom:10px; font-size:15px; color:navy;">Please show your work before checking the answer and explanations. </p>
+
+<p style="text-align: left; padding-top:15px; padding-bottom:10px; font-size:15px; color:red;">
+<b> An Important Tip</b>. Please draw a density curve and label all given in information on the curve before use the standard normal distribution table to find answers for any normal distribution related problems.
+</p>
+<br>
+<b> Find the confidence interval specified</b>.
+</p>
+<br>
+
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem1      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 1.</b> &nbsp; A random sample of 105 light bulbs had a mean life of  x&#772;=401 hours. Assume that &sigma;=39 hours. Construct a 90% confidence interval for the mean life, &mu;, of all light bulbs of this type.
+. 
+<BR>
+<p class = "options"><BR>
+A) 394.7 to 407.3 hours <BR>
+B) 391.2 to 410.8 hours <BR>
+C) 392.1 to 409.9 hours <BR>
+D) 393.5 to 408.5 hours <BR>
+</p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q1');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q1" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<b>Explanation</b>: CI=(x&#772;-z(&sigma;/&#8730;n), x&#772;+z(&sigma;/&#8730;n)) <BR>
+x&#772;=401, &sigma;=39, and n=105. It is a 90% CI, therefore z=z<sub>0.05</sub>=1.6449. Therefore, the CI is (394.7, 407.3) and the answer is A.</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 2      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 2.</b> &nbsp; A sample of 32 people were randomly selected from among the workers in a shoe factory. The time taken for each person to polish a finsihed shoe was measured. The sample mean was 3.1 minutes. Assume that &sigma;=0.94 minutes. Construct a 90% confidence interval for the true mean time , &mu;, to polish a shoe.
+<BR>
+</span>
+<BR>
+<p>
+<p class = "options"><BR>
+</p>
+</p>
+<BR>
+A) 2.71 to 3.49 minutes<BR>
+B) 2.83 t0 3.37 minutes <BR>
+C) 2.67 to 3.53 minutes <BR>
+D) 2.77 to 3.43 minutes <BR>
+</p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q2');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q2" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>:CI=(x&#772;-z(&sigma;/&#8730;n) ,x&#772;+z(&sigma;/&#8730;n))<BR>
+x&#772;=3.1, &sigma;=0.94, and n=32. It is a 90% CI, therefore z=z<sub>0.05</sub>=1.6449. Therefore, the CI is (2.83, 3.37) and the answer is B. </p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+     <b> Solve the problem.</b>.
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 3      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 3.</b> &nbsp; Based on a sample of 40 randomly selected years, a 90% confidence interval for the mean annual precipitation in one city is from 42.7 inches to 45.3 inches. Find the margin of errror. 
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) 2.6 inches <BR>
+B) 0.34 <BR>
+C) There is not enough information to find the margin of error <BR>
+D) 1.3 inches <BR>
+<p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q3');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q3" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>:CI=(x&#772-E, x&#772+E)<br>
+45.3-42.7=2.6. E=2.6/2=1.3.</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 4      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 4.</b> &nbsp;  Based on a sample size of 44, a 95% confidence interval for the mean score of all students, &mu;, on an aptitude test is from 62.3 to 69.7. Find the margin of error. <BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) There is not enough information to find the the margin of error. <BR>
+B) 3.7 <BR>
+C) 1.09 <BR>
+D) 7.4 <BR>
+<p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q4');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q4" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: CI=(x&#772-E, x&#772+E).<br>
+ 69.7-62.3=7.4. E=7.4/2=3.7. 
+</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 5      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 5.</b> &nbsp; A sample of 51 eggs yields a mean weight of 1.58 ounces. &sigma;=0.58 ounces, find the margin of error in estimating , &mu;, at the 95% level of confidence.
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) 0.43 oz <BR>
+B) 0.02 oz <BR>
+C) 0.13 oz<BR>
+D) 0.16 oz<BR>
+<p>
+<BR>
+
+<!---<p class = "options"><BR>
+<center><img src="w01/w01-assess-q05.2.jpg" alt="w01-q5.2" width="450" height="250"></center>
+</p>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q5');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q5" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>: E=z(&sigma;/&#8730;n). z<sub>0.025</sub> as it is a CI of 95%. &sigma;=0.58 and n=51. Therefore E=1.96(0.58/&#8730;51)=0.16.</p></div><br/>
+</font>
+</p>
+<BR>
+     
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 6      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 6.</b> &nbsp;  A sample of 80 college students yields a mean annual income of $3673. Assuming that &sigma;= $812,  find the margin of error in estimating &mu; at the 99% level of confidence.
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) $234 <BR>
+B) $212 <BR>
+C) $1057 <BR>
+D) $178 <BR>
+<p>
+<BR>
+
+<!--<center><img src="w01/w01-assess-q06.jpg" alt="w01-q6" width="300" height="180"></center>
+</span>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q6');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q6" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<p> <b>Explanation</b>: E=z(&sigma;/&#8730;n). z<sub>0.005</sub> as it is a CI of 99%. &sigma;=812 and n=80. Therefore E=2.5758(812/&#8730;80)=234.
+</p></div><br/>
+</font>
+</p>
+<BR>
+<b> Provide an appropiate response</b>.
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 7      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 7.</b> &nbsp;  A confidence interval for a population mean has a margin of error of 2.3. If the sample mean is 69.7, obtain the confidence interval. <BR>
+</span>
+<BR>
+A) From 67.4 to 69.7  <BR>
+B) From 69.7 to 72 <BR>
+C) From 67.4 to 72 <BR>
+D) From 68.55 to 70.85 <BR>
+<p>
+<BR>
+
+<!---
+<p class = "options"><BR>
+<center><img src="w04/w04-assess-q08.1.jpg" alt="w04-q8.1" width="480" height="330"></center>
+</p>
+<BR>
+--->
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q7');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q7" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: CI=(x&#772;-E, x&#772;+E) x&#772;=69.7, E=2.3 therefore CI: (69.7-2.3, 69.7+2.3), which is (67.4,72). </p></div><br/>
+</font>
+</p>
+<BR>
+<b> Find the specified t-value</b>.
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 8      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 8.</b> &nbsp; For a t-curve with df=20, find t<sub>0.01</sub><BR>
+</span>
+<BR>
+A) 2.330 <BR>
+B) 2.528 <BR>
+C) 1.325 <BR>
+D) 2.539 <BR>
+<p>
+<BR>
+<!---
+<p class = "options"><BR>
+<center><img src="w04/w04-assess-q08.1.jpg" alt="w04-q8.1" width="480" height="330"></center>
+</p>
+<BR>
+-->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q8');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q8" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: Look up in a t table, use R, or TI-84. Area under the curve=0.99 and the df=20. On TI-84 invT(.99,20), which equals 2.528. </p></div><br/>
+</font>
+</p>
+<BR>
+     
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 9      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 9.</b> &nbsp; For a t-curve with df = 27, find the two t-values that divide the area under the curve into a middle 0.95 area and two outside areas of 0.025 <BR>
+</span>
+<BR>
+A) 0, 2.052 <BR>
+B) -2.052, 2.052<BR>
+C) -1.703, 1.703 <BR>
+D) 0, 1.703 <BR>
+</p>
+<BR>
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q9');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q9" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: We want to find the t scores that divide the area under the curve into an area of 0.95 and two outside areas of 0.025. So the area under the curve we want to calcualte is 0.025 with 27 degrees of freedom. Use a t-table, R, or TI-84 to calculate the area under 0.025 with 27 df. On TI-84 invT(0.025,27)=-2.052, as the curve is symetric the upper t value is the positive of -2.052. This can be seen by calculating the upper t value with an area of .975 and 27 df.   invT(0.975, 27) is 2.052. <br><br>
+<!---
+<center><img src="w01/w01-assess-q09.3.jpg" alt="w01-q9.3" width="500" height="250"></center>--->
+</p></div><br/>
+</font>
+</p>
+<BR>
+    <b> Find the confidence interval specifed. Assume that the population is normally distrubted.  </b>.
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 10    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 10.</b> &nbsp; A laboratory tested twelve chicken eggs and found that the mean amount of cholesterol was 226 milligrams with s = 17.9 milligrams. Construct a 95% confidence interval for the true mean cholesterol content of all such eggs.<BR>
+</span>
+<BR> 
+A)  216.7 to 235.3 milligrams <BR>
+B) 214.7 to 237.3 milligrams <BR>
+C) 214.6 to 237.4 milligrams <BR>
+D) 214.5 to 237.5 milligrams <BR>
+</p>
+<BR>
+<!---
+<center><img src="w01/w01-assess-q10.2.jpg" alt="w01-q10.2" width="480" height="400"></center>
+</p>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q10');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q10" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: x&#772;=226, n=12, df=n-1=11, s=17.9, CI of 95% so (1-.95)/2=0.025 and t=t<sub>0.025</sub>=2.201. CI=(x&#772;-t<sub>0.025</sub>(s/&#8730;n), x&#772;+t<sub>0.025</sub>(s/&#8730;n)). Therefore CI=(226-2.201(17.9/&#8730;12), 226+2.201(17.9/&#8730;12)=(214.6,237.4).
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 11    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 11.</b> &nbsp; )
+A savings and loan association needs information concerning the checking account balances of its local customers. A random sample of 14 accounts was checked and yielded a mean balance of $664.14 and a standard deviation of $297.29. Find a 90% confidence interval for the true mean checking account balance for local customers.
+</span>
+<BR>
+<p class = "options"><BR>
+<BR>
+A) $493.71 to $834.57 <BR>
+B) $523.43 to $804.85 <BR>
+C) $492.52 to $835.76 <BR>
+D) $455.65 to $872.63 <BR>
+</p>
+<!---<center><img src="w01/w01-assess-q10.2.jpg" alt="w01-q10.2" width="480" height="400"></center>--->
+</p>
+<BR>
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q11');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q11" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: x&#772;=664.14, n=14, df=n-1=13, s=297.29, CI of 90% so (1-.90)/2=0.05 and t=t<sub>0.05</sub>=1.771. CI=(x&#772;-t<sub>0.05</sub>(s/&#8730;n), x&#772;+t<sub>0.05</sub>(s/&#8730;n)). Therefore CI=(664.14-1.771(297.29/&#8730;14), 664.14+1.771(297.29/&#8730;14)=(523.43,804.85).
+
+</p></div><br/>
+</font>
+</p>
+<BR>
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 12    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 12.</b> &nbsp; 
+The principal randomly selected six students to take an aptitude test. Their scores were:
+81.6 72.0 81.1 86.4 70.2 83.1 Determine a 90% confidence interval for the mean score for all students.</span>
+<BR>
+<p class = "options"><BR>
+<BR>
+A) 73.75 to 84.39 <BR>
+B) 84.49 to 73.65 <BR>
+C) 73.65 to 84.49 <BR>
+D) 84.39 to 73.75 <BR>
+</p>
+<!---<center><img src="w01/w01-assess-q10.2.jpg" alt="w01-q10.2" width="480" height="400"></center>--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q12');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q12" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<p> <b>Explanation</b>: x&#772;=(81.6+72.0+81.1+86.4+70.2+83.1)/6=79.07 <BR>
+[(81.6-79.07) <sup>2</sup>+(72.0-79.07)<sup>2</sup>+(81.1-79.07)<sup>2</sup>+(86.4-79.07)<sup>2</sup>+(70.2-79.07)<sup>2</sup>+(83.1-79.07)<sup>2</sup>]/(6-1)=41.8609, s=&#8730;41.8609=6.47.<BR>
+t<sub>0.05</sub>=2.015.
+CI=(79.07-2.015(6.47/&#8730;6), 79.07+2.015(6.47/&#8730;6))=(73.75,84.39).  
+ <br><br>
+</p></div><br/>
+</font>
+</p>
+<BR>
+<b> Use the one-proportion z-interval procedure to find the required confidence interval </b>.
+</p>
+<br>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 13    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 13.</b> &nbsp;  A researcher wishes to estimate the proportion of adults in the city of Darby who are vegetarian. In a random sample of 1423 adults from this city, the proportion that are vegetarian is 0.085. Find a 90% confidence interval for the proportion of all adults in the city of Darby that are vegetarians.<BR>
+<p class = "options"><BR>
+<BR>
+A) 0.0776 to 0.0924  <BR>
+B) 0.0755 to 0.0945 <BR>
+C) 0.0632 to 0.1068 <BR>
+D) 0.0728 to 0.0972 <BR>
+</p>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q13');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q13" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>: Given: p&#770;=0.085 and n=1423. 90% confidence interval so t<sub>0.05</sub>=1.645. <BR>
+CI=(p&#770;-t<sub>0.05</sub>&#8730;((p&#770;(1-p&#770))/n),p&#770;+t<sub>0.05</sub>&#8730;((p&#770;(1-p&#770))/n))<br>
+CI=(0.085-1.645&#8730;(0.085(0.915)/1423),(0.085+1.645&#8730;(0.085(0.915)/1423)) therefore answer is 0.0728 to 0.0972. 
+ </p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 14   VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 14.</b> &nbsp; A survey of 300 union members in New York State reveals that 112 favor the Republican candidate for governor. Construct the 98% confidence interval for the proportion of all New York State union members who favor the Republican candidate. 
+<BR>
+<p class = "options"><BR>
+<BR>
+A)  0.316 to 0.430 <BR>
+B) 0.308 to 0.438 <BR>
+C)  0.304 to 0.442 <BR>
+D) 0.301 to 0.445 <BR>
+</p>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q14');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q14" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>:p&#770;=112/300 and n=300. 98% confidence interval so t<sub>0.01</sub>=2.326 <BR>
+CI=(p&#770;-t<sub>0.01</sub>&#8730;((p&#770;(1-p&#770))/n),p&#770;+t<sub>0.01</sub>&#8730;((p&#770;(1-p&#770))/n))<br>
+CI=(112/300-2.326&#8730;(112/300(47/75)/300),(112/300+2.326&#8730;(112/300(47/75)/300)) therefore answer is 0.308 to 0.438. 
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 15    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 15.</b> &nbsp; Of 106 patients selected at random from a clinic, 31 were found to have high blood pressure. Construct a 95% confidence interval for the percentage of all patients at this clinic that have high blood pressure.
+<BR>
+<p class = "options"><BR>
+<BR>
+A) 17.8% to 40.6% <BR>
+B) 19.0% to 39.5% <BR>
+C) 20.6% to 37.9% <BR>
+D) 22.0% to 36.5% <BR>
+</p>
+<p>
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q15');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q15" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: p&#770;=31/106 and n=106. 95% confidence interval so t<sub>0.025</sub>=1.96 <BR>
+CI=(p&#770;-t<sub>0.025</sub>&#8730;((p&#770;(1-p&#770))/n),p&#770;+t<sub>0.025</sub>&#8730;((p&#770;(1-p&#770))/n))<BR>
+CI=(31/106-1.96&#8730;(31/106(75/206)/106),(31/106+1.96&#8730;(31/106(75/106)/106)) therefore the interval is .206 to 0.379. The question asks for this as a percentage, multiple each by 100 and you get 20.6% to 37.9%. </p></div><br/>
+</font>
+</p>
+<BR>
+
+
+<!-- inner table-->  
+</td></tr>
+</tbody>
+</table>
+</div>
+</center>
+<BR>
+
+<!-- outer table -->
+</td> </tr> <tbody></table>
+</center>
+<BR>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX  FOOTER  XXXXXXXXXXXXXXXXXXXXXXX-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<footer class="col-md-12">
+<center><font color = "navy" size =2>
+    <p class="text-center">Copyright &copy; 
+        <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+       C. Peng. Last updated: 
+         <script> 
+            document.write(new Date().toLocaleDateString()); 
+         </script> 
+      </font>
+ <a href='http://www.freevisitorcounters.com'>.</a> 
+<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script></p>
+<center>
+<BR><BR><BR>
+</body>
+</html>

@@ -1,0 +1,192 @@
+---
+title: '<font size = 7 color = "skyblue">W05.1: Sampling Distribution of Sample Means </font>'
+subtitle: '<font size = 6 color = "gold"> - Applications of Central Limit Theorem</font>'
+author: '<font size = 6 color = "skyblue">Cheng Peng </font>'
+institute: '<font size = 5 color = "skyblue">West Chester University of Pennsylvania</font><br>'
+date: '<font color = "skyblue" size =5> 09/29/2022 <font> <br> <font color = "skyblue" size =4>  </font> <br> <font color = "gold" size = 6> MAT 121 - Statistics I </font> <br> <br> <font color = "white" size = 5> Slides available at: https://pengdsci.github.io/MAT121/w05-CLTHTMLPresentation.html</font>'
+output:
+  xaringan::moon_reader:
+    #yolo: true  #randomly insert new slides with background image of Karl’s mustache photo into existing slides
+    lib_dir: libs
+    self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: true
+      #titleSlideClass: [center, middle, inverse]  # default set up of the title page
+      #titleSlideClass: [top, left, inverse]
+      #autoplay: 30000     # This sets autoplay, 30000 = 10 seconds
+      #countdown: 30000    # The timer will count down to 00:00 then continue with red time
+---
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+##
+if(!require('xaringan')) {
+  remotes::install_github("yihui/xaringan")
+  library('xaringan')
+}
+if (!require("knitr")) {
+   install.packages("knitr")
+   library(knitr)
+}
+if (!require("leaflet")) {
+   install.packages("leaflet")
+   library(leaflet)
+}
+# remotes::install_github("yihui/xaringan")
+```
+
+
+
+class: inverse, middle   
+<!-- This sets the background color to black and align the text in the slide -->
+<!-- Comments must be placed after the line of the page of configuration and also 
+     be placed in separate lines.  --> 
+<!-- use "---" to close each slide -->
+<!-- not comments should placed immediately before "---" -->
+
+## <center><b>Agenda </b></center>    
+<!-- level 2 title -->
+
+### Distribution of Sample Means - A Simulation
+
+### Centrl Limit Theorem (CLT)
+
+### Applications of CLT
+
+### Use of IntroStatsApps
+
+---
+
+
+
+
+class: inverse, center, middle
+<!-- inverse option -->
+
+# <font color = "gold">Sampling Distribution of Sample Means </font>
+
+<br>
+
+### <font color = "gold"> In order to investiage the pasture rent structure with respect to the grass variety
+
+</font>
+---
+
+
+
+
+
+
+
+
+
+
+class: middle
+<!-- some comments -->
+
+## <center>Data Source and Variable Description</center>
+
+### Source
+
+The data (https://people.sc.fsu.edu/~jburkardt/datasets/regression/x11.txt) were collected over various districts in Minnesota.
+
+### Description
+
+There are 67 rows  and 4 variables in the data set (the first column is the observation ID).
+      
+**ArablePrice**: the rent per acre of arable land,
+      
+**CowsCount**: the number of milk cows per square mile,
+      
+**DiffPastureArable**: the difference between pasturage and arable land,
+      
+**PastreRentalPrice**:  the rental price per acre for this variety of grass.  
+---
+
+
+
+## <center> Exploratory Data Analysis (EDA) </center> 
+
+```{r echo = FALSE, fig.align='center'}
+rental.data = read.table("https://people.sc.fsu.edu/~jburkardt/datasets/regression/x11.txt", skip = 38)[,-1]
+names(rental.data) = c("ArablePrice", "CowsCount", "DiffPastureArable", "PastreRentalPrice") 
+pairs(rental.data, main="Pair-wise Scatter Plots of Pasture Rental Data")
+```
+
+---
+
+class: center, middle
+<!-- inverse option -->
+
+## <center>Linear Regression: Initial Model and Diagnostics</center>
+
+```{r echo = FALSE}
+m0 = lm(PastreRentalPrice ~ ArablePrice + CowsCount + DiffPastureArable, data = rental.data)
+coef.mtx = summary(m0)$coef
+kable(coef.mtx)
+```
+
+```{r echo = FALSE, fig.align='center', fig.width=8, fig.height=4}
+par(mfrow= c(1,2) )
+plot(m0)
+```
+---
+
+
+
+
+class: middle
+
+## <center> Results and Discussions </center>
+<!-- commenting  -->
+
+- The residual plots indicates that some potential violations of model assumptions
+
+  1. The variance is not a contant
+  
+  2. There are three potential outliers.
+  
+- Refit the model by dropping the insignificant variable
+
+```{r echo = FALSE}
+m1 = lm(PastreRentalPrice ~ ArablePrice + CowsCount, data = rental.data)
+coef.mtx1 = summary(m1)$coef
+kable(coef.mtx1)
+```
+
+
+---
+
+
+```{r echo = FALSE, fig.align='center', fig.width=8, fig.height=8}
+par(mfrow= c(2,2) )
+plot(m1)
+```
+
+
+---
+
+
+
+class: middle
+
+## <center> Final Model and Conclusions </center>
+<!-- commenting  -->
+
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# Thanks!
+
+
+
+

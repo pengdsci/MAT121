@@ -1,0 +1,546 @@
+﻿<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<title>w04-assessment </title>
+
+<link href="bootstrap.css" rel="stylesheet">
+<link href="homedesign.css" rel="stylesheet">
+<link href="mcqcheck.css" rel="stylesheet">
+<style>
+ *{
+    margin:0px;
+    padding:0px;
+  } 
+
+body{
+  background-color:#EAEAEA;
+}
+
+#myDIV a:hover {
+    background-color: #337ab7;
+    color: white;
+  }
+ .active {
+  background-color: #337ab7;
+  color: white;
+ }
+  .btn.active
+  {
+  color: white;
+}
+</style>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  js code to control answers and explanations MMMMMMMMMMMMMMMMMMMMMMM-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+
+<script>let mainNav=document.getElementById("js-menu");let navBarToggle=document.getElementById("js-navbar-toggle");navBarToggle.addEventListener("click",function(){mainNav.classList.toggle("active")});</script>
+
+<script type="text/javascript">function toggle_visibility(b){var a=document.getElementById(b);if(a.style.display=="block"){a.style.display="none"}else{a.style.display="block"}}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122097904-1"></script>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","UA-122097904-1");</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-5912385878283070",enable_page_level_ads:true});</script>
+
+</head>
+
+<!--MMMMMMMM  HTML BODY STARTS HERE  MMMMM-->
+<body>
+
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN  Quiz Begins Here    NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+<!--NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN-->
+
+<!--div class = "col-md-7">
+<div class="content"-->
+
+<center>
+
+<!--XXXXXXXXXXXXXXXXXXXX outer table: for titles XXXXXXXXXXXXXXXXXX-->
+<table align = center width="700" border="1" cellpadding="0" cellspacing="0"  bordercolor=purple>
+<tr><td>
+
+<!--VVVVVVVVVVVVVVV   Assessment Title Information     VVVVVVVVVVVVVVVV-->
+
+<h4 style="text-align: center; padding-top:10px;padding-bottom:0px;"><b>MAT121 Practice Exercises</b></h4> 
+<h3 style="text-align: center; padding-top:0px;padding-bottom:10px;"><b>Normal Distributions</b></h3> 
+<h5 style="text-align: center; padding-top:0px;padding-bottom:10px;">Instr. C. Peng</h5> 
+
+<!--XXXXXXXXXXXXXXXXXXX inner table: HTML contents XXXXXXXXXXXXXXXXXXXXXX-->
+  <center>
+  <div class="container sec">
+  <table align = center width="600" border="0" cellpadding="0" cellspacing="0"  bordercolor=purple>
+  <tbody>
+    <tr>
+    <td>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVVVVVVV         Quiz Description        VVVVVVVVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<p style="text-align: left; padding-top:15px; padding-bottom:10px; font-size:15px; color:navy;">Please show your work before checking the answer and explanations. </p>
+
+<p style="text-align: left; padding-top:15px; padding-bottom:10px; font-size:15px; color:red;">
+<b> An Important Tip</b>. Please draw a density curve and label all given in information on the curve before use the standard normal distribution table to find answers for any normal distribution related problems.
+</p>
+<br>
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem1      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 1.</b> &nbsp;Use the standard normal distribution to find P(0 < z < 2.25). 
+<BR>
+<p class = "options"><BR>
+A) 0.8817 <BR>
+B) 0.5122 <BR>
+C) 0.4878 <BR>
+D) 0.7888 <BR>
+</p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q1');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q1" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<b>Explanation</b>: The question uses the standard normal distribution, therefore the mean is 0, the standard deviation is 1, the lower bound is 0 and the upper bound is 2.25. On the TI-84 use normalcdf(0,2,25,0,1), which gives you an answer of C.</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 2      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 2.</b> &nbsp; Use the standard normal distribution to find P(z < -1.33). 
+<BR>
+</span>
+<BR>
+<p>
+<p class = "options"><BR>
+</p>
+</p>
+<BR>
+A) 0.7888 <BR>
+B) 0.0606 <BR>
+C) 0.0918 <BR>
+D) 0.9809 <BR>
+</p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q2');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q2" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: The question uses the standard normal distribution, therefore the mean is 0, the standard deviation is 1. The lower bound is not specified, so it includes all values to the left of the upper bound. On the TI-84 calculator this is represented by -1E99. The upper bound is given and is -1.33. On the TI-84 use normalcdf(-1E99,-1.33,0,1), which give you an answer of C.</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+     
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 3      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 3.</b> &nbsp; The area that lies to the left of 1.13 
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) 0.8907 <BR>
+B) 0.8708 <BR>
+C) 0.8485 <BR>
+D) 0.1292 <BR>
+<p>
+<BR>
+<font color = "red">
+<span  onclick="toggle_visibility('q3');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q3" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: The question uses the standard normal distribution, therefore the mean is 0, the standard deviation is 1. The lower bound is specified as all values to the left of 1.13. On the TI-84 calculator this is represented by -1E99. The upper bound is given and is 1.13. On the TI-84 use normalcdf(-1E99,1.13,0,1), which give you an answer of B.</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 4      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 4.</b> &nbsp;  Find the z-score for which the area under the standard normal curve to its left is 0.96 
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) 1.75 <BR>
+B) -1.38 <BR>
+C) 1.82 <BR>
+D) 1.03 <BR>
+<p>
+<BR>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q4');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q4" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<p> <b>Explanation</b>: The question uses the standard normal distribution, therefore the mean is 0, the standard deviation is 1. On the TI-84 calucular use invNorm to find the area under the standard normal curve. InvNorm(0.96,0,1), this will give you the bound from -1E99 to the upper limit for the area that equals 0.96, therfore A is the answer.
+</p></div><br/>
+</p>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 5      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 5.</b> &nbsp; Find a value of the standard normal random variable z, called z<sub>0</sub>, such that P(z &GreaterEqual; z<sub>0</sub>) = 0.70. 
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) -0.47 <BR>
+B) -0.98 <BR>
+C) -0.81<BR>
+D) -0.52<BR>
+<p>
+<BR>
+
+<!---<p class = "options"><BR>
+<center><img src="w01/w01-assess-q05.2.jpg" alt="w01-q5.2" width="450" height="250"></center>
+</p>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q5');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q5" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>: The standard normal distribution gives the area to the left tail. We are given that the right tail area is 0.7. The left tail area is 1 - 0.7 = 0.3. From the normal table, we can see that the left tail area 0.3 corresponds to a z-value that is approximately -0.52. 
+<center><img src="w04/q05.1.jpg" alt="w04-q5.2" width="300" height="150"></center>
+</p></div><br/>
+</font>
+</p>
+<BR>
+     
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 6      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 6.</b> &nbsp;  In Standard normal distribution, the value of median is ___________
+<BR>
+</span>
+<p class = "options"><BR>
+</p>
+<BR>
+A) 1 <BR>
+B) 0 <BR>
+C) 2 <BR>
+D) Not Fixed <BR>
+<p>
+<BR>
+
+<!--<center><img src="w01/w01-assess-q06.jpg" alt="w01-q6" width="300" height="180"></center>
+</span>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q6');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q6" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: For a standard normal distribuation the median is equal to the mean, therefore B is the correct answer. 
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 7      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 7.</b> &nbsp; To the nearest whole number, what percentile is associated with z = -.68? 
+<BR>
+</span>
+<BR>
+A) 10th <BR>
+B) 40th <BR>
+C) 50th <BR>
+D) 25th <BR>
+<p>
+<BR>
+
+<!---
+<p class = "options"><BR>
+<center><img src="w04/w04-assess-q08.1.jpg" alt="w04-q8.1" width="480" height="330"></center>
+</p>
+<BR>
+--->
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q7');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q7" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>: For a standard normal distribution the percentile -0.68 corresponds to a left tail area 0.2483 which is close to 0.25, therefore the answer is D. 
+<center><img src="w04/q07.1.jpg" alt="w04-q7.1" width="300" height="130"></center>
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 8      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 8.</b> &nbsp; Find the area under the standard normal curve to the left of z = 1.5.
+<BR>
+</span>
+<BR>
+A) 0.0668 <BR>
+B) 0.4332 <BR>
+C) 0.9332 <BR>
+D) 0.4666 <BR>
+<p>
+<BR>
+<!---
+<p class = "options"><BR>
+<center><img src="w04/w04-assess-q08.1.jpg" alt="w04-q8.1" width="480" height="330"></center>
+</p>
+<BR>
+-->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q8');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q8" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: The question uses the standard normal distribution, therefore the mean is 0, the standard deviation is 1. The area includes all values to the left of 1.5. On the TI-84 use normalcdf(-1E99,1.5,0,1), which give you an answer of C.
+<center><img src="w04/q08.2.jpg" alt="w04-q8.2" width="300" height="130"></center>
+</p></div><br/>
+</font>
+</p>
+<BR>
+     
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 9      VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 9.</b> &nbsp; Find the z value that corresponds to the given area.
+<BR>
+<center><img src="w04/q09.1.jpg" alt="w04-q09.1" width="230" height="130"></center>
+</span>
+
+<p class = "options"><BR>
+A) 0.57 <BR>
+B) 0.27 <BR>
+C) -0.79 <BR>
+D) 0.44 <BR>
+</p>
+<BR>
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q9');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q9" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<p> <b>Explanation</b>: We are given the area of 0.2157 and the lower bound of 0. The area between negative infinity and 0 is 0.5. Since Z score is all of the area to the left of the score. In this case, the area is 0.5+0.2157=0.7157. Use invnorm(0.7157,0,1) to get a z score of 0.57. <br><br>
+<!---
+<center><img src="w01/w01-assess-q09.3.jpg" alt="w01-q9.3" width="500" height="250"></center>--->
+</p></div><br/>
+</font>
+</p>
+<BR>
+    
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 10    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 10.</b> &nbsp; Find the z value that corresponds to the given area.
+<BR>
+<center><img src="w04/q10.1.jpg" alt="w04-q10.1" width="230" height="120"></center>
+</span>
+<p class = "options"><BR>
+<BR> 
+A) 0.07 <BR>
+B) -1.46 <BR>
+C) 1.46 <BR>
+D) 1.23 <BR>
+</p>
+<BR>
+<!---
+<center><img src="w01/w01-assess-q10.2.jpg" alt="w01-q10.2" width="480" height="400"></center>
+</p>
+<BR>
+--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q10');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q10" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: You can use a TI calculator or simply use the standard normal distribution table to find the z-score.
+<!---<center><img src="w01/w01-assess-q10.3.jpg" alt="w01-q10.3" width="550" height="250"></center>--->
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 11    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 11.</b> &nbsp; Find the z value that corresponds to the given area.Given IQ scores are approximately normally distributed with a mean of 100 and standard deviation of 15, the proportion of people with IQs above 130 isapproximately: 
+
+</span>
+<BR>
+<p class = "options"><BR>
+<BR>
+A) 95% <BR>
+B) 68% <BR>
+C) 5% <BR>
+D) 2.5% <BR>
+</p>
+<!---<center><img src="w01/w01-assess-q10.2.jpg" alt="w01-q10.2" width="480" height="400"></center>--->
+</p>
+<BR>
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q11');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q11" class="showanswer" style="display: none;" > <b>Ans</b> : D <br/>
+<p> <b>Explanation</b>: With a mean of 100 and a standard deviation of 15, one 130 is two deviations. Anyone above 130 would be greater than 2 standard deviations. With the 68-95-99.7 rule, we know the proportion of anything two standard deviations in either direction is 5%. Since we only want the right side(+2 standard deviations), it is half of the 5% and the answer is D. The could also be solved by finding the Z score: (130-100)/15=2, P(Z>2) and using invnorm(2.5,1E99,0,1).
+</p></div><br/>
+</font>
+</p>
+<BR>
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 12    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 12.</b> &nbsp; Provided that the ACT is reasonably normally distributed with a mean of18 and standard deviation of 6, determine the proportion of students with a 33 or higher. 
+</span>
+<BR>
+<p class = "options"><BR>
+<BR>
+A) 0.0062 <BR>
+B) 0.0109 <BR>
+C) 0.0124 <BR>
+D) 0.0217 <BR>
+</p>
+<!---<center><img src="w01/w01-assess-q10.2.jpg" alt="w01-q10.2" width="480" height="400"></center>--->
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q12');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q12" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<p> <b>Explanation</b>: First, find the Z score: (33-18)/6=2.5. P(Z>2.5)=0.0062 using the normal table or TI command invnorm(2.5,1E99,0,1). <br><br>
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 13    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 13.</b> &nbsp; For a population of giraffes, the heights are measured. The sample mean is 16.5 ft; the sample standard deviation is 3.8. What percentage of giraffes are taller than 20 ft.  
+<BR>
+<p class = "options"><BR>
+<BR>
+A) 8% <BR>
+B) 15% <BR>
+C) 18% <BR>
+D) 21% <BR>
+</p>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q13');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q13" class="showanswer" style="display: none;" > <b>Ans</b> : C <br/>
+<p> <b>Explanation</b>: 𝑍= (20−16.5)/3.8 = 0.92. 𝑃(𝑍> 0.92) = 1 − P(z < 0.92) = 1 - 0.8212 = 0.1788.
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 14   VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 14.</b> &nbsp; IQ scores are normally distributed with mean 100 andstandard deviation 15. What is the IQ scores that correspond to the 85 percentile? 
+<BR>
+<p class = "options"><BR>
+<BR>
+A) 115.6 <BR>
+B) 120.3 <BR>
+C) 126.6<BR>
+D) 146.2 <BR>
+</p>
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q14');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q14" class="showanswer" style="display: none;" > <b>Ans</b> : A <br/>
+<p> <b>Explanation</b>: The z-score for 0.85 is around 1.04. So the 85 percentile is 100 + (1.04)(15) = 115.6
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!--VVVV     Problem 15    VVVVV-->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVV-->     
+<p class="mcq"><span class = "ques">
+<b>Problem 15.</b> &nbsp; Assume that the heights of women are normally distributed with a mean of 64.9 inches and a standard deviation of 1.6 inches. Find Q3, the third quartile that separates the bottom 75% from the top 25%. 
+<BR>
+<p class = "options"><BR>
+<BR>
+A) 63.8 <BR>
+B) 66.0 <BR>
+C) 66.9<BR>
+D) 66.7 <BR>
+</p>
+<p>
+
+<p>
+<font color = "red">
+<span  onclick="toggle_visibility('q15');" class="view"><font color = "blue"><b>View Answer</b></font></span>
+<div id="q15" class="showanswer" style="display: none;" > <b>Ans</b> : B <br/>
+<p> <b>Explanation</b>: Q3 is the area under the curve with an area of 0.75. Using the normal table or the TI command Invnorm(0.75,0,1) to obtain z = 0.675. Recall that the z-score transformation has form 0.675=(x-64.9)/1.6. Next, solve for x=65.98, so the answer is B. 
+</p></div><br/>
+</font>
+</p>
+<BR>
+
+
+<!-- inner table-->  
+</td></tr>
+</tbody>
+</table>
+</div>
+</center>
+<BR>
+
+<!-- outer table -->
+</td> </tr> <tbody></table>
+</center>
+<BR>
+
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX  FOOTER  XXXXXXXXXXXXXXXXXXXXXXX-->
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<footer class="col-md-12">
+<center><font color = "navy" size =2>
+    <p class="text-center">Copyright &copy; 
+        <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+       C. Peng. Last updated: 
+         <script> 
+            document.write(new Date().toLocaleDateString()); 
+         </script> 
+      </font>
+ <a href='http://www.freevisitorcounters.com'>.</a> 
+<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script></p>
+<center>
+<BR><BR><BR>
+</body>
+</html>
+
+
+
