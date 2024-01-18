@@ -1,0 +1,33 @@
+
+
+Descriptive Statistical Analysis of Weekly Quiz #1 Grades
+
+
+4.98  5.98  6.48  7.00  7.49  7.49  7.98  7.98  7.99  7.99  8.00
+8.00  8.00  8.02  8.02  8.49  8.49  8.50  8.50  8.50  8.50  8.50
+8.50  8.50  8.51  8.51  8.51  8.98  8.99  8.99  8.99  8.99  9.00
+9.00  9.00  9.00  9.00  9.01  9.01  9.01  9.01  9.01  9.01  9.01
+9.02  9.02  9.02  9.48  9.51  9.98  9.98  9.99  9.99 10.00 10.00
+10.00 10.00
+
+1. This is a numerical data, we want to see the grade distribution (i.e., percentage of As, Bs, Cs, etc).
+
+2. walso may want to know the class average, median, variance and standard deviation, etc.
+
+3. We may also want to see the 5-number summary and box-plot
+
+4. If my score is 8.65, I want to know my ranking (i.e., my grade is higher than what percentage of all class grades)
+
+5. We can also standardize the grades by z-score transformation and find inter-quartile range (IQR).
+
+
+
+
+
+ 
+
+
+
+
+
+
