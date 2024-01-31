@@ -1,0 +1,1036 @@
+
+<html lang="en" style="scroll-padding-top: 76px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--meta name="description" content="Project documentation with Markdown.">
+        <meta name="author" content="MkDocs Team">
+        <link rel="canonical" href="https://www.mkdocs.org/">
+        <link rel="shortcut icon" href="https://www.mkdocs.org/img/favicon.ico"-->
+
+        <title>MAT121-Statistics I</title>
+        <link href="./stat/bootstrap.min.css" rel="stylesheet">
+        <link href="./stat/font-awesome.min.css" rel="stylesheet">
+        <link href="./stat/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./stat/github.min.css">
+        <link href="./stat/extra.css" rel="stylesheet">
+
+        <script async="" src="./stat/analytics.js.download"></script><script src="./stat/jquery-1.10.2.min.js.download" defer=""></script>
+        <script src="./stat/bootstrap.min.js.download" defer=""></script>
+        <script src="./stat/highlight.min.js.download"></script>
+        <script src="./stat/yaml.min.js.download"></script>
+        <script src="./stat/django.min.js.download"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <style>
+            div.a {
+              line-height: 90%;
+            }
+
+            .section {
+               background-color: white;
+               border: 0px solid black;
+               margin: 0px;
+               padding: 0px;
+               font-size: 28px;
+               font-weight: 450;
+               text-align: center;
+             }
+            .sub {
+               background-color: white;
+               border: 0px solid black;
+               margin: 0px;
+               padding: 5px;
+               font-size: 20px;
+               font-weight: 490;
+               text-align: left;
+             }
+
+           .graytoc {
+            background-color: LightCyan;
+            color:red;
+            font-weight: 300;
+           }
+
+        </style>
+    </head>
+
+    <body class="homepage" style="">
+
+<!--####################################################-->
+<!-- VVVVVVVVVVVVVVVVV    TOP Panel   VVVVVVVVVVVVVVVVVV-->
+<!--####################################################-->
+    <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+             <a class="navbar-brand" href=""><center><b>MAT121 Statiatics I</b><br> <sub> Dr. Cheng Peng</sub></center> </a>
+             <!-- Expander button -->
+             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse"><span class="navbar-toggler-icon"></span> </button>
+
+             <!-- Expanded navigation -->
+             <div id="navbar-collapse" class="navbar-collapse collapse">
+
+              <!-- Main navigation -->
+
+             <ul class="nav navbar-nav ml-auto">
+    
+             
+<!--########################################################################-->
+<!--SSSSSSSSSSSSSSSSSSSSSS    Dropdown tag: Syllabus  SSSSSSSSSSSSSSSSSSSS-->
+<!--########################################################################-->
+                 <li class="navitem active"> <a href="w00/MAT121Syllabus.pdf"  target="popup" onclick="window.open('w00/MAT121Syllabus.pdf','name','width=900,height=500')" class="nav-link">Syllabus </a></li>
+ 
+                  <!--li class="navitem active"> <a href="https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09"  target="popup" onclick="window.open('https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09','name','width=900,height=500')"  class="nav-link">Zoom</a></li-->
+                 
+                 <li class="navitem active"> <a href="w00/TutorScheduleMLCFall23.pdf"  target="popup" onclick="window.open('w00/TutorScheduleMLCFall23.pdf','name','width=900,height=500')" class="nav-link"><font color = "purple"><b>Tutoring </b></font></a></li>
+
+ <!--######################################################################-->
+<!--SSSSSSSSSSSSSSSSSSSSSS    Dropdown tag: Office Hours   SSSSSSSSSSSSSSSSSSSS-->
+<!--######################################################################-->
+         <li class="dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"> Office Hours<b class="caret"></b></a>
+            <ul class="dropdown-menu">   
+            
+                <center><a href="https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09"  target="popup" onclick="window.open('https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09','name','width=900,height=500')"  class="nav-link"><font color = "blue">Dr. Peng's Zoom Link</font></a>
+                </center>
+            <center></center>
+                
+           <li class="navitem active"><center><b>Monday</b> <br> <font size=2 color="purple">3:30PM-5:30PM</font></center></li>
+            
+           <li class="navitem active"><center><b>Tuesday</b> <br><font size=2 color="purple">8:30AM-9:30PM <br> 11:00AM-12:00AM</font></center></li>
+                
+           <li class="navitem active"><center><b>Thursday</b> <br><font size=2 color="purple">8:30AM-9:30PM <br> 11:00AM-12:00AM</font></center></li>
+             </ul>
+          </li>
+                 
+
+<!--########################################################################-->
+<!--SSSSSS                  Dropdown tag: Turtoring              SSSSSSSSSSSS-->
+<!--########################################################################>
+
+               <li class="dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"> Tutoring<b class="caret"></b></a>
+                   <ul class="dropdown-menu">
+                     <b>Free Tutoring</b><BR>
+                     <li class="navitem active"> <a href="https://www.wcupa.edu/universityCollege/larc/"  target="popup" onclick="window.open('https://www.wcupa.edu/universityCollege/larc/','name','width=900,height=500')"  class="dropdown-item">WCU LARC</a></li>
+                    <li class="navitem active"> <a href="STATGAOfficeHoursFall2022.pdf"  target="popup" onclick="window.open('STATGAOfficeHoursFall2022.pdf','name','width=900,height=500')"  class="dropdown-item">Math Dept Tutoring (<font color = "red">New!</font>)</a></li>
+                   </ul>
+               </li>
+         
+<!--########################################################################-->
+<!--SSSSSS                  Dropdown tag: Tables                SSSSSSSSSSSS-->
+<!--########################################################################-->
+
+               <li class="dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"> Tables<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                     <b>Statistical Tables</b>
+                     <li class="navitem active"> <a href="w00/w00-statstables.html"  target="popup" onclick="window.open('w00/w00-statstables.html','name','width=900,height=500')"  class="dropdown-item">HTML Version</a></li>
+
+                    <li class="navitem active"> <a href="w00/w00-statstables.pdf"  target="popup" onclick="window.open('w00/w00-statstables.pdf','name','width=900,height=500')"  class="dropdown-item">PDF Version</a></li>
+                     </ul>
+               </li>
+<!--############################################################################-->
+<!--SSSSSS                  Dropdown tag: flowcharts                SSSSSSSSSSSS-->
+<!--############################################################################-->
+
+               <li class="dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"> Flowcharts </a>
+                   <ul class="dropdown-menu">
+                     <li class="navitem active"> <a href="w00/w08-CI-Flow-chart.pdf"  target="popup" onclick="window.open('w00/w08-CI-Flow-chart.pdf','name','width=900,height=500')"  class="dropdown-item">Confidence Interval</a></li>
+
+                    <li class="navitem active"> <a href="w00/w10-HT-flow-chart.pdf"  target="popup" onclick="window.open('w00/w10-HT-flow-chart.pdf','name','width=900,height=500')"  class="dropdown-item">Testing Hypothesis</a></li>
+                       
+                   <li class="navitem active"> <a href="w00/w11-Two-sample-flow-chart.pdf"  target="popup" onclick="window.open('w00/w11-Two-sample-flow-chart.pdf','name','width=900,height=500')"  class="dropdown-item">Two Sample Tests</a></li>
+                   </ul>
+             </li>
+<!--########################################################################-->
+<!--SSSSSSS               Dropdown tag: Shiny Apps              SSSSSSSSSSSS-->
+<!--########################################################################-->
+
+
+               <li class="dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"><font color = "red"><b> InteractiveStatsApps</b></font><b class="caret"></b></a>
+                   <ul class="dropdown-menu">
+                 
+                     <li class="navitem active" > <a href="https://wcupeng.shinyapps.io/DescriptiveStats/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/DescriptiveStats/',
+                         'name','width=900,height=500')"  class="dropdown-item">1. Descriptive Statistics</a></li>
+
+                    <li class="navitem active"> <a href="https://wcupeng.shinyapps.io/ZTable/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/ZTable/','name','width=900,height=500')"  class="dropdown-item">2. Standard Normal Table</a></li>
+                       
+                    <li class="navitem active"> <a href="https://peng-isla.shinyapps.io/TwoQ4NormalDist/"  target="popup" onclick="window.open('https://peng-isla.shinyapps.io/TwoQ4NormalDist/','name','width=900,height=500')"  class="dropdown-item">3. Two Types of Questions of Normal Distributions</a></li>
+                       
+                    <li class="navitem active"> <a href="https://wcupeng.shinyapps.io/CLTdemo/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/CLTdemo/','name','width=900,height=500')"  class="dropdown-item">4. Central Limit Theorem Demo</a></li>                       
+              
+                    <li class="navitem active"> <a href="https://wcupeng.shinyapps.io/AppsCLT4Means/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/AppsCLT4Means/','name','width=900,height=500')"  class="dropdown-item">5. Applications of CLT for Means</a></li>                       
+                    <li class="navitem active"> <a href="https://wcupeng.shinyapps.io/AppsCLT4Prop/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/AppsCLT4Prop/','name','width=900,height=500')"  class="dropdown-item">6. Applications of CLT for Proportions</a></li>
+                       
+                    <li class="navitem active"> <a href="https://wcu-peng.shinyapps.io/NormalCI4MeanProp/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/NormalCI4MeanProp/','name','width=900,height=500')"  class="dropdown-item">7. Normal CI for Means and Proportion</a></li> 
+                       
+                    <li class="navitem active"> <a href="https://wcu-peng.shinyapps.io/t-Table/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/t-Table/','name','width=900,height=500')"  class="dropdown-item">8. Student t Table</a></li>                     
+                       
+                    <li class="navitem active"> <a href="https://wcu-peng.shinyapps.io/Student-t-CI/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/Student-t-CI/','name','width=900,height=500')"  class="dropdown-item">9. Student t CI for Means</a></li> 
+                         
+                    <li class="navitem active"> <a href="https://wcu-peng.shinyapps.io/oneMean-z-Test/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-z-Test/','name','width=900,height=500')"  class="dropdown-item">10. Normal Test for One Mean</a></li>                     
+                       
+                    <li class="navitem active"> <a href="https://wcu-peng.shinyapps.io/oneMean-ttest/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-ttest/','name','width=900,height=500')"  class="dropdown-item">11. t Test for One Mean</a></li>                      
+                       
+                    <li class="navitem active"> <a href="https://chpeng.shinyapps.io/oneProp-z-testR/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/oneProp-z-testR/','name','width=900,height=500')"  class="dropdown-item">12. Normal Test for One Proportion</a></li>  
+                    
+                   <li class="navitem active"> <a href="https://chpeng.shinyapps.io/twoSampleTests/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/twoSampleTests/','name','width=900,height=500')"  class="dropdown-item">13. Two-sample Tests of Population Means</a></li> 
+                       
+                  <li class="navitem active"> <a href="https://chpeng.shinyapps.io/LSE-Reg/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/LSE-Reg/','name','width=900,height=500')"  class="dropdown-item">14. Understanding Regression: Simulation</a></li>     
+                     
+                  <li class="navitem active"> <a href="https://chengpeng.shinyapps.io/correlation-reg/"  target="popup" onclick="window.open('https://chengpeng.shinyapps.io/correlation-reg/','name','width=900,height=500')"  class="dropdown-item">15. Correlation Coefficient and Regression</a></li>  
+                       
+                   <li class="navitem active"> <a href="https://chpeng.shinyapps.io/chisq-gof/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/chisq-gof/','name','width=900,height=500')"  class="dropdown-item">16. Chisquared Test of Goodness-of-fit</a></li>     
+                    
+                   <li class="navitem active"> <a href="https://chpeng.shinyapps.io/chisq-independence/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/chisq-independence/','name','width=900,height=500')"  class="dropdown-item">17. Chisquared Test of Independence</a></li>
+                  
+                     </ul>
+               </li>
+                   
+<!--######################################################################-->
+<!--SSSSSSSSSSSSSSSSSSSSSS    Dropdown tag: Contact   SSSSSSSSSSSSSSSSSSSS-->
+<!--######################################################################-->
+              <li class="dropdown"><a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"> Contact <b class="caret"></b></a>
+                   <ul class="dropdown-menu">
+                     <li class="navitem active"> <a href="mailto: cpeng@wcupa.edu"  target="popup" onclick="window.open('mailto: cpeng@wcupa.edu','name','width=900,height=500')"  class="dropdown-item">My Email (link)</a></li>    
+                       
+                       <li class="navitem active"> <a href="https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09"  target="popup" onclick="window.open('https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09','name','width=900,height=500')"   class="dropdown-item"><font color = "blue">Zoom Link</font></a></li>
+                       
+                     <li class="navitem active"> <a href="" class="dropdown-item"><b>Office</b></a> <font size=2, color="purple"><center>R107, 25 Univ. Ave</center></font></li>
+                  </ul>
+              </li>
+                 
+
+<!--SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS-->
+               </ul>
+         </div>
+      </div>
+ </div>
+
+<!--####################################################-->
+<!-- VVVVVVVVVVVVVVVVV    TOC Panel   VVVVVVVVVVVVVVVVVV-->
+<!--####################################################-->
+<div class="container">
+            <div class="row">
+                <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary" style="top: 76px;">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+  <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+          <ul class="nav flex-column">
+              
+              
+              
+              
+              
+            <li class="nav-item" data-level="1">
+                
+                       <div class="row"  align = "center">
+                            <div class="column"><a href="https://pengdsci.github.io/MAT121EB/"  target="popup" onclick="window.open('https://pengdsci.github.io/MAT121EB/','name','width=900,height=500')" class="nav-link"><center> <img src = "eBook.png"  width="50" height="80"></center> </a></div>
+                            <div class="column"><a href="OnlineLearningStrategies.png"  target="popup" onclick="window.open('OnlineLearningStrategies.png','name','width=900,height=500')" class="nav-link"><center> <img src = "LearningStrategyIcon.png"  width="50" height="80"> </center></a> </div>
+                       </div>
+                
+                <!--a href="https://pengdsci.github.io/MAT121EB/"  target="popup" onclick="window.open('https://pengdsci.github.io/MAT121EB/','name','width=900,height=500')" class="nav-link"> <img src = "eBook.png"  width="50" height="80"> </a> <a href="OnlineLearningStrategies.png"  target="popup" onclick="window.open('OnlineLearningStrategies.png','name','width=900,height=500')" class="nav-link"> <img src = "LearningStrategyIcon.png"  width="50" height="80"> </a--> 
+                
+                
+                
+               <ul class="nav flex-column">
+                   <div class="a">
+                   <li class="nav-item" data-level="2"><a href="#week01" class="nav-link">1. Tables and Charts </a></li>
+                   <li class="nav-item" data-level="2"><a href="#week02" class="nav-link">2. Numerical Measures</a></li>
+                   <li class="nav-item" data-level="2"><a href="#week03" class="nav-link">3. Concepts of Probability</a></li>
+                   <li class="nav-item" data-level="2"><a href="#week04" class="nav-link">4. Normal Distributions</a></li>
+                       <center><font color = "red">Midterm Exam 1 [9/27]</font></center>
+                   <li class="nav-item" data-level="2"><a href="#week05" class="nav-link">5. Sampling Distributions </a> </li>
+                   <li class="nav-item" data-level="2"><a href="#week06" class="nav-link">6. Z-Confidence Intervals </a></li>    
+				   <li class="nav-item" data-level="2"><a href="#week07" class="nav-link">7. t-confidence Intervals </a></li> 
+                       <center><font color = "red">Midterm Exam 2 [10/19]</font></center>
+                   <li class="nav-item" data-level="2"><a href="#week08" class="nav-link">8. Testing Hypotheses </a></li>
+                   <li class="nav-item" data-level="2"><a href="#week09" class="nav-link">9. Normal Tests </a> </li> 
+                   <li class="nav-item" data-level="2"><a href="#week10" class="nav-link">10. t and Paired t-tests</a> </li> 
+				   <li class="nav-item" data-level="2"><a href="#week11" class="nav-link">11. Two-sample Tests</a> </li>  
+                   <li class="nav-item" data-level="2"><a href="#week11x" class="nav-link">12. Exam #3 Review</a> </li>
+                        <center><font color = "red">Midterm Exam 3 [11/21]</font></center>
+				   <li class="nav-item" data-level="2"><a href="#week12" class="nav-link">13. Correlation and Regression</a> </li>
+                   <li class="nav-item" data-level="2"><a href="#week13" class="nav-link">14. Chisquare tests </a> </li>
+                   <li class="nav-item" data-level="2"><a href="#week14" class="nav-link">15. Review of Final Exam </a> </li>
+                   </div>
+                </ul>
+             </li>
+           </ul>
+    </div>
+</div></div>
+
+
+<!-- VVVVVVVVVVVVVVVVV    Main Body   VVVVVVVVVVVVVVVVVV-->
+
+<div class="col-md-9" role="main">
+
+    
+    
+<hr>         
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV     Week #01    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+
+    <h6 id="week01" class="section" style="text-align:center"><font size = 4><b>Topic 01: Course Introduction and Graphical Summary of Data</b></font>
+        <br><center><font size = 3 color = "blue">[8/28 - 9/1]</font></center>
+    </h6>
+ <hr> 
+    <ul><li> Course resources and logistics</li>
+           <ul>
+             <li> <a href="notes/w01-CourseInfoLogistics.html" target="popup" 
+                 onclick="window.open('notes/w01-CourseInfoLogistics.html','name','width=900,height=500')">
+                 [HTML]</a> </li>
+              <li><a href="notes/w01-CourseInfoLogistics.pdf" target="popup" 
+                 onclick="window.open('notes/w01-CourseInfoLogistics.pdf','name','width=900,height=500')">
+                 [PDF]</a></li>
+            </ul>
+         <li> Tabular and graphical summary of data</li>
+          <ul>
+            <li> Summary of categorical data</li>
+            <li> Summary of numerical data </li>
+          </ul>
+         <li> Study Materials</li>
+           <ul>
+              <li> Descriptive statistics: [Lecture Note]<br>
+                <a href="notes/w01-freqTableCharts.html" target="popup" 
+                 onclick="window.open('notes/w01-freqTableCharts.html','name','width=900,height=500')">
+                  [HTML]</a> 
+                  <a href="notes/w01-freqTableCharts.pdf" target="popup" 
+                 onclick="window.open('notes/w01-freqTableCharts.pdf','name','width=900,height=500')">
+                  [PDF]</a></li>
+        
+              <li> <a href="w01-assessment.html" target="popup" 
+                          onclick="window.open('w01-assessment.html','name','width=900,height=500')">
+                          Practice exercises #01</a>
+            
+             <li> <font color = "red">[Optional]</font> Practice example in 2.1-2.2 of Navidi's textbook</li>
+        </ul>
+        
+             <li> IntroStatsApps:</li>
+            <ul>
+                     <li> <a href="https://wcupeng.shinyapps.io/DescriptiveStats/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/DescriptiveStats/','name','width=900,height=500')" >Descriptive Stats</a></li> 
+                
+                     <li> <a href="https://mat121.s3.amazonaws.com/ISLA-DescriptiveStats.mp4"  target="popup" onclick="window.open('https://mat121.s3.amazonaws.com/ISLA-DescriptiveStats.mp4','name','width=900,height=500')" >Descriptive Stats Demonstration Video</a></li>                
+
+             </ul> 
+        
+        <li> <font color = "blue">This week's Assignment (Weekly quiz)</font>
+            <ul>
+              <li> <b>Available on D2L:</b> 12:00 PM, Thursday</li>
+              <li> <b>Due:</b> 11:30 PM, Sunday</li>
+                     <li> <a href="HW/week01-quiz-key.pdf"  target="popup" onclick="HW/week01-quiz-key.pdf','name','width=900,height=500')" ><font color = "red"><b>Answer Key to Weekly Quiz #1</b></font></a></li> 
+              </ul>   
+    </ul>
+
+<hr>
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV     Week #02    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week02"  class="section" style="text-align:center"><font size = 4><b> Topic 02: Numerical Summary of Data</b></font>
+            <br><center><font size = 3 color = "blue">[9/5 - 9/8]</font></center></h6>
+<hr>
+ <ul>
+     <li> Numerical measures- raw data </li>
+             <ul>
+               <li> Central tendency</li>
+               <li> Variation (spread) </li>
+               <li> Location </li>
+               <li> Boxplot and IQR</li>
+             </ul>
+     
+     <li>Study Materials</li>
+         <ul>
+             <li> Numerical summary of numerical data: [Lecture Note]: <br>
+                 <a href="notes/w02-numericalMeasures.html" target="popup" 
+                          onclick="window.open('notes/w02-numericalMeasures.html',
+                      'name','width=900,height=500')">[HTML] </a> <BR>
+                 <a href="notes/w02-numericalMeasures.pdf" target="popup" 
+                          onclick="window.open('notes/w02-numericalMeasures.pdf',
+                      'name','width=900,height=500')">[PDF] </a></li>
+    
+             <li> <a href="w02-assessment.html" target="popup" 
+                          onclick="window.open('w02-assessment.html','name','width=900,height=500')">
+                          Practice exercises #02</a>
+               
+             <li> <font color = "red">[Optional]</font> Practice example in 3.1-3.3 of Navidi's textbook</li>
+         </ul>
+         <li>IntroStatsApps:</li>
+            <ul>
+                     <li> <a href="https://wcupeng.shinyapps.io/DescriptiveStats/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/DescriptiveStats/','name','width=900,height=500')" >Descriptive Stat</a></li> 
+             </ul> 
+           <li> <font color = "blue">This week's Assignment (Weekly quiz)</font>
+             <ul>
+               <li> <b>Available on D2L:</b> 12:00 PM, Thursday</li>
+              <li> <b>Due:</b> 11:30 PM, Sunday</li>
+                     <li> <a href="HW/week02-quiz.pdf"  target="popup" onclick="HW/week02-quiz.pdf','name','width=900,height=500')" ><font color = "red">Answer Key to Weekly Quiz #2</font></a></li> 
+              </ul>   
+     
+    </ul> 
+    
+<hr>
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV     Week #03    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->   
+<h6 id="week03"  class="section" style="text-align:center"><font size = 4><b> Topic 03: Concepts of Probability</b></font>
+            <br><center><font size = 3 color = "blue">[9/11 - 9/15]</font></center></h6>
+    <hr>
+   <ul>
+      <li> Probability concepts
+          <ul>
+          <li> Experiments, sample space, and events
+          <li> Definitions of probability: classical and relative frequency approaches.
+          </ul>
+      <li> Concepts of Random Variables
+         <ul>
+            <li> Definition of a random variable
+            <li> Characterizing discrete random variables
+            <li> Characterizing continuous random variables
+         </ul>
+       <li> Study Materials</li>
+           <ul>
+                  <li> Concepts of probability and random variables: [Lecture Note] <br>
+                      <a href="notes/w03-ConceptsOfProbability.html" target="popup" 
+                          onclick="window.open('notes/w03-ConceptsOfProbability.html','name','width=900,height=500')">
+                         <li[HTML] </a> <BR>
+                      <a href="notes/w03-ConceptsOfProbability.pdf" target="popup" 
+                          onclick="window.open('notes/w03-ConceptsOfProbability.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+  
+                 <li> <a href="w03-assessment.html" target="popup" 
+                          onclick="window.open('w03-assessment.html','name','width=900,height=500')">
+                          Practice exercises #03</a>    
+  
+                <li> <font color = "red">[Optional]</font> Practice example in 5.1 and 6.1 of Navidi's textbook</li>
+               
+                  <li> <font color = "blue">This week's Assignment (Weekly quiz)</font>
+                  <ul>
+                      <li> <b>Available on D2L:</b> 12:00 PM, Thursday</li>
+                      <li> <b>Due:</b> 11:30 PM, Sunday</li>
+                     <li> <a href="HW/week03-quiz-key.pdf"  target="popup" onclick="HW/week03-quiz-key.pdf','name','width=900,height=500')" ><font color = "red">Answer Key</font></a></li> 
+                  </ul>   
+
+         </ul>
+
+    </ul> 
+
+    
+    
+ <hr>   
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV->
+<!-- VVVVVVVVVVVVVVVVV     Week #04    VVVVVVVVVVVVVVVVVV->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week04"  class="section" style="text-align:center"><font size = 4><b> Topic 04: Normal Distribution</b></font>
+                <br><center><font size = 3 color = "blue">[9/18 - 9/22]</font></center></h6>
+<hr>   
+<ul>
+     <li>Standard normal distribution</li>
+        <ul>
+           <li> Finding probabilities </li>
+           <li> Finding percentiles</li>
+        </ul>
+      <li>General normal distribution</li>
+         <ul>
+           <li> Finding probabilities </li>
+           <li> Finding percentiles</li>
+         </ul>
+    
+     <li> Study Materials</li>
+         <ul>
+           <li> Normal Distribution: [Lecture Note] <br>
+                      <a href="notes/w04-NormalDistribution.html" target="popup" 
+                          onclick="window.open('notes/w04-NormalDistribution.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                      <a href="notes/w04-NormalDistribution.pdf" target="popup" 
+                          onclick="window.open('notes/w04-NormalDistribution.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+     
+           <li> <a href="w04-assessment.html" target="popup" 
+                          onclick="window.open('w04-assessment.html','name','width=900,height=500')">
+                          Practice exercises #04</a>
+              
+           <li>  <font color = "red">[Optional]</font>Read section 7.1 and 7.2 of Navidi's textbook </li>
+         </ul>  
+       <li> IntroStatsApps:</li>
+            <ul>
+                <li> <a href="https://wcupeng.shinyapps.io/ZTable/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/ZTable/','name','width=900,height=500')" >Standard Normal Table</a></li> 
+                
+                <li> <a href="https://chengpeng.shinyapps.io/TwoQuestionsofNormalDist/"  target="popup" onclick="window.open('https://chengpeng.shinyapps.io/TwoQuestionsofNormalDist/','name','width=900,height=500')" >General Normal Distribution</a></li>            
+             </ul> 
+    
+    <li> <font color = "blue">This week's Assignment (Weekly quiz)</font>
+            <ul>
+              <li> <b>Available on D2L:</b> 12:00 PM, Thursday</li>
+              <li> <b>Due:</b> 11:30 PM, Sunday</li>
+              <li> <a href="HW/week04-quiz-key.pdf"  target="popup" onclick="HW/week04-quiz-key.pdf','name','width=900,height=500')" ><font color = "red">Answer Key</font></a></li> 
+              </ul>     
+           </ul>
+
+   
+<hr>
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV     Week #05    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+ <h6 id="week05"  class="section" style="text-align:center"><font size = 4><b> Topic 05: Sampling Distribution of Sample Means</b></font>
+    <br><center><font size = 3 color = "blue">[9/25 - 9/29]</font></center></h6>   
+ <hr>   
+<ul>
+ <li> Sampling distribution of sample means: Large sample <br>
+    <ul>
+       <li> Finding probability 
+       <li> Finding percentiles </li>
+    </ul>
+  <li> CLT for Population Proportion
+     <ul>
+	   <li> Finding probabilities
+       <li> Finding percentiles
+	 </ul>
+   <li> Study Materials</li>
+        <ul>
+            <li>Sampling distribution of sample means: [Lecture Note] <br>
+                 <a href="notes/w05-CLTSamplingDist.html" target="popup" 
+                          onclick="window.open('notes/w05-CLTSamplingDist.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w05-CLTSamplingDist.pdf" target="popup" 
+                          onclick="window.open('notes/w05-CLTSamplingDist.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w06-assessment.html" target="popup" 
+                          onclick="window.open('w06-assessment.html','name','width=900,height=500')">
+                          Practice exercises #05</a>
+            
+            <li>  <font color = "red">[Optional]</font>Read section 7.3 and 7.4 of Navidi's textbook </li>  
+        </ul>
+    
+     <li> IntroStatsApps:</li>
+            <ul>          
+                    <li> <a href="https://wcupeng.shinyapps.io/CLTdemo/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/CLTdemo/','name','width=900,height=500')">Central Limit Theorem Demo</a></li> 
+                
+                     <li> <a href="https://wcupeng.shinyapps.io/AppsCLT4Means/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/AppsCLT4Means/','name','width=900,height=500')">CLT for Sample Means</a></li> 
+                     
+                     <li> <a href="https://wcupeng.shinyapps.io/AppsCLT4Prop/"  target="popup" onclick="window.open('https://wcupeng.shinyapps.io/AppsCLT4Prop/','name','width=900,height=500')">CLT for Sample Proportions</a></li> 
+             </ul>  
+    
+ <li><font color = "blue" size = 4><b>Midterm Exam #1: Wednesday, 9/27</b> </font></li>
+    <ul>
+    <li><b>Coverage</b>: All topics covered from week #1 to week #4.</li>
+    <li><b>Time</b>: The exam will be administered through D2L. You can start the exam any time between 12:00 PM (Wednesday, 9/27) and 10:30 AM (Thursday, 9/28). <font color = "red">Once you start the exam, the clock starts counting down. You have to submit the exam within 90 minutes! The exam will automatically close after 90 minutes. </font></li>
+    <li><b>Format</b>: There will be 25 multiple-choice questions only. Everyone will have a slightly different problem set with similar problems.</li>
+    <li><b>Length</b>: The exam takes 90 minutes.</li>
+    <li><b>Logistics</b>: To guarantee that you will have 90 minutes of quality time to complete the exam, you should prepare a formula sheet ahead of time and a scientific or graphical calculator for the exam. You are also encouraged to print out statistical tables that are on the course web page.</li>
+    <li><b>Make-up exam.</b> Since you have a wide time window to start your exam, there will be no midterm exam. </li>
+    </ul>
+    
+      <li> <a href="Exams/MAT121F22MidtermExam01-Peng.pdf"  target="popup" onclick="Exams/MAT121F22MidtermExam01-Peng.pdf','name','width=900,height=500')" ><font color = "red">Midterm Exam #1 Answer Key</font></a></li> 
+    
+     <li><font color = "darkred"><b>No weekly quiz for this week due to the midterm exam.</b></font></li>
+    
+     </ul> 
+    
+ <hr>  
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV     Week #06    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV -->
+<hr>
+  <h6 id="week06"  class="section" style="text-align:center"><font size = 4><b> Topic 06: Normal Confidence Intervals</b></font>
+    <br><center><font size = 3 color = "blue">[10/2 - 10/6]</font></center></h6>   
+<hr>
+
+<ul>
+   <li> Concept of confidence interval for population mean </li>
+    <ul>
+      <li> Issues of points estimates</li>
+      <li> The logic and framework of confidence intervals</li>
+    </ul>
+    
+    
+   <li> Confidence interval for the mean: large sample case </li>    
+    <ul>
+      <li> Large sample confidence interval of means</li>
+    </ul>
+   <li> Study Materials</li>
+           <ul>
+            <li>Confidence Intervals: Logic and Framework  [Lecture Note] <br>
+                 <a href="notes/w06-ConfIntervals4Means.html" target="popup" 
+                          onclick="window.open('notes/w06-ConfIntervals4Means.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w06-ConfIntervals4Means.pdf" target="popup" 
+                          onclick="window.open('notes/w06-ConfIntervals4Means.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w07-assessment01.html" target="popup" 
+                          onclick="window.open('w07-assessment01.html','name','width=900,height=500')">
+                          Practice exercises #06</a>
+            
+            
+                 <li> <font color = "blue">Answer key to this week's quiz: normal confidence intervals</font></li>
+                    <ul>
+                     <li> <a href="HW/week06-quiz-key.pdf"  target="popup" onclick="HW/week06-quiz-key.pdf','name','width=900,height=500')" ><font color = "red">Answer Key </font></a></li> 
+                   </ul>        
+
+            <li>  <font color = "red">[Optional]</font>Read section 8.1 and 8.2 of Navidi's textbook </li>  
+        </ul>    
+
+    <li><font color = "red"><b>IntroStatsApps:</b></font>
+        <ul>
+       <li> <a href="https://wcu-peng.shinyapps.io/NormalCI4MeanProp/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/NormalCI4MeanProp/','name','width=900,height=500')" >Normal CI for Means and Proportions</a></li>               
+        </ul>
+    </li>
+    </ul>
+    
+ <hr>   
+    <!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV     Week #07    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV -->
+  <h6 id="week07"  class="section" style="text-align:center"><font size = 4><b> Topic 07: t Confidence Intervals and Confidence Interval for Proportions</b></font>
+    <br><center><font size = 3 color = "blue">[10/9 - 10/13]</font></center></h6>
+<hr>
+
+<ul>
+   <li> Confidence interval for proportions </li>    
+     <ul>
+        <li> Sampling distribution of sample proportion</li>
+        <li> Confidence interval of proportion</li>
+    </ul>
+   <li> Confidence interval of normal population mean - t confidence intervals </li>
+    <ul>
+      <li>  Sampling distribution of the test statistic: t-distribution</li>
+      <li>  CI for normal population mean with unknown population variance</li>
+    </ul>
+
+   <li> Study Materials</li>
+           <ul>
+            <li>CI for normal population mean and population proportions [Lecture Note] <br>
+                 <a href="notes/w07-CI4MeansProportions.html" target="popup" 
+                          onclick="window.open('notes/w07-CI4MeansProportions.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w07-CI4MeansProportions.pdf" target="popup" 
+                          onclick="window.open('notes/w07-CI4MeansProportions.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w07-assessment02.html" target="popup" 
+                          onclick="window.open('w07-assessment02.html','name','width=900,height=500')">
+                          Practice exercises #07</a>
+                  
+             <li> <font color = "blue">Answer key to this week's quiz: Proportions and t-CI</font></li>
+                    <ul>
+                     <li> <a href="HW/week07-quiz-key.pdf"  target="popup" onclick="HW/week07-quiz-key.pdf','name','width=900,height=500')" ><font color = "red">Answer Key </font></a></li> 
+                   </ul>        
+                                
+            <li>  <font color = "red">[Optional]</font>Read section 8.3 of Navidi's textbook </li>  
+        </ul>    
+
+    
+    <li><font color = "red"><b>IntroStatsApps:</b></font>
+        <ul>
+       <li> <a href="https://wcu-peng.shinyapps.io/NormalCI4MeanProp/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/NormalCI4MeanProp/','name','width=900,height=500')" >Normal CI for Means and Proportions</a></li>     
+            
+       <li> <a href="https://wcu-peng.shinyapps.io/oneMean-ttest/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-ttest/','name','width=900,height=500')" >t-CI for Normal Population Means</a></li>          </ul>
+        
+     <li><a href="https://pengdsci.github.io/MAT121/w00/w08-CI-Flow-chart.pdf"><font color = "red"> C.I. Flowchart</font></a></li>   
+     </ul> 
+    
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV       Midterm #2    VVVVVVVVVVVVVVVVVV-->
+ <!--VVVVVVVVVVVVVVVVV  Fall break: 10/16-10/17 VVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+    <hr>
+    <center><font color = "blue" size = 4><b>Midterm Exam #2: Thursday, 10/19</b> </font></center>
+    <hr>  
+    <ul>
+    <li> Exam Information</li>
+    <ul>
+    <li><b>Coverage</b>: All topics covered from week #5 to week #7 (Sampling distribution and confidence intervals).</li>
+    <li><b>Time</b>: The exam will be administered through D2L. You can start the exam any time between 12:00 PM (Thursday, 10/19) and 10:30 AM (Friday, 10/20). <font color = "red">Once you start the exam, the clock starts counting down. You have to submit the exam within 90 minutes! The exam will automatically close after 90 minutes. </font></li>
+    <li><b>Format</b>: There will be 25 multiple-choice questions only. Everyone will have a slightly different problem set with similar problems.</li>
+    <li><b>Length</b>: The exam takes 90 minutes.</li>
+    <li><b>Logistics</b>: To guarantee that you will have 90 minutes of quality time to complete the exam, you should prepare a formula sheet ahead of time and a scientific or graphical calculator for the exam. You are also encouraged to print out statistical tables that are on the course web page.</li>
+    <li><b>Make-up exam.</b> Since you have a wide time window to start your exam, there will be no make-up midterm exam. </li>
+    </ul>
+    
+      <li> <a href="Exams/MAT121F23MidtermExam02-key.pdf"  target="popup" onclick="Exams/MAT121F23MidtermExam02-key.pdf','name','width=900,height=500')" ><font color = "red"><b>Midterm Exam #2 Answer Key</b></font></a></li> 
+    
+     <li><font color = "darkred"><b>No weekly quiz for this week due to the midterm exam.</b></font></li>
+    </ul>
+   <br> 
+ <hr>     
+
+    
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVV     Week #08    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week08"  class="section" style="text-align:center"><font size = 4><b>Topic 08: Framework and Steps for Hypothesis Testing</b></font>
+    <br><center><font size = 3 color = "blue">[10/23 - 10/27]</font></center></h6>
+<hr>
+    
+<ul>
+    <li> Loigic and technical terms of hypothesis testing</li>
+    <li> Components of hypothesis testing</li>
+          <ul>
+            <li> Steps for testing hypothesis
+            <li> Types of hypothesis testing</li>
+          </ul>
+	 
+    <li> Study Materials</li>   
+        <ul>
+            <li>CI for normal population mean and population proportions [Lecture Note] <br>
+                 <a href="notes/w08-LogicConceptsOfHT.html" target="popup" 
+                          onclick="window.open('notes/w08-LogicConceptsOfHT.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w08-LogicConceptsOfHT.pdf" target="popup" 
+                          onclick="window.open('notes/w08-LogicConceptsOfHT.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w08-assessment.html" target="popup" 
+                          onclick="window.open('w08-assessment.html','name','width=900,height=500')">
+                          Practice exercises #08</a>
+          
+            <li>  <font color = "red">[Optional]</font>Read sections 9.1-9.2 of Navidi's textbook </li>      
+         </ul>
+    
+       <li><font color = "red"><b>IntroStatsApps:</b></font>
+        <ul>
+          <li> <a href="https://wcu-peng.shinyapps.io/oneMean-z-Test/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-z-Test/','name','width=900,height=500')"> Normal Tests Population Means</a></li>
+        </ul></li>
+       <br>
+   </ul>
+<hr>
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!-- VVVVVVVVVVVVVVVVV     Week #09    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week09"  class="section" style="text-align:center"><font size = 4><b>Topic 09: Normal Tests for Population Means and Proportions</b></font>
+        <br><center><font size = 3 color = "blue">[10/30 - 11/3]</font></center></h6>
+<hr>
+
+<ul>
+     <li> Hypothesis testing about normal population means.
+         <ul>
+             <li> Critical value method (revisited)</li>
+             <li> p-value method </li>
+         </ul> 
+     <li> Hypothesis testing for proportion </li>
+
+     <li> Study Materials</li>    
+       <ul>
+            <li>Normal tests for population mean and proportions [Lecture Note] <br>
+                 <a href="notes/w09-NormalTests.html" target="popup" 
+                          onclick="window.open('notes/w09-NormalTests.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w09-NormalTests.pdf" target="popup" 
+                          onclick="window.open('notes/w09-NormalTests.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w09-assessment.html" target="popup" 
+                          onclick="window.open('w09-assessment.html','name','width=900,height=500')">
+                          Practice exercises #09</a>
+          
+              <li> <font color = "blue">Answer key to this week's quiz: Normal Tests</font></li>
+                    <ul>
+                     <li> <a href="HW/week09-quiz-key.pdf"  target="popup" onclick="HW/week09-quiz-key.pdf','name','width=900,height=500')" ><font color = "red">Answer Key </font></a></li> 
+                   </ul>                
+            
+            <li>  <font color = "red">[Optional]</font>Read sections 9.1-9.2 of Navidi's textbook </li>  
+      </ul>
+       <li><font color = "red"><b>IntroStatsApps:</b></font>
+        <ul>
+          <li> <a href="https://wcu-peng.shinyapps.io/oneMean-z-Test/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-z-Test/','name','width=900,height=500')"> Normal Tests for Population Means</a></li>
+            
+           <li> <a href="https://cpeng.shinyapps.io/oneProp-z-testR/"  target="popup" onclick="window.open('https://cpeng.shinyapps.io/oneProp-z-testR/','name','width=900,height=500')"> Normal Tests for Population Proportions</a></li>    
+        </ul>
+       <br>
+   </ul>
+<hr>
+
+<!-- MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!-- VVVVVVVVVVVVVVVVV     Week #10    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week10"  class="section" style="text-align:center"><font size = 4><b>Topic 10: t-Tests and Paired t-Tests</b></font>
+    <br><center><font size = 3 color = "blue">[11/1-11/6]</font></center></h6>
+<hr>
+<ul>
+      <li> t-test for normal population means
+        <ul>
+			<li> t-distribution revisited.</li>
+            <li> Conditions and steps for the t-test.</li>
+        </ul>
+     <li> Paired t-test
+         <ul>
+             <li> Paired samples and sample of difference</li>
+             <li> t-test for the difference of dependent population means</li>
+         </ul>
+     <li> Study Materials</li>    
+       <ul>
+            <li>t-tests and paired t-tests [Lecture Note] <br>
+                 <a href="notes/w10-t-paired-ttest.html" target="popup" 
+                          onclick="window.open('notes/w10-t-paired-ttest.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w10-t-paired-ttest.pdf" target="popup" 
+                          onclick="window.open('notes/w10-t-paired-ttest.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+            <li> <a href="w10-assessment.html" target="popup" 
+                          onclick="window.open('w10-assessment.html','name','width=900,height=500')">
+                          Practice exercises #10</a>
+          
+                   <li> <font color = "blue">Answer key to this week's quiz: Normal Tests</font></li>
+                    <ul>
+                     <li> <a href="HW/week10-quiz-key.pdf"  target="popup" onclick="HW/week10-quiz-key.pdf','name','width=900,height=500')" ><font color = "red">Answer Key </font></a></li> 
+                   </ul>              
+                
+                
+            <li>  <font color = "red">[Optional]</font>Read sections 9.1-9.2, 11.3 of Navidi's textbook </li>  
+       </ul>
+       <li><font color = "red"><b>IntroStatsApps:</b></font>
+        <ul>
+          <li> <a href="https://wcu-peng.shinyapps.io/oneMean-ttest/"  target="popup" onclick="window.open('https://wcu-peng.shinyapps.io/oneMean-ttest/','name','width=900,height=500')"> t Tests for Normal Population Means</a></li>     
+        </ul> 
+     </ul>             
+ <hr> 
+
+<!-- MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!-- VVVVVVVVVVVVVVVVV     Week #11    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week11"  class="section" style="text-align:center"><font size = 4><b>Topic 11: Two Sample Tests of Population Means</b></font>
+    <br><center><font size = 3 color = "blue">[11/6 - 11/10]</font></center></h6>
+<hr>
+    <ul>
+      <li> Normal test of two independent population means</li>
+          <ul>
+             <li> Sampling distribution of the difference of two sample means</li>
+             <li> 6-step procedure: both critical and p-value methods.</li>
+         </ul>
+      <li> t-test of two independent population means</li>    
+          <ul>
+            <li> Assumptions: normal population, unknown but equal variances</li>
+            <li> pooled sample variance and the 6-step procedure.</li>
+         </ul>
+    
+    <li> Study materials</li>
+          <ul>
+            <li>Two-sample tests of the population mean [Lecture Note] <br>
+                 <a href="notes/w11-2sampleTests4Means.html" target="popup" 
+                          onclick="window.open('notes/w11-2sampleTests4Means.html','name','width=900,height=500')">
+                         [HTML] </a> <BR>
+                 <a href="notes/w11-2sampleTests4Means.pdf" target="popup" 
+                          onclick="window.open('notes/w11-2sampleTests4Means.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+            
+              <li> <a href="w11-assessment.html" target="popup" 
+                          onclick="window.open('w11-assessment.html','name','width=900,height=500')">
+                          Practice exercises #11</a>
+          
+                  
+             <li> <font color = "blue">Answer key to this week's quiz: 2-sample t Tests</font></li>
+                    <ul>
+                     <li> <a href="HW/week11-quiz-key.pdf"  target="popup" onclick="HW/week11-quiz-key.pdf','name','width=900,height=500')" ><font color = "red">Answer Key </font></a></li> 
+                   </ul>              
+                            
+                  
+                  
+                  
+                  
+              <li>  <font color = "red">[Optional]</font>Read sections 11.1 of Navidi's textbook </li>  
+          </ul>
+      <li><font color = "red"><b>IntroStatsApps:</b></font>
+          <ul>
+          <li> <a href="https://chpeng.shinyapps.io/twoSampleTests/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/twoSampleTests/','name','width=900,height=500')"> Two-sample Tests for Population Means</a></li>    
+        </ul>
+      <li> Flow-chart of two-sample testing procedures: <a href="https://pengdsci.github.io/MAT121/w00/w11-Two-sample-flow-chart.pdf" target="popup"  onclick="window.open('https://pengdsci.github.io/MAT121/w00/w11-Two-sample-flow-chart.pdf','name','width=900,height=500')"> Two-sample Tests</a> </li>
+    </ul>  
+
+    
+    
+    
+    
+    
+<hr>
+<!-- MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!-- VVVVVVVVVVVVVVVVV     Week #11    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week11x"  class="section" style="text-align:center"><font size = 4><b>Topic #12. Review of Midterm Exam #3: Testing Hypotheses</b></font>
+    <br><center><font size = 3 color = "blue">[11/13 - 11/17]</font></center></h6>
+<hr>
+ <ul>
+   <li>The general framework of testing hypothesis.</li> 
+   <li>One-sample tests for population mean and proportion: Normal and t-tests.</li>
+   <li> Paired-sample t-test.</li>
+   <li>Two-sample tests for the difference of population means normal and t-tests. (tests of two proportions will not be covered in this course).</li>
+ </ul>
+
+        <li> Study materials</li>
+          <ul>
+            <li>Review of hyperthesis testing [Lecture Note]. </li>
+                 <a href="notes/w11-HTReview.html" target="popup" 
+                          onclick="window.open('notes/w11-HTReview.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w11-HTReview.pdf" target="popup" 
+                          onclick="window.open('notes/w11-HTReview.pdf','name','width=900,height=500')">
+                         [PDF] </a>
+           </ul>   
+    </li>
+              
+<font color = "red"><b>There will be not weekly exam for this week.</b></font> <font color = "blue"><b>Please review the weekly quizzes from week #8 to week #11 and make sure you understand the concepts and procedures for conducting hypothesis testing. </b></font>    
+    
+<!-- MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                      Exam Three
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+        <hr>
+    <center><font color = "blue" size = 4><b>Midterm Exam #3: Tuesday, 11/20</b> </font></center>
+    <hr>  
+    <ul>
+    <li>Exam #2 Information</li>
+    <ul>
+    <li><b>Coverage</b>: All topics covered from week #8 to week #11 (Sampling distribution and confidence intervals).</li>
+    <li><b>Time</b>: The exam will be administered through D2L. You can start the exam any time between 12:00 PM (Monday, 11/20) and 10:30 AM (Tuesday, 11/21). <font color = "red">Once you start the exam, the clock starts counting down. You have to submit the exam within 90 minutes! The exam will automatically close after 90 minutes. </font></li>
+    <li><b>Format</b>: There will be 25 multiple-choice questions only. Everyone will have a slightly different problem set with similar problems.</li>
+    <li><b>Length</b>: The exam takes 90 minutes.</li>
+    <li><b>Logistics</b>: To guarantee that you will have 90 minutes of quality time to complete the exam, you should prepare a formula sheet ahead of time and a scientific or graphical calculator for the exam. You are also encouraged to print out statistical tables that are on the course web page.</li>
+    <li><b>Make-up exam.</b> Since you have a wide time window to start your exam, <b>there will be <font color = "red">no make-up</font> midterm exam #3. </b></li>
+    </ul>
+    
+      <li> <a href="Exams/MAT121F23ActuallyUsedExam03-key.pdf"  target="popup" onclick="Exams/MAT121F23ActuallyUsedExam03-key.pdf','name','width=900,height=500')" ><font color = "red"><b>Midterm Exam #3 Answer Key</b></font></a></li>   
+    </ul>
+    <br>
+    <center><font color = "blue" size = 4><b>Happy Thanksgiving!</b></font></center>
+    
+<br>
+  
+
+                
+
+<hr>
+<!--MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM -->
+<!-- VVVVVVVVVVVVVVVVV     Week #12    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week12"  class="section" style="text-align:center"><font size = 4><b>Topic 13: Correlation and Linear Regression</b></font>
+        <br><center><font size = 3 color = "blue">[11/27 - 12/1]</font></center></h6>
+<hr>
+<ul>
+    <li> Correlation coefficients</li>
+    <ul>
+        <li>Linear correlaion coefficeint and interpreation</li>
+    </ul>
+    <li> Least square regression </li>
+      <ul>
+        <li>Regression coefficients and interpretation</li>
+        <li>Coefficient of determionation</li>
+        <li> Inference of regression: testing slope and prediction interval</li>
+      </ul> 
+    <li> Study materials</li>
+          <ul>
+            <li>Correlation and linear regression [Lecture Note] </li>
+                 <a href="notes/w12-CorrelationRegression.html" target="popup" 
+                          onclick="window.open('notes/w12-CorrelationRegression.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w12-CorrelationRegression.pdf" target="popup" 
+                          onclick="window.open('notes/w12-CorrelationRegression.pdf','name','width=900,height=500')">
+                         [PDF] </a>
+            
+              <li> <a href="w12-assessment.html" target="popup" 
+                          onclick="window.open('w12-assessment.html','name','width=900,height=500')">
+                  Practice exercises #12</a></li>
+                         
+              <li>  <font color = "red">[Optional]</font>Read sections 4.1-4.2 and 13.1 and 13.2 of Navidi's textbook </li>  
+              
+              <li> <font color = "blue">Answer key to this week's quiz: Normal Tests</font></li>
+                    <ul>
+                     <li> <a href="HW/week13-quiz-key.pdf"  target="popup" onclick="HW/week13-quiz-key.pdf','name','width=900,height=500')" ><font color = "red"><b>Answer Key</b></font></a></li> 
+                   </ul>  
+              
+            </ul>
+         <li><font color = "red"><b>IntroStatsApps:</b></font>
+          <ul>
+          <li> <a href="https://chpeng.shinyapps.io/LSE-Reg/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/LSE-Reg/','name','width=900,height=500')"> Understanding Correlation Coefficients and Regression: Simulation</a></li>  
+              
+          <li> <a href="https://chengpeng.shinyapps.io/correlation-reg/"  target="popup" onclick="window.open('https://chengpeng.shinyapps.io/correlation-reg/','name','width=900,height=500')"> Correlation Coefficients and Regression</a></li>     
+        </ul>
+  </ul>
+
+<hr>
+
+<!-- MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!-- VVVVVVVVVVVVVVVVV     Week #13    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week13"  class="section" style="text-align:center"><font size = 4><b>Topic 14: Chisq Test of Goodness-of-fit</b></font>
+        <br><center><font size = 3 color = "blue">[12/4- 12/8]</font></center></h6>
+<hr>
+    <ul> 
+    <li> Chisquare goodness-of-fit</li>
+         <ul>
+          <li> Chisquare test of goodness-of-fit </li>
+        </ul>
+    <li> Study materials</li>
+          <ul>
+            <li>Goodness-of-fit test [Lecture Note] <br>
+                 <a href="notes/w13-Chisq-Goodness-of-fit.html" target="popup" 
+                          onclick="window.open('notes/w13-Chisq-Goodness-of-fit.html','name','width=900,height=500')">
+                         [HTML] </a> 
+                 <a href="notes/w13-Chisq-Goodness-of-fit.pdf" target="popup" 
+                          onclick="window.open('notes/w13-Chisq-Goodness-of-fit.pdf','name','width=900,height=500')">
+                         [PDF] </a></li>
+
+              <li>  <font color = "red">[Optional] </font>Read section 12.1 of Navidi's textbook </li>  
+          </ul>
+         <li><font color = "red"><b>IntroStatsApps:</b></font>
+          <ul>
+          <li> <a href="https://chpeng.shinyapps.io/chisq-gof/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/chisq-gof/','name','width=900,height=500')"> Chi-square Test of Goodness-of-fit</a></li>  
+              
+          <li> <a href="https://chpeng.shinyapps.io/chisq-independence/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/chisq-independence/','name','width=900,height=500')"> Chi-square Test of Independence</a></li> 
+        </ul>
+          
+         <li><font color = "red"><b>There will be no weekyly quiz for this week.</b></font></li>     
+    </ul> 
+    
+ <br>   
+<hr>    <!-- MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!-- VVVVVVVVVVVVVVVVV     Week #14    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<h6 id="week14"  class="section" style="text-align:center"><font size = 4><b>Review of Final Exam</b></font>
+        <br><center><font size = 3 color = "blue">[12/11]</font></center></h6>
+<hr>
+   <ul>
+       <li> <a href="notes/w14-ExampleReview.pdf" target="popup" 
+          onclick="window.open('notes/w14-ExampleReview.pdf','name','width=900,height=500')">
+          Final Exam Checklist </a></li>
+    </ul> 
+    
+    
+    
+
+<!-- MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-->
+<!-- VVVVVVVVVVVVVVVVV     Week #15    VVVVVVVVVVVVVVVVVV-->
+<!-- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+<br><hr>
+<h6 id="week15"  class="section" style="text-align:center"><font color = "red" size = 4><b>Final Exam</b></font>
+        <br><center><font size = 3 color = "blue">Tuesday, 12/12</font></center></h6>
+<hr>   
+
+  <ul>
+    <li><b>Time</b>: The exam will take place between 3:30 PM and 5:30 PM, on Tuesday, 12/12/23. <br>
+      <font color="red"><b>Caution:</b></font> Unlike in midterm exams, you can choose a slot within a 24-hour window to complete the exam, the final exam has only one slot: 3:30 PM - 5:30 PM. The exam will be available on D2L at 3:30 PM. You have to complete it by 5:30 PM (The system will automatically submit whatever you have completed at 5:30 PM and then close the exam). I will not be able to reopen the exam afterward. <font color = "red">There will be NO make-up final exam!</font></li>
+      
+    <li><b>Format</b>: Closed-book exam with only multiple-choice questions. The exam will be administered through D2L (similar to the midterm exams).</li>
+      
+    <li><b>Length</b>: 120 minutes (No extension).</li>
+    <li><b>Logistics</b>: A formula sheet (with only formulas) and a scientific or graphical calculator are allowed. Statistical tables will be provided.</li>
+    </ul> 
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX  FOOTER  XXXXXXXXXXXXXXXXXXXXXXX-->
+</div>
+        <footer class="col-md-12">
+<hr>
+    <p class="text-center">Copyright &copy; 
+        <script>
+            var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+        </script>
+       C. Peng. Last updated: 
+         <script> 
+            document.write(new Date().toLocaleDateString()); 
+         </script>
+
+ <a href='http://www.freevisitorcounters.com'>.</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script>   </p>
+</body>
+</html>
