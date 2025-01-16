@@ -20,16 +20,16 @@
 
 	/* appearance background font-family content-text-color content-text-shadow-color */    
 	body {
-		background-image: url("bg201231.jpg") !important;		background-position: center top !important;
+		background-image: url("bg201231.jpg") !important;		
+            background-position: center top !important;
 		background-color: #dbdbdb;
 		background-repeat: no-repeat;
-		
-				background-attachment: fixed !important;
+		background-attachment: fixed !important;
 				
 		font: 12px/20px "Arial", Arial, Helvetica, sans-serif;
 		color: #242424; 
 		text-shadow: none;
-	}
+      	}
 	.pagin-info, .team-wrap .head, .custom-menu li a, .panel .panel-wrapper a, .reviews-t, .post a, ul.categories li a, .do-clear, .c-clear {
 		color: #242424 !important; 
 		text-shadow: none !important;
@@ -37,7 +37,7 @@
 		
 	/* boxed lauout */
 	#page.boxed {
-		background-color: rgba(255,255,255,1) !important;		-webkit-
+	  background-color: rgba(255,255,255,1) !important;		-webkit-
         box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.16) !important;		
         box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.16) !important;		
         background-image: none;		

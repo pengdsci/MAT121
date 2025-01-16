@@ -2990,7 +2990,8 @@ div.templatebuttons p a.av-button, div.full-left p a.av-button {color:#fff !impo
 	text-decoration:none;
 	height:16px;
 	min-width:18px;
-	color:#1a1a1a !important;
+    color:purple； !important;
+	/*color:#1a1a1a !important;*/
 	text-shadow:#eeeeee 1px 1px 0 !important;
 	font-size:10px;
 	font-weight:bold;
