@@ -128,7 +128,7 @@
 		background-image: none;		
         background-position: center center !important;		
         background-repeat: repeat;
-		background-color: rgba(18,18,18,1) !important;
+		background-color: #591140;!important; /*rgba(18,18,18,1) !important; */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fe121212,endColorstr=#fe121212) !important;
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#fe121212,endColorstr=#fe121212) !important;";
 	}
@@ -138,7 +138,7 @@
 		background-image: none;		
         background-position: center bottom !important;		
         background-repeat: repeat-x;
-		background-color: rgba(255,255,255,0.08) !important;		
+		background-color:  rgba(255,255,255,0.08) !important;		
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#014ffffff,endColorstr=#014ffffff) !important;
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#014ffffff,endColorstr=#014ffffff) !important;";
 	}
@@ -150,8 +150,8 @@
 
 	/* background footer wide divider */
 	.line-footer {
-		
-		background-image: url(https://andreasviklund.com/wp-content/themes/dt-konstruktor/images/backgrounds/footer/line-decor/full/light_line-decor.png) !important;		background-position: bottom left !important;		
+		background-color: gold !important;
+		/*background-image: url(https://andreasviklund.com/wp-content/themes/dt-konstruktor/images/backgrounds/footer/line-decor/full/light_line-decor.png) !important;	*/	background-position: bottom left !important;		
         background-repeat: repeat-x;	
 	}
 	
