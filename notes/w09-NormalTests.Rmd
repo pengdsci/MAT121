@@ -241,7 +241,7 @@ $$
 **Step 4**: Since the sample size $n = 36$, by the CLT, the sampling distribution of $TS$ is a standard normal distribution. Since this is a two-tailed test, the p-value is equal to the smaller tail area times 2. That is, p-value = $2 \times 0.0035 = 0.007$.  The following figure shows the way of finding the p-value. 
 
 
-**Step 5**: Decision rule. Since the p-value = 0.07 < 0.05 (default significance), we reject $H_o: \  \mu = 8$.    
+**Step 5**: Decision rule. Since the p-value = 0.007 < 0.05 (default significance), we reject $H_o: \  \mu = 8$.    
 
 **Step 6**: Based on the decision made in **step 5** and the relationship between the claim in **step 1** and the hypotheses in **step 2**, the sample evidence supports the claim. This implies that the machine should be stopped for repairs.
 
