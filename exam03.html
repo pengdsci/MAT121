@@ -1,4 +1,3 @@
-
 <html lang="en-US"  id = "top">
 <!--<![endif]-->
 <head>
@@ -28,34 +27,13 @@ swin {
   border: 1px solid black;
   overflow: scroll;
 }
-</style>
 
-<style>
-  .table {
+    .table {
         color: green;
         display: block;
         max-width: 100%;
         overflow: scroll; <!-- Available options: visible, hidden, scroll, auto -->
     }
-    
-table {
-  font-family: arial, sans-serif;
-  font-size: 12px;  
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  font-family: arial, sans-serif;
-  font-size: 12px;  
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 </style>
     
     
@@ -68,6 +46,17 @@ var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
 <script type='text/javascript' src='js/scripts.js' id='dt_scripts-js'></script>
 <script type='text/javascript' src='js/cp01.js'></script> 
 <script type='text/javascript' src='js/cp02.js'></script>
+
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>   
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 
 
@@ -87,23 +76,22 @@ var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
                  <br>
                  <table style = "background-color: #591140;"><tr><td>
                  <center><br>
-                     <font size = 5 color="gold"><b> MAT 121 Statistics </b></font><br><font size = 3 color="gold">Instructor: Dr. Cheng Peng<sub></sub></font>  
+                     <font size = 5 color="gold"><b> MAT 121 Statistics </b><sup><font color = "skyblue" size = 2><b>Onsite</b></font></sup></font><br><font size = 3 color="gold">Instructor: Dr. Cheng Peng<sub></sub></font>  
                  </center>
                      
                      
-                <nav> <center>
+                <nav> 
                 <div class="main-menu">
-                 
                  <ul id="nav">
-                     
-                <li>
-                    <li class="first"><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>  
                     
-                    <li class="first"><a href="w00/MAT121Syllabus.pdf" target="_blank" 
+                     
+                     <li class="first"><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                     
+                     <li class="first"><a href="w00/MAT121Syllabus.pdf" target="_blank" 
                 onclick="window.open('w00/MAT121Syllabus.pdf','name','width=900,height=500')">
                     <font color = "#0F3483"> Syllabus</font></a></li>
-    
-                <li><a href=""><font color = "#0F3483">Course Info</font><span class="a-inner"></span></a> 
+                     
+                   <li><a href=""><font color = "#0F3483">Course Info</font><span class="a-inner"></span></a> 
                         <!-- Drop-down manual-->
                         <div><ul>        
                      <li class="navitem active"> <a href="w00/OnlineLearningStrategies.png"  target="popup" onclick="window.open('w00/OnlineLearningStrategies.png', 'name','width=900,height=500')"  class="dropdown-item">Learning Strategies</a></li>
@@ -113,20 +101,19 @@ var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
                     <li class="navitem active"> <a href="w00/FinalExamSpring2025.pdf"  target="popup" onclick="window.open('w00/FinalExamSpring2025.pdf', 'name','width=900,height=500')"  class="dropdown-item">Final Exam Schedule</a></li>
                      </ul>
                     </div></li>
-         
+                     
+                                 
                    <li><a href=""><font color = "#0F3483">Office Hours</font><span class="a-inner"></span></a> 
                         <!-- Drop-down manual-->
-                        <div>
-                        <ul class="dropdown-menu">   
+                        <div><ul class="dropdown-menu">   
                          
-                         <li class="navitem active"><center><b>Tuesday</b> <br><font size=2 color="purple"> 9:30AM-11:30AM</font></center></li>
-                       
-                         <li class="navitem active"><center><b>Wednesday</b> <br> <font size=2 color="purple">4:00PM-5:00PM</font></center></li>
-            
-                         <li class="navitem active"><center><b>Thursday</b> <br><font size=2 color="purple">9:30AM-11:30AM</font></center></li>
+                         <li class="navitem active"><center><b>Tuesday</b> <br><font size=2 color="purple"> 8:30AM-9:30AM</font></center><br></li>
+                         <li class="navitem active"><center><b>Wednesday</b> <br> <font size=2 color="purple">1:00PM-3:00PM</font></center><br></li>
+                         <li class="navitem active"><center><b>Thursday</b> <br><font size=2 color="purple">2:30PM-4:30PM</font></center></li>
+                            
                       </ul>
                         </div></li>
-
+                     
                      <li><a href=""><font color = "#0F3483">ISLA</font><span class="a-inner"></span></a> 
                         <!-- Drop-down manual-->
                         <div><ul>        
@@ -165,7 +152,7 @@ var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
                        
                    <li class="navitem active"> <a href="https://chpeng.shinyapps.io/chisq-gof/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/chisq-gof/','name','width=900,height=500')"  class="dropdown-item">16. Goodness-of-fit Test</a></li>     
                     
-                   <li class="navitem active"> <a href="https://chpeng.shinyapps.io/chisq-independence/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/chisq-independence/','name','width=900,height=500')"  class="dropdown-item">17. Test of Independence</a></li-->                         
+                   <li class="navitem active"> <a href="https://chpeng.shinyapps.io/chisq-independence/"  target="popup" onclick="window.open('https://chpeng.shinyapps.io/chisq-independence/','name','width=900,height=500')"  class="dropdown-item">17. Test of Independence</a></li-->                          
                             </ul>
                         </div></li>
                      
@@ -207,16 +194,14 @@ var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
                               <font size=2 color="purple"></font></center></li>   
                           </ul>
                         </div></li>
-                      </ul>  
-
-                  </div>                     
-                     </center>                     
-                     
-                    
+                     <li class="first"><a href="https://pengdsci.github.io/STA200/TI84.html" target="popup"  onclick="window.open('https://pengdsci.github.io/STA200/TI84.html, 'name','width=900,height=500')"><font color ="#0F3483">TI-84</font></a></li>
+                    </ul>  
+                  </div>
                  </nav>
                      
                  </td></tr></table>
                </header> 
+
 
   
 <center> 
@@ -226,48 +211,37 @@ var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
     <td><img class="dt-top-logo" src="img/placeholder.jpg" width="80" height="80"/></td>
     <td>             
     <h3 id = "week01"> Information of Midterm Exam #3</h3>
+        <br>
         <center><a href="ExamInstructions.png"><font color = "red"><b>Exam Instructions [Link]</b></font></a></center>
+        <br>
         
     <ul>
     <li><b>Coverage</b>: All topics covered from week #8 to week #11 (from the concepts of testing hypothesis to one-sample, two-sample, and paired t tests).</li>
-        
+    <br>    
                
     <li><b>Exam Schedule</b>: The exam schedule for the two sections is given below <br>
-        
- <table>
-  <tr>
-    <th>Section</th>
-    <th>Time</th>
-    <th>Day</th>
-    <th>Room</th>
-  </tr>
-  <tr>
-    <td>MAT121-04 (Morning)</td>
-    <td>8:00 AM-9:15 AM</td>
-      <td><font color="red"><b>Thursday, 4/17/2025</b></font></td>
-    <td>UNA158</td>
-  </tr>
-  <tr>
-    <td>MAT121-01 (Afternoon)</td>
-    <td>2:00 PM-3:15 PM</td>
-    <td><font color="red"><b>Thursday,  4/17/2025</b></font></td>
-    <td>UNA155</td>
-  </tr>
-</table>
+      <center><font color="red"><b>Thursday, 11/13/2025</b></font> </center>
 
-            <ul>
+         <ul>
         <font color = "red">  <b>Note:</b>For those who requested accommodation, please sign up for a time slot with the OEA Proctoring Center at</font> <a href="https://westchester-accommodate.symplicity.com/"><font = color = "blue">https://westchester-accommodate.symplicity.com/</font></a> <font color = "red"> as early as possible.</font>  
         </ul>
+    <br>
         
     <li><b>Format</b>: There will be multiple-choice questions and word problems. Everyone will have a slightly different problem set with similar types of problems.</li>
+    <br>
+        
     <li><b>Length</b>: The exam takes 75 minutes. </li>
+    <br>
+        
     <li><b>Logistics</b>: You are also encouraged to print out the normal table that is available on the course web page.</li>
+    <br>
+        
     <li><b>Make-up exam.</b> There will be <b>no makeup</b> midterm exam. See the syllabus for the policies of the makeup exam. </li>
     </ul>
     
         
     <br>
-      <a href="Exams/MAT121SP25-MidtermExam03-Key.pdf"  target="popup" onclick="Exams/MAT121SP25-MidtermExam03-Key.pdf','name','width=900,height=500')" ><font color = "blue" size = 3><b>Midterm Exam #3 Answer Key [link]</b></font></a>  
+      <!--a href="Exams/MAT121SP25-MidtermExam03-Key.pdf"  target="popup" onclick="Exams/MAT121SP25-MidtermExam03-Key.pdf','name','width=900,height=500')" ><font color = "blue" size = 3><b>Midterm Exam #3 Answer Key [link]</b></font></a-->  
 
         
   </td>
@@ -278,37 +252,46 @@ var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
  <!-- Layer two: right panel  -->
  <!----------------------------->        
         <aside id="aside" class="right">
-            
+            <!--center><span><font color = "blue">Feburary 19, 2024</font></span></center-->
             <div class="widget"><center><h3><font color = "darkblue">Table of Contents</font></h3></center>
                 <!-- First post-->
                 
                 <div class="post first">
                     <div class="post-bg">
                         <!--div class="post-inner"-->
-                         <ul>
-                            <li><a href="index.html" class="nav-link">1. Frequency Tables and Charts </a></li>
+                          <ul>
+                            <li><a href="index.html" class="nav-link">1. Freq. Tables and Charts </a></li>
                             <li><a href="index02.html" class="nav-link">2. Numerical Measures</a></li>
                             <li><a href="index03.html" class="nav-link">3. Concepts of Probability</a></li>
                             <li><a href="index04.html" class="nav-link">4. Normal Distributions</a></li>
-                             <li><a href="exam01.html" class="nav-link"><center><font color = "red"> Midterm Exam 1 [Thu, 2/20]</font></center></a>
+                             <li><hr color = "skyblue"> <a href="exam01.html" class="nav-link"><center><font color = "red"> Midterm Exam 1 [Thursday, 9/18]</font></center></a>
+                                 <hr color = "skyblue"><br> 
+                                 
                             <li><a href="index05.html" class="nav-link">5. Sampling Distributions </a> </li>
                             <li><a href="index06.html" class="nav-link">6. Z-Confidence Intervals </a></li>    
 				            <li><a href="index07.html" class="nav-link">7. t-confidence Intervals </a></li> 
-                              <li><a href="exam02.html" class="nav-link"><center><font color = "red"> Midterm Exam 2 [Thu, 3/20]</font></center></a>
+                              <li><hr color = "skyblue"> <a href="exam02.html" class="nav-link"><center><font color = "red"> Midterm Exam 2 [Thursday, 10/9]</font></center></a>
+                                  <hr color = "skyblue"><br> 
+                                  
                             <li><a href="index08.html" class="nav-link">8. Testing Hypotheses </a></li>
                             <li><a href="index09.html" class="nav-link">9. One-sample Normal Tests </a> </li> 
                             <li><a href="index10.html" class="nav-link">10. t and Paired t-tests</a> </li> 
 				            <li><a href="index11.html" class="nav-link">11. Two-sample Tests</a> </li>  
-                             <li><a href="exam03.html" class="nav-link"><center><font color = "red"> Midterm Exam 3 [Thu, 4/17]</font></center></a>
+                              
+                             <li><hr color = "skyblue"> <a href="exam03.html" class="nav-link"><center><font color = "red"> Midterm Exam 3 [Thursday, 11/13]</font></center></a>
+                              <hr color = "skyblue"><br> 
+                                 
                             <li><a href="index12.html" class="nav-link">12. Correlation between 2 Variables</a> </li>
 				            <li><a href="index13.html" class="nav-link">13. Least-Square Regression</a> </li>
                             <li><a href="index14.html" class="nav-link">14. Chisquare tests </a> </li>
-                            <li><a href="index15.html" class="nav-link">15. <font color = "red">Final Exam Info</font></a> </li>
+                              
+                              <li><hr color = "skyblue"> <a href="index15.html" class="nav-link"> <center><font color = "red">Final Exam [Tuesday, 12/09]</font></center> </a><hr color = "skyblue"> </li>
+                              
                       </ul>
 					</div>
                 </div>            
         </div>
-    </aside>            
+    </aside>   
 
    </td></tr></table>  
    </div>
