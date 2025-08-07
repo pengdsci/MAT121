@@ -1,0 +1,164 @@
+---
+title: "Enhancing Your Learning with ISLA"
+author: "Cheng Peng"
+date: " "
+output:
+  html_document: 
+    toc: no
+    toc_depth: 4
+    toc_float: yes
+    number_sections: yes
+    toc_collapsed: yes
+    #code_folding: hide
+    code_download: no
+    smooth_scroll: no
+    theme: lumen
+  pdf_document: 
+    toc: yes
+    toc_depth: 4
+    fig_caption: yes
+    number_sections: yes
+    fig_width: 5
+    fig_height: 4
+---
+
+```{=html}
+
+<style type="text/css">
+
+div#TOC li {
+    list-style:none;
+    background-image:none;
+    background-repeat:none;
+    background-position:0;
+}
+
+/* Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML. it is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents. */
+
+h1.title {  /* Title - font specifications of the report title */
+  font-size: 22px;
+  font-weight: bold;
+  color: navy;
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+}
+h4.author { /* Header 4 - font specifications for authors  */
+  font-size: 18px;
+  font-weight: bold;
+  font-family: system-ui;
+  color: navy;
+  text-align: center;
+}
+h4.date { /* Header 4 - font specifications for the date  */
+  font-size: 18px;
+  font-family: system-ui;
+  color: DarkBlue;
+  text-align: center;
+  font-weight: bold;
+}
+h1 { /* Header 1 - font specifications for level 1 section title  */
+    font-size: 18px;
+    font-family: "Gill Sans", sans-serif;
+    color: navy;
+    text-align: center;
+    font-weight: bold;
+}
+h2 { /* Header 2 - font specifications for level 2 section title */
+    font-size: 16px;
+    font-family: "Gill Sans", sans-serif;
+    color: navy;
+    text-align: left;
+    font-weight: bold;
+}
+
+h3 { /* Header 3 - font specifications of level 3 section title  */
+    font-size: 14px;
+    font-family: "Gill Sans", sans-serif;
+    color: navy;
+    text-align: left;
+}
+
+h4 { /* Header 4 - font specifications of level 4 section title  */
+    font-size: 12px;
+    font-family: "Gill Sans", sans-serif;
+    color: darkred;
+    text-align: left;
+}
+
+body { background-color:white; }
+
+.highlightme { background-color:yellow; }
+
+p { background-color:white; }
+
+</style>
+```
+
+
+
+```{r setup, include=FALSE}
+# code chunk specifies whether the R code, warnings, and output 
+# will be included in the output files.
+if(!require('vembedr')) {
+  install.packages('vembedr')
+  library('vembedr')
+}
+if (!require("knitr")) {
+   install.packages("knitr")
+   library(knitr)
+}
+# knitr::opts_knit$set(root.dir = "C:/Users/75CPENG/OneDrive - West Chester University of PA/Documents")
+# knitr::opts_knit$set(root.dir = "C:\\STA490\\w05")
+
+knitr::opts_chunk$set(echo = FALSE,       
+                      warning = FALSE,   
+                      results = TRUE,   
+                      message = FALSE,
+                      comments = NA)
+```
+
+\
+
+**ISLA** (*Interactive Statistics Learning Applications*) is a set of interactive apps created by the instructor to facilitate your learning in this class.  
+
+\
+
+<center><font color = "navy" size = 3>**Goals of ISLA Apps**</font></center>
+
+\
+
+The goals of creating these apps are outlined in the following
+
+* **Making Stats Concepts Intuitive**
+
+Although most of the concepts and procedures are not abstract, some pf them such as sampling distributions involving limiting processes are not intuitive and can even be surprising for beginners. A few **ISLA apps** have used simulations to provide some degree of intuition for these ideas.
+
+* **Reproducing Steps of Procedures**
+
+Most descriptive and inferential procedures are structured. The majority of **ISLA apps** can reproduce the steps involved in these procedures once you grasp the related basic concepts. These steps were described in detail in the lecture notes for the corresponding modules.
+
+
+* **Generating Solutions**
+
+Due to the structured nature of most procedures, many **ISLA apps** can provide solutions to problems in this class. All you need to do is check the given information, select the appropriate **ISLA app**, and enter the provided details into the input box to generate the solution.
+
+\
+
+<center><font color = "navy" size = 3>**Use ISLA Responsibly**</font></center>
+
+\
+
+Although most **ISLA apps** can generate solutions to many descriptive and inferential statistics problems, they are **not** designed for completing assignments without a clear understanding of the underlying concepts and procedures. Instead, they are meant to:
+
+* **Make certain concepts more intuitive**;
+
+* **Streamline the structure of your solutions** by following a logical reasoning flow;
+
+* **Validate worked examples** from notes or other resources when you rework them;
+
+* **Check your work** while practicing problems.
+
+<!--font color = "darkred">**An Important Note:** All **ISLA apps** will be disabled during the final exam, scheduled for Sunday, June 29, 2025, from 3:30 PM to 5:30 PM.</font-->
+
+
+
