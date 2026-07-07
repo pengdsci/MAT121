@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Cards · Hypothesis Testing</title>
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #512d6d;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      transition: background-color 0.25s ease, color 0.2s ease;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+
+    .header {
+      background: #6E3061;
+      padding: 1.0rem 1.0rem;
+      color: white;
+      border-bottom: 4px solid #ffd966;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.25rem;
+    }
+
+    .header h2 {
+      font-size: 2.0rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.25rem;
+    }
+
+    .header .subtitle {
+      font-size: 1.35rem;
+      opacity: 0.92;
+      font-weight: 500;
+      border-left: 3px solid #ffd966;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+      padding: 0.9rem 2rem;
+      background: #f9f4f7;
+      border-bottom: 1px solid #e2d0dc;
+      align-items: center;
+    }
+
+    .btn {
+      background: white;
+      border: 1px solid #c2a8bd;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #2d2a2c;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .btn:hover {
+      background: #e9dce5;
+      border-color: #6E3061;
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: #6E3061;
+      border-color: #4f2444;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #4f2444;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      padding: 2rem 2rem;
+    }
+
+    @media (max-width: 760px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      body {
+        padding: 1rem;
+      }
+    }
+
+    .card {
+      background: #fefcff;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px #6E3061;
+      border: 1px solid #ecdde6;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-header {
+      background: #6E3061;
+      padding: 1rem 1.4rem;
+      border-bottom: 2px solid #dbbdce;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-header span {
+      background: #6E306110;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: normal;
+      font-family: monospace;
+    }
+
+    .card-body {
+      padding: 1.3rem 1.4rem 1.6rem;
+      flex: 1;
+    }
+
+    .formula-block {
+      background: #f5f0f3;
+      padding: 0.9rem;
+      border-radius: 18px;
+      margin: 0.8rem 0;
+      font-size: 1rem;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 0.7rem;
+      border-top: 1px dashed #e2d0dc;
+      padding-top: 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .check-row input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #6E3061;
+    }
+
+    .badge {
+      background: #e2d0dc;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    footer {
+      background: #f3eaf0;
+      padding: 1.2rem 2rem;
+      font-size: 0.8rem;
+      color: #3f2d38;
+      border-top: 1px solid #e1cfda;
+      /*display: flex; */
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Dark mode */
+    body.dark {
+      background-color: #2c1a27;
+    }
+    body.dark .container {
+      background: #1f1a1d;
+    }
+    body.dark .card {
+      background: #2b2428;
+      border-color: #4d3a44;
+    }
+    body.dark .card-header {
+      background: #6E3061;
+      color: white;
+      border-bottom-color: #6E3061;
+    }
+    body.dark .card-body {
+      color: #efeaed;
+    }
+    body.dark .formula-block {
+      background: #3a2e35;
+      color: #f3e6ef;
+    }
+    body.dark .toolbar {
+      background: #2a2126;
+      border-bottom-color: #4b3942;
+    }
+    body.dark .btn {
+      background: #3f2f37;
+      border-color: #6E3061;
+      color: #f0e3ea;
+    }
+    body.dark .btn-primary {
+      background: #6E3061;
+      color: white;
+    }
+    body.dark footer {
+      background: #2c2228;
+      color: #cfc1ca;
+      border-top-color: #4a3842;
+    }
+    body.dark .badge {
+      background: #4a3842;
+    }
+
+    /* Print */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+      body.dark .container, .container {
+        background: white;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .toolbar {
+        display: none;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+      .check-row input {
+        opacity: 1;
+        border: 1px solid black;
+      }
+      footer {
+        background: #f5f5f5;
+        color: black;
+      }
+      .btn, .toolbar .btn {
+        display: none;
+      }
+      body.dark .card-header, body.dark .card-body {
+        color: black;
+        background: #fff;
+      }
+      .formula-block {
+        background: #f7f7f7;
+      }
+      @page {
+        size: A3;
+      }
+      @page letter {
+        size: letter;
+      }
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media print and (max-width: 760px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    .site-meter {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <h2>MAT 121 Statistics I</h2>
+    <h3>📊 Hypothesis Testing: Logic · Components · Formulas · Examples</h3>
+  </header>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <button class="btn btn-primary" id="darkToggle">🌓 Dark / Light</button>
+  </div>
+
+  <!-- CARDS GRID -->
+  <div class="cards-grid" id="cardsGrid">
+
+    <!-- CARD 1: Claim & hypotheses -->
+    <div class="card">
+      <div class="card-header">Claim &amp; Hypotheses <span>🔑</span></div>
+      <div class="card-body">
+        <p><strong>Claim</strong> = statement about population parameter (μ or p).</p>
+        <p><strong>H₀</strong> (null) <em>must</em> contain “=”: ≤, ≥, or =.</p>
+        <p><strong>Hₐ</strong> (alternative) <em>never</em> contains “=”: ≠, &gt;, or &lt;.</p>
+        <div class="formula-block">
+          \( H_0: \mu = \mu_0 \quad \text{vs.} \quad H_a: \mu \ne \mu_0 \)<br>
+          \( H_0: \mu \le \mu_0 \quad \text{vs.} \quad H_a: \mu > \mu_0 \)<br>
+          \( H_0: \mu \ge \mu_0 \quad \text{vs.} \quad H_a: \mu < \mu_0 \)
+        </div>
+        <p><span class="badge">💡</span> <em>Example:</em> “mean is at most 2.5” → claim \( \mu \le 2.5 \) = H₀.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Test statistic (Z) -->
+    <div class="card">
+      <div class="card-header">Test Statistic <span>📐</span></div>
+      <div class="card-body">
+        <p>Converts sample statistic to a standard score (assuming H₀ true).</p>
+        <div class="formula-block">
+          \( Z = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} \) &nbsp; (large sample, CLT)
+        </div>
+        <p><strong>Interpretation:</strong> standardized distance between \(\bar{x}\) and \(\mu_0\).</p>
+        <p><span class="badge">🧮</span> Example: \( n=36, \bar{x}=98.2, s=0.62, \mu_0=98.6 \)</p>
+        <div class="formula-block">
+          \( Z = \frac{98.2 - 98.6}{0.62/\sqrt{36}} = -3.87 \)
+        </div>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Critical values & RR -->
+    <div class="card">
+      <div class="card-header">Critical Values <span>✂️</span></div>
+      <div class="card-body">
+        <p><strong>Rejection Region (RR):</strong> values of TS that cause rejection of H₀.</p>
+        <p><strong>Critical value(s):</strong> cut-off(s) at significance level \(\alpha\).</p>
+        <div class="formula-block">
+          Two-tailed: \( \pm z_{\alpha/2} \) &nbsp;·&nbsp; Right-tailed: \( +z_{\alpha} \) &nbsp;·&nbsp; Left-tailed: \( -z_{\alpha} \)
+        </div>
+        <p><span class="badge">📌</span> Common α = 0.05 → two-tailed CV = ±1.96</p>
+        <p><span class="badge">📐</span> If TS falls in RR → <strong>reject H₀</strong>.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Type I & Type II errors -->
+    <div class="card">
+      <div class="card-header">Errors <span>⚠️</span></div>
+      <div class="card-body">
+        <p><strong>Type I error:</strong> reject H₀ when H₀ is true (probability α).</p>
+        <p><strong>Type II error:</strong> fail to reject H₀ when H₀ is false (probability β).</p>
+        <div class="formula-block">
+          \( P(\text{Type I}) = \alpha \) &nbsp;·&nbsp; \( P(\text{Type II}) = \beta \)
+        </div>
+        <p><span class="badge">🧪</span> Analogy: patient has disease, but doctor says NO disease (Type I).</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Two-tailed test -->
+    <div class="card">
+      <div class="card-header">Two-tailed Test <span>↔️</span></div>
+      <div class="card-body">
+        <p>Alternative: \( H_a: \mu \ne \mu_0 \)</p>
+        <p>RR split equally on both tails, each area \( \alpha/2 \).</p>
+        <div class="formula-block">
+          Reject H₀ if \( |Z| > z_{\alpha/2} \)
+        </div>
+        <p><span class="badge">📘</span> Example: \( H_0: \mu = 80 \) vs. \( H_a: \mu \ne 80 \), α=0.05 → CV = ±1.96</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Right-tailed test -->
+    <div class="card">
+      <div class="card-header">Right-tailed Test <span>➡️</span></div>
+      <div class="card-body">
+        <p>Alternative: \( H_a: \mu > \mu_0 \)</p>
+        <p>RR on the right tail, area = α.</p>
+        <div class="formula-block">
+          Reject H₀ if \( Z > z_{\alpha} \)
+        </div>
+        <p><span class="badge">📗</span> Example: \( H_0: \mu \le 100 \) vs. \( H_a: \mu > 100 \), α=0.05 → CV = +1.645</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Left-tailed test -->
+    <div class="card">
+      <div class="card-header">Left-tailed Test <span>⬅️</span></div>
+      <div class="card-body">
+        <p>Alternative: \( H_a: \mu < \mu_0 \)</p>
+        <p>RR on the left tail, area = α.</p>
+        <div class="formula-block">
+          Reject H₀ if \( Z < -z_{\alpha} \)
+        </div>
+        <p><span class="badge">📕</span> Example: \( H_0: \mu \ge 80 \) vs. \( H_a: \mu < 80 \), α=0.05 → CV = -1.645</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: 6-step procedure -->
+    <div class="card">
+      <div class="card-header">6-Step Procedure <span>📋</span></div>
+      <div class="card-body">
+        <ol style="padding-left: 1.2rem; margin-bottom: 0.5rem;">
+          <li><strong>Claim</strong> – identify the statement about μ or p.</li>
+          <li><strong>H₀ &amp; Hₐ</strong> – set up null and alternative.</li>
+          <li><strong>Test statistic</strong> – compute \( Z \) (or \( t \)).</li>
+          <li><strong>Critical value(s)</strong> – based on α, define RR.</li>
+          <li><strong>Decision</strong> – reject or fail to reject H₀.</li>
+          <li><strong>Conclusion</strong> – state in context of the claim.</li>
+        </ol>
+        <p><span class="badge">🧩</span> Always tie conclusion back to the original claim.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 9: Example (body temp) -->
+    <div class="card">
+      <div class="card-header">Example: Body Temp <span>🌡️</span></div>
+      <div class="card-body">
+        <p><strong>Claim:</strong> μ = 98.6°F. Sample: n=36, \(\bar{x}=98.2\), s=0.62.</p>
+        <div class="formula-block">
+          \( H_0: \mu = 98.6 \quad vs. \quad H_a: \mu \ne 98.6 \)
+        </div>
+        <p>TS = \( \frac{98.2-98.6}{0.62/\sqrt{36}} = -3.87 \)</p>
+        <p>α=0.05 → CV = ±1.96. TS falls in RR → <strong>reject H₀</strong>.</p>
+        <p><span class="badge">✅</span> Conclusion: not enough evidence to support claim μ=98.6.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 10: Example (teaching method) -->
+    <div class="card">
+      <div class="card-header">Example: Teaching Method <span>🎓</span></div>
+      <div class="card-body">
+        <p><strong>Claim:</strong> score changed from 80. n=36, \(\bar{x}=88\), s=10.</p>
+        <div class="formula-block">
+          \( H_0: \mu = 80 \quad vs. \quad H_a: \mu \ne 80 \)
+        </div>
+        <p>TS = \( \frac{88-80}{10/\sqrt{36}} = 4.8 \) &nbsp; CV = ±1.96</p>
+        <p>TS in RR → <strong>reject H₀</strong> → conclude score has changed.</p>
+        <p><span class="badge">📊</span> Two-tailed test, α=0.05.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>reviewed</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <center> 
+       <div class="copyright">
+       <p>© 2019-<span id="currentYear"></span>  C. Peng @ West Chester University, USA. All rights reserved.</p>
+            <!-- Copyright Statement -->
+ 
+      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script><a href='http://www.freevisitorcounters.com'><img src="img/blackdot.jpg" width="1" height="1"></a><br>
+    
+           <div class="license">
+              <p>📄 Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer"><font color = "red">Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</font></a></p>
+              <p>You are free to share and adapt for non-commercial purposes with appropriate credit.</p>
+            </div>
+         </div>
+       </center> 
+  </footer>
+</div>
+
+<script>
+  
+         // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear(); 
+
+  (function() {
+    const darkBtn = document.getElementById('darkToggle');
+    const body = document.body;
+
+    // toggle dark mode
+    darkBtn.addEventListener('click', function() {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      darkBtn.textContent = isDark ? '☀️ Light Mode' : '🌓 Dark / Light';
+    });
+
+    // (Optional) checkboxes keep state across print – no extra action needed
+    console.log('Cards ready – click checkboxes to track review.');
+  })();
+</script>
+
+</body>
+</html>

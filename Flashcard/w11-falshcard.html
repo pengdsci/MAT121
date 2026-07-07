@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAT121 · Two‑Sample Tests · Flash Cards</title>
+  <!-- MathJax for clean formulas -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async>
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #512d6d;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      transition: background-color 0.25s ease, color 0.2s ease;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+
+    .header {
+      background: #6E3061;
+      padding: 1.0rem 1.0rem;
+      color: white;
+      border-bottom: 4px solid #ffd966;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .header h2 {
+      font-size: 2.0rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .header .subtitle {
+      font-size: 1.35rem;
+      opacity: 0.92;
+      font-weight: 500;
+      border-left: 3px solid #ffd966;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+      padding: 0.9rem 2rem;
+      background: #f9f4f7;
+      border-bottom: 1px solid #e2d0dc;
+      align-items: center;
+    }
+
+    .btn {
+      background: white;
+      border: 1px solid #c2a8bd;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #2d2a2c;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .btn:hover {
+      background: #e9dce5;
+      border-color: #6E3061;
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: #6E3061;
+      border-color: #4f2444;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #4f2444;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      padding: 2rem 2rem;
+    }
+
+    @media (max-width: 760px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      body {
+        padding: 1rem;
+      }
+    }
+
+    .card {
+      background: #fefcff;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px #6E3061;
+      transition: all 0.2s;
+      border: 1px solid #ecdde6;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-header {
+      background: #6E3061;
+      padding: 1rem 1.4rem;
+      border-bottom: 2px solid #dbbdce;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .card-header span {
+      background: #6E306110;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .card-body {
+      padding: 1.3rem 1.4rem 1.6rem;
+      flex: 1;
+    }
+    .formula-block {
+      background: #f5f0f3;
+      padding: 0.9rem;
+      border-radius: 18px;
+      margin: 0.8rem 0;
+      font-size: 1rem;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 0.7rem;
+      border-top: 1px dashed #e2d0dc;
+      padding-top: 0.8rem;
+      font-size: 0.85rem;
+    }
+    .check-row input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #6E3061;
+    }
+    .badge {
+      background: #e2d0dc;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    footer {
+      background: #f3eaf0;
+      padding: 1.2rem 2rem;
+      font-size: 0.8rem;
+      color: #3f2d38;
+      border-top: 1px solid #e1cfda;
+      /*display: flex; */
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Dark mode overrides */
+    body.dark {
+      background-color: #2c1a27;
+    }
+    body.dark .container {
+      background: #1f1a1d;
+    }
+    body.dark .card {
+      background: #2b2428;
+      border-color: #4d3a44;
+    }
+    body.dark .card-header {
+      background: #6E3061;
+      color: white;
+      border-bottom-color: #6E3061;
+    }
+    body.dark .card-body {
+      color: #efeaed;
+    }
+    body.dark .formula-block {
+      background: #3a2e35;
+      color: #f3e6ef;
+    }
+    body.dark .toolbar {
+      background: #2a2126;
+      border-bottom-color: #4b3942;
+    }
+    body.dark .btn {
+      background: #3f2f37;
+      border-color: #6E3061;
+      color: #f0e3ea;
+    }
+    body.dark .btn-primary {
+      background: #6E3061;
+      color: white;
+    }
+    body.dark footer {
+      background: #2c2228;
+      color: #cfc1ca;
+      border-top-color: #4a3842;
+    }
+    body.dark .badge {
+      background: #4a3842;
+    }
+
+    /* print styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+      body.dark .container, .container {
+        background: white;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .toolbar {
+        display: none;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+      .check-row input {
+        opacity: 1;
+        border: 1px solid black;
+      }
+      footer {
+        background: #f5f5f5;
+        color: black;
+      }
+      .btn, .toolbar .btn {
+        display: none;
+      }
+      body.dark .card-header, body.dark .card-body {
+        color: black;
+        background: #fff;
+      }
+      body.dark .formula-block {
+        background: #f7f7f7;
+        color: #000;
+      }
+      @page {
+        size: A3;
+      }
+      @page letter {
+        size: letter;
+      }
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media print and (max-width: 760px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    .site-meter {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+<div class="container" id="appContainer">
+
+  <!-- HEADER -->
+  <header class="header">
+    <h2> MAT121 Statistics</h2>
+    <h3>📊 Two‑Sample Tests</h3>
+  </header>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <button class="btn" id="darkToggleBtn">🌓 Dark / Light</button>
+  </div>
+
+  <!-- CARDS GRID: 2 per row -->
+  <div class="cards-grid" id="cardsGrid">
+
+    <!-- CARD 1: Two‑Sample Large Sample (Z) -->
+    <div class="card">
+      <div class="card-header">
+        <span>📌</span> Large‑Sample Z
+      </div>
+      <div class="card-body">
+        <p><strong>Concept:</strong> Compare two population means when $n_1, n_2 &gt; 30$ (or normal &amp; known variances).</p>
+        <div class="formula-block">
+          $TS = \dfrac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \;\; \sim \; N(0,1)$
+        </div>
+        <p><strong>Example (left‑tailed):</strong> Texas vs Virginia daily cost.<br>
+        $H_0: \mu_1 - \mu_2 \ge 0$, $H_a: \mu_1 - \mu_2 &lt; 0$<br>
+        $\bar{x}_1=248,\; \bar{x}_2=252,\; s_1=15,\; s_2=22,\; n_1=50,\; n_2=35$<br>
+        $TS \approx -0.934$, $CV=-2.33$ → fail to reject $H_0$.</p>
+        <div class="check-row">
+          <input type="checkbox" id="c1"> <label for="c1">✔️ I understand large‑sample Z test</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Pooled t‑test (equal variances) -->
+    <div class="card">
+      <div class="card-header">
+        <span>📌</span> Pooled t‑test
+      </div>
+      <div class="card-body">
+        <p><strong>Concept:</strong> Two normal populations, unknown but <em>equal</em> variances. Pooled variance:</p>
+        <div class="formula-block">
+          $s_p^2 = \dfrac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}$<br>
+          $TS = \dfrac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}} \;\; \sim \; t_{n_1+n_2-2}$
+        </div>
+        <p><strong>Example (two‑tailed):</strong> GTI vs Focus braking distances.<br>
+        $\bar{x}_1=134,\; \bar{x}_2=143,\; s_1=6.9,\; s_2=6.6,\; n_1=8,\; n_2=10$<br>
+        $s_p^2 = 45.33$, $TS \approx -2.818$, $df=16$, $CV=\pm 2.921$<br>
+        → fail to reject $H_0$: no difference in means.</p>
+        <div class="check-row">
+          <input type="checkbox" id="c2"> <label for="c2">✔️ Pooled t‑test assumptions &amp; formula</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Hypothesis testing workflow -->
+    <div class="card">
+      <div class="card-header">
+        <span>⚙️</span> Workflow Summary
+      </div>
+      <div class="card-body">
+        <p><strong>6‑step procedure:</strong></p>
+        <ol style="margin-left: 1.2rem; margin-bottom: 0.6rem;">
+          <li><strong>Claim</strong> → write in terms of $\mu_1 - \mu_2$</li>
+          <li>$H_0$ and $H_a$ (left, right, or two‑tailed)</li>
+          <li><strong>Test statistic</strong> (Z or pooled t)</li>
+          <li>Critical value / p‑value</li>
+          <li>Decision (reject $H_0$ or not)</li>
+          <li>Conclusion in context</li>
+        </ol>
+        <div class="formula-block" >
+          <strong>Key:</strong> keep difference consistent: $\mu_1 - \mu_2$
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="c3"> <label for="c3">✅ I can apply the 6‑step workflow</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Assumptions & Conditions -->
+    <div class="card">
+      <div class="card-header">
+        <span>📋</span> Assumptions
+      </div>
+      <div class="card-body">
+        <p><strong>Large‑sample Z:</strong></p>
+        <ul style="margin-left: 1.2rem; list-style-type: disc;">
+          <li>$n_1 &gt; 30$ and $n_2 &gt; 30$ <em>or</em></li>
+          <li>both populations normal <strong>and</strong> variances known</li>
+        </ul>
+        <p><strong>Pooled t‑test:</strong></p>
+        <ul style="margin-left: 1.2rem; list-style-type: disc;">
+          <li>both populations normal</li>
+          <li>variances unknown but <strong>equal</strong></li>
+          <li>independent samples</li>
+        </ul>
+        <p style="margin-top: 0.4rem;"><span class="badge">⚠️</span> If assumptions fail, these tests are not valid.</p>
+        <div class="check-row">
+          <input type="checkbox" id="c4"> <label for="c4">📌 Assumptions checked</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Example practice – Body temperature -->
+    <div class="card">
+      <div class="card-header">
+        <span>🧪</span> Practice: Body Temp
+      </div>
+      <div class="card-body">
+        <p><strong>Women:</strong> $n=65,\; \bar{x}=98.105,\; s=0.699$<br>
+        <strong>Men:</strong> $n=65,\; \bar{x}=98.395,\; s=0.743$</p>
+        <p>Test if mean body temperatures differ (two‑tailed, $\alpha=0.05$).</p>
+        <div class="formula-block">
+          $TS = \dfrac{(98.105-98.395)-0}{\sqrt{\frac{0.699^2}{65}+\frac{0.743^2}{65}}} \approx -2.28$
+        </div>
+        <p>Critical value $\approx \pm 1.96$ → reject $H_0$: significant difference.</p>
+        <div class="check-row">
+          <input type="checkbox" id="c5"> <label for="c5">📝 I can compute this Z test</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Practice – Credit card debt -->
+    <div class="card">
+      <div class="card-header">
+        <span>💳</span> Practice: Credit Debt
+      </div>
+      <div class="card-body">
+        <p><strong>Males:</strong> $n=200,\; \bar{x}=3270,\; s=900$<br>
+        <strong>Females:</strong> $n=200,\; \bar{x}=2960,\; s=850$</p>
+        <p>Claim: difference in mean debt. $\alpha=0.05$</p>
+        <div class="formula-block">
+          $TS = \dfrac{(3270-2960)-0}{\sqrt{\frac{900^2}{200}+\frac{850^2}{200}}} \approx 3.57$
+        </div>
+        <p>$p$-value $&lt; 0.001$ → reject $H_0$: strong evidence of difference.</p>
+        <div class="check-row">
+          <input type="checkbox" id="c6"> <label for="c6">✅ Large‑sample Z practice</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Pooled t example – Cordless phone range -->
+    <div class="card">
+      <div class="card-header">
+        <span>📱</span> Pooled t: Phone Range
+      </div>
+      <div class="card-body">
+        <p><strong>Manufacturer:</strong> $n_1=14,\; \bar{x}_1=1270,\; s_1=25$<br>
+        <strong>Competitor:</strong> $n_2=16,\; \bar{x}_2=1250,\; s_2=30$</p>
+        <p>Claim: manufacturer range greater (right‑tailed), $\alpha=0.05$</p>
+        <div class="formula-block">
+          $s_p^2 = \frac{13(25^2)+15(30^2)}{28} \approx 774.11$<br>
+          $TS = \frac{1270-1250}{\sqrt{774.11/14 + 774.11/16}} \approx 1.87$
+        </div>
+        <p>$t_{28,0.05} \approx 1.701$ → reject $H_0$: support manufacturer's claim.</p>
+        <div class="check-row">
+          <input type="checkbox" id="c7"> <label for="c7">📊 Pooled t practice</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: Formulas quick reference -->
+    <div class="card">
+      <div class="card-header">
+        <span>📐</span> Formula Summary
+      </div>
+      <div class="card-body">
+        <p><strong>Large‑sample Z:</strong></p>
+        <div class="formula-block">$Z = \dfrac{(\bar{x}_1 - \bar{x}_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$</div>
+        <p><strong>Pooled t:</strong></p>
+        <div class="formula-block">
+          $s_p^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}$<br>
+          $t = \dfrac{(\bar{x}_1 - \bar{x}_2)}{\sqrt{s_p^2(\frac{1}{n_1}+\frac{1}{n_2})}}$
+        </div>
+        <p><span class="badge">df</span> $= n_1+n_2-2$</p>
+        <div class="check-row">
+          <input type="checkbox" id="c8"> <label for="c8">🧮 Formulas memorized</label>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- end cards-grid -->
+
+  <!-- FOOTER -->
+  <footer>
+    <center> 
+       <div class="copyright">
+       <p>© 2019-<span id="currentYear"></span>  C. Peng @ West Chester University, USA. All rights reserved.</p>
+            <!-- Copyright Statement -->
+ 
+      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script><a href='http://www.freevisitorcounters.com'><img src="img/blackdot.jpg" width="1" height="1"></a><br>
+    
+           <div class="license">
+              <p>📄 Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer"><font color = "red">Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</font></a></p>
+              <p>You are free to share and adapt for non-commercial purposes with appropriate credit.</p>
+            </div>
+         </div>
+       </center> 
+  </footer>
+</div>
+
+<script>
+  
+         // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear(); 
+
+  (function() {
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('darkToggleBtn');
+    const body = document.body;
+    // check stored preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark');
+    }
+    toggleBtn.addEventListener('click', function() {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('darkMode', isDark);
+    });
+
+    // Print button
+    document.getElementById('printBtn').addEventListener('click', function() {
+      window.print();
+    });
+
+    // (Optional) persist checkbox states? not required, but nice.
+    // we could store them but user asked for "working checkboxes" – they are interactive.
+  })();
+</script>
+
+<!-- ensure MathJax re-renders after dynamic content (none) but okay -->
+</body>
+</html>

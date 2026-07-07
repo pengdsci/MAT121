@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Cards · Confidence Intervals for Means</title>
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #512d6d;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      transition: background-color 0.25s ease, color 0.2s ease;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .header {
+      background: #6E3061;
+      padding: 1.0rem 1.0rem;
+      color: white;
+      border-bottom: 4px solid #ffd966;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+    .header h2 {
+      font-size: 2.0rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+    .header .subtitle {
+      font-size: 1.35rem;
+      opacity: 0.92;
+      font-weight: 500;
+      border-left: 3px solid #ffd966;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+      padding: 0.9rem 2rem;
+      background: #f9f4f7;
+      border-bottom: 1px solid #e2d0dc;
+      align-items: center;
+    }
+    .btn {
+      background: white;
+      border: 1px solid #c2a8bd;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #2d2a2c;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .btn:hover {
+      background: #e9dce5;
+      border-color: #6E3061;
+      transform: scale(0.97);
+    }
+    .btn-primary {
+      background: #6E3061;
+      border-color: #4f2444;
+      color: white;
+    }
+    .btn-primary:hover { background: #4f2444; }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      padding: 2rem 2rem;
+    }
+    @media (max-width: 760px) {
+      .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      body { padding: 1rem; }
+    }
+    .card {
+      background: #fefcff;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px #6E3061;
+      border: 1px solid #ecdde6;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .card-header {
+      background: #6E3061;
+      padding: 1rem 1.4rem;
+      border-bottom: 2px solid #dbbdce;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .card-header span {
+      background: #6E306110;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: normal;
+      font-family: monospace;
+    }
+    .card-body {
+      padding: 1.3rem 1.4rem 1.6rem;
+      flex: 1;
+    }
+    .formula-block {
+      background: #f5f0f3;
+      padding: 0.9rem;
+      border-radius: 18px;
+      margin: 0.8rem 0;
+      font-size: 1rem;
+      overflow-x: auto;
+      text-align: center;
+    }
+    .check-row {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 0.7rem;
+      border-top: 1px dashed #e2d0dc;
+      padding-top: 0.8rem;
+      font-size: 0.85rem;
+    }
+    .check-row input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #6E3061;
+    }
+    .badge {
+      background: #e2d0dc;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+    footer {
+      background: #f3eaf0;
+      padding: 1.2rem 2rem;
+      font-size: 0.8rem;
+      color: #3f2d38;
+      border-top: 1px solid #e1cfda;
+      /*display: flex;  */
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    /* dark mode */
+    body.dark { background-color: #2c1a27; }
+    body.dark .container { background: #1f1a1d; }
+    body.dark .card { background: #2b2428; border-color: #4d3a44; }
+    body.dark .card-header { background: #6E3061; color: white; border-bottom-color: #6E3061; }
+    body.dark .card-body { color: #efeaed; }
+    body.dark .formula-block { background: #3a2e35; color: #f3e6ef; }
+    body.dark .toolbar { background: #2a2126; border-bottom-color: #4b3942; }
+    body.dark .btn { background: #3f2f37; border-color: #6E3061; color: #f0e3ea; }
+    body.dark .btn-primary { background: #6E3061; color: white; }
+    body.dark footer { background: #2c2228; color: #cfc1ca; border-top-color: #4a3842; }
+    body.dark .badge { background: #4a3842; }
+    /* print */
+    @media print {
+      body { background: white; padding: 0; margin: 0; }
+      body.dark .container, .container { background: white; box-shadow: none; border-radius: 0; }
+      .toolbar { display: none; }
+      .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; padding: 1rem; }
+      .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+      .check-row input { opacity: 1; border: 1px solid black; }
+      footer { background: #f5f5f5; color: black; }
+      .btn, .toolbar .btn { display: none; }
+      body.dark .card-header, body.dark .card-body { color: black; background: #fff; }
+      .formula-block { background: #f7f7f7; }
+      @page { size: A3; }
+      @page letter { size: letter; }
+      .cards-grid { grid-template-columns: repeat(2,1fr) !important; }
+    }
+    @media print and (max-width: 760px) {
+      .cards-grid { grid-template-columns: repeat(2,1fr) !important; }
+    }
+    .site-meter { font-family: monospace; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h2>MAT 121 Statistics I</h2>
+    <h3>📊 Confidence Intervals for Means</h3>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <button class="btn" id="darkToggle">🌓 Dark / Light</button>
+  </div>
+
+  <!-- CARDS GRID (2 per row) -->
+  <div class="cards-grid" id="cardGrid">
+
+    <!-- CARD 1: General framework + key terms -->
+    <div class="card">
+      <div class="card-header">🧩 Framework &amp; terms <span>1/8</span></div>
+      <div class="card-body">
+        <p><strong>Point estimate:</strong> single value from sample (e.g. $\bar{x}$ for $\mu$).</p>
+        <p><strong>Bias:</strong> $\bar{x} - \mu$ &nbsp;|&nbsp; <strong>Variance:</strong> measures precision.</p>
+        <div class="formula-block">
+          $ \bar{X} \sim N(\mu,\; \sigma/\sqrt{n}) $ &nbsp; (CLT, $n>30$)
+        </div>
+        <p><strong>Confidence level</strong> $1-\alpha$ = middle area; $\alpha$ = total tail area.</p>
+        <p><strong>Critical value (CV):</strong> $z_{\alpha/2}$ (e.g. 1.96 for 95%).</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>I understand the sampling distribution of $\bar{x}$</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: CI formula & margin of error -->
+    <div class="card">
+      <div class="card-header">📐 Formula &amp; E <span>2/8</span></div>
+      <div class="card-body">
+        <p><strong>Margin of error:</strong> $E = CV \times \frac{s}{\sqrt{n}}$</p>
+        <div class="formula-block">
+          $ \bar{x} \pm E \quad \Rightarrow \quad (\bar{x}-E,\; \bar{x}+E) $
+        </div>
+        <p><strong>Interpretation:</strong> "We are $95\%$ confident that the interval contains $\mu$."</p>
+        <p><em>width</em> = $2E$ &nbsp;·&nbsp; $n \uparrow \Rightarrow E \downarrow$ &nbsp;·&nbsp; confidence $\uparrow \Rightarrow E \uparrow$</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>I can compute $E$ and build the CI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: 5-step procedure (Example 5) -->
+    <div class="card">
+      <div class="card-header">📋 5‑Step procedure <span>3/8</span></div>
+      <div class="card-body">
+        <p><strong>Example:</strong> $n=81,\; \bar{x}=57,\; s=15$, 95% CI.</p>
+        <ol style="padding-left:1.2rem; font-size:0.95rem;">
+          <li>Confidence: $1-\alpha=0.95 \Rightarrow \alpha/2=0.025$</li>
+          <li>CV: $z_{0.025}=1.96$</li>
+          <li>E: $1.96 \times 15/\sqrt{81} = 3.27$</li>
+          <li>CI: $57 \pm 3.27 = (53.73,\; 60.27)$</li>
+          <li>Interpret: "95% confident $\mu$ lies in (53.73, 60.27)"</li>
+        </ol>
+        <div class="check-row">
+          <input type="checkbox"> <span>I can apply all 5 steps</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Critical values & confidence levels -->
+    <div class="card">
+      <div class="card-header">🎯 Critical values <span>4/8</span></div>
+      <div class="card-body">
+        <p>Common CVs (two‑tailed):</p>
+        <div class="formula-block">
+          $90\% \rightarrow z_{0.05}=1.645$ <br>
+          $95\% \rightarrow z_{0.025}=1.96$ <br>
+          $99\% \rightarrow z_{0.005}=2.576$
+        </div>
+        <p>As confidence $\uparrow$, CV $\uparrow$, interval $\uparrow$ (wider).</p>
+        <p>For 99%: $E = 2.576 \times s/\sqrt{n}$.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>I remember the critical values for 90%, 95%, 99%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Example 4 (walleye fingerlings) -->
+    <div class="card">
+      <div class="card-header">🐟 Walleye example <span>5/8</span></div>
+      <div class="card-body">
+        <p>$n=100,\; \bar{x}=7.5,\; s=2.3$, 95% CI.</p>
+        <div class="formula-block">
+          $E = 1.96 \times \frac{2.3}{\sqrt{100}} = 0.451$ <br>
+          $CI = 7.5 \pm 0.451 = (7.05,\; 7.95)$
+        </div>
+        <p><strong>Interpret:</strong> 95% chance interval contains true mean length.</p>
+        <p>✔️ CLT applies because $n>30$.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>I understand the walleye CI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Bias / variance trade-off -->
+    <div class="card">
+      <div class="card-header">⚖️ Bias &amp; variance <span>6/8</span></div>
+      <div class="card-body">
+        <p><strong>Bias</strong> = accuracy (ideal: 0).</p>
+        <p><strong>Variance</strong> = precision (smaller = better).</p>
+        <div class="formula-block">
+          $ \text{Bias}(\bar{x}) = \bar{x} - \mu $ <br>
+          $ \text{Var}(\bar{x}) = \sigma^2 / n $
+        </div>
+        <p>Good estimator: <em>unbiased</em> and <em>low variance</em>.</p>
+        <p><span class="badge">CLT</span> ensures $\bar{x}$ is approximately unbiased.</p>
+        <div class="check-row">
+          <input type="checkbox"> <span>I grasp bias vs. precision</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Sampling distribution & z-score -->
+    <div class="card">
+      <div class="card-header">📊 Sampling distribution <span>7/8</span></div>
+      <div class="card-body">
+        <p>From $\bar{X} \sim N(\mu, \sigma/\sqrt{n})$ to standard normal:</p>
+        <div class="formula-block">
+          $ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim N(0,1) $
+        </div>
+        <p>Use $z$ table to find CVs (e.g. $\pm 1.96$ for 95%).</p>
+        <p>Then solve for LCL/UCL:</p>
+        <div class="formula-block">
+          $ LCL = \bar{x} - z_{\alpha/2} \frac{s}{\sqrt{n}} $ <br>
+          $ UCL = \bar{x} + z_{\alpha/2} \frac{s}{\sqrt{n}} $
+        </div>
+        <div class="check-row">
+          <input type="checkbox"> <span>I can transform $\bar{x}$ to $z$ and back</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: General facts & interpretation -->
+    <div class="card">
+      <div class="card-header">🧾 Key facts <span>8/8</span></div>
+      <div class="card-body">
+        <ul style="padding-left:1.2rem;">
+          <li>CI is random; $\mu$ is fixed.</li>
+          <li>“95% chance interval contains $\mu$” (frequentist).</li>
+          <li>$n$ ↑ → E ↓ → narrower CI.</li>
+          <li>Confidence ↑ → wider CI.</li>
+          <li>Default $1-\alpha = 0.95$.</li>
+        </ul>
+        <p><strong>Always interpret</strong> in context of the problem.</p>
+        <div class="formula-block">
+          $ \text{CI} = \bar{x} \pm E $
+        </div>
+        <div class="check-row">
+          <input type="checkbox"> <span>I can interpret a CI correctly</span>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- end cards-grid -->
+
+  <!-- FOOTER -->
+  <footer>
+   <center> 
+       <div class="copyright">
+       <p>© 2019-<span id="currentYear"></span>  C. Peng @ West Chester University, USA. All rights reserved.</p>
+            <!-- Copyright Statement -->
+ 
+      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script><a href='http://www.freevisitorcounters.com'><img src="img/blackdot.jpg" width="1" height="1"></a><br>
+    
+           <div class="license">
+              <p>📄 Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer"><font color = "red">Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</font></a></p>
+              <p>You are free to share and adapt for non-commercial purposes with appropriate credit.</p>
+            </div>
+         </div>
+       </center> 
+  </footer>
+</div>
+
+<script>
+  
+         // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear(); 
+
+  (function() {
+    const toggleBtn = document.getElementById('darkToggle');
+    toggleBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+    });
+
+    // ensure checkboxes work (they are interactive by default)
+    // print sizing handled by CSS @media print
+  })();
+</script>
+</body>
+</html>

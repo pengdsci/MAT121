@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Normal Tests · Flash Cards</title>
+  <!-- MathJax for beautiful formulas -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #512d6d;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      transition: background-color 0.25s ease, color 0.2s ease;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+
+    .header {
+      background: #6E3061;
+      padding: 1.0rem 1.0rem;
+      color: white;
+      border-bottom: 4px solid #ffd966;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.25rem;
+    }
+    .header h2 {
+      font-size: 2.0rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.25rem;
+    }
+    .header .subtitle {
+      font-size: 1.35rem;
+      opacity: 0.92;
+      font-weight: 500;
+      border-left: 3px solid #ffd966;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+      padding: 0.9rem 2rem;
+      background: #f9f4f7;
+      border-bottom: 1px solid #e2d0dc;
+      align-items: center;
+    }
+
+    .btn {
+      background: white;
+      border: 1px solid #c2a8bd;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #2d2a2c;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .btn:hover {
+      background: #e9dce5;
+      border-color: #6E3061;
+      transform: scale(0.97);
+    }
+    .btn-primary {
+      background: #6E3061;
+      border-color: #4f2444;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #4f2444;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      padding: 2rem 2rem;
+    }
+
+    @media (max-width: 760px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      body { padding: 1rem; }
+    }
+
+    .card {
+      background: #fefcff;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px #6E3061;
+      border: 1px solid #ecdde6;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: background 0.15s;
+    }
+
+    .card-header {
+      background: #6E3061;
+      padding: 0.9rem 1.4rem;
+      border-bottom: 2px solid #dbbdce;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .card-header .badge {
+      background: rgba(255,255,255,0.2);
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      font-family: monospace;
+      color: #f5eaf0;
+    }
+
+    .card-body {
+      padding: 1.3rem 1.4rem 1.6rem;
+      flex: 1;
+    }
+    .card-body p {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-block {
+      background: #f5f0f3;
+      padding: 0.9rem;
+      border-radius: 18px;
+      margin: 0.8rem 0;
+      font-size: 1rem;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 0.7rem;
+      border-top: 1px dashed #e2d0dc;
+      padding-top: 0.8rem;
+      font-size: 0.85rem;
+    }
+    .check-row input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #6E3061;
+    }
+
+    footer {
+      background: #f3eaf0;
+      padding: 1.2rem 2rem;
+      font-size: 0.8rem;
+      color: #3f2d38;
+      border-top: 1px solid #e1cfda;
+      /*display: flex;  */
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .site-meter {
+      font-family: monospace;
+    }
+
+    /* ----- dark mode ----- */
+    body.dark {
+      background-color: #2c1a27;
+    }
+    body.dark .container {
+      background: #1f1a1d;
+    }
+    body.dark .card {
+      background: #2b2428;
+      border-color: #4d3a44;
+    }
+    body.dark .card-header {
+      background: #6E3061;
+      color: #f1e4ec;
+      border-bottom-color: #6E3061;
+    }
+    body.dark .card-body {
+      color: #efeaed;
+    }
+    body.dark .formula-block {
+      background: #3a2e35;
+      color: #f3e6ef;
+    }
+    body.dark .toolbar {
+      background: #2a2126;
+      border-bottom-color: #4b3942;
+    }
+    body.dark .btn {
+      background: #3f2f37;
+      border-color: #6E3061;
+      color: #f0e3ea;
+    }
+    body.dark .btn-primary {
+      background: #6E3061;
+      color: white;
+    }
+    body.dark footer {
+      background: #2c2228;
+      color: #cfc1ca;
+      border-top-color: #4a3842;
+    }
+    body.dark .badge {
+      background: #4a3842;
+      color: #e6d7df;
+    }
+    body.dark .check-row {
+      border-top-color: #4a3842;
+    }
+
+    /* ----- print ----- */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+      body.dark .container, .container {
+        background: white;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .toolbar {
+        display: none !important;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #aaa;
+        background: #fff !important;
+      }
+      .card-header {
+        background: #6E3061 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .card-body {
+        color: black !important;
+      }
+      .formula-block {
+        background: #f1f1f1 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .check-row input {
+        opacity: 1;
+        border: 1px solid black;
+        accent-color: #6E3061;
+      }
+      footer {
+        background: #f5f5f5 !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .btn, .toolbar .btn {
+        display: none !important;
+      }
+      body.dark .card-header, body.dark .card-body {
+        color: black !important;
+        background: #fff !important;
+      }
+      @page {
+        size: A3;
+      }
+      @page letter {
+        size: letter;
+      }
+    }
+    @media print and (max-width: 760px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="appContainer">
+    <!-- HEADER -->
+    <header class="header">
+      <h2> MAT 121 Statistics I</h2>
+      <h3>📊 Normal Tests of Means & Proportions: P-value & Critical Value </h3>
+    </header>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <button class="btn" id="darkToggleBtn">🌙 Dark / Light</button>
+    </div>
+
+    <!-- CARDS GRID (2 per row) -->
+    <div class="cards-grid" id="cardsGrid">
+      <!-- Card 1: 6-step procedure -->
+      <div class="card">
+        <div class="card-header">
+          <span>📋 6‑Step Procedure</span>
+          <span class="badge">recall</span>
+        </div>
+        <div class="card-body">
+          <p><strong>1.</strong> Identify claim (parameter: μ or p)<br>
+          <strong>2.</strong> Set $H_0$ and $H_a$<br>
+          <strong>3.</strong> Compute test statistic<br>
+          <strong>4.</strong> Find critical value(s) / p‑value<br>
+          <strong>5.</strong> Decision: reject or fail to reject $H_0$<br>
+          <strong>6.</strong> Conclusion about the claim.</p>
+          <div class="formula-block">
+            $TS = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$ &nbsp; (mean) <br>
+            $TS = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}$ &nbsp; (proportion)
+          </div>
+          <div class="check-row">
+            <input type="checkbox"> <span>reviewed 6‑step</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: p‑value definition -->
+      <div class="card">
+        <div class="card-header">
+          <span>🎯 p‑value</span>
+          <span class="badge">definition</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Right‑tailed:</strong> area to the right of $TS$<br>
+          <strong>Left‑tailed:</strong> area to the left of $TS$<br>
+          <strong>Two‑tailed:</strong> $2 \times$ smaller tail area</p>
+          <div class="formula-block">
+            if p‑value $< \alpha$ → reject $H_0$ <br>
+            if p‑value $> \alpha$ → fail to reject $H_0$
+          </div>
+          <p><em>Decision rule equivalent to critical‑value method.</em></p>
+          <div class="check-row">
+            <input type="checkbox"> <span>p‑value method</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Normal test for mean -->
+      <div class="card">
+        <div class="card-header">
+          <span>📈 Mean test</span>
+          <span class="badge">z‑test</span>
+        </div>
+        <div class="card-body">
+          <p>Test $H_0: \mu = \mu_0$ (or $\le$, $\ge$)<br>
+          <strong>Test statistic:</strong></p>
+          <div class="formula-block">
+            $Z = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} \sim N(0,1)$
+          </div>
+          <p><strong>Conditions:</strong> $n \ge 30$ (CLT) or normal population.</p>
+          <p><strong>Example:</strong> $n=200,\; \bar{x}=51750,\; s=5240,\; \mu_0=50352$<br>
+          $Z = 3.77$ → reject $H_0$ at $\alpha=0.05$.</p>
+          <div class="check-row">
+            <input type="checkbox"> <span>mean z‑test</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Normal test for proportion -->
+      <div class="card">
+        <div class="card-header">
+          <span>📊 Proportion test</span>
+          <span class="badge">z‑test</span>
+        </div>
+        <div class="card-body">
+          <p>Test $H_0: p = p_0$ (or $\le$, $\ge$)<br>
+          <strong>Test statistic:</strong></p>
+          <div class="formula-block">
+            $Z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}} \sim N(0,1)$
+          </div>
+          <p><strong>Conditions:</strong> $n p_0 > 5$ and $n(1-p_0) > 5$.</p>
+          <p><strong>Example:</strong> $n=166,\; \hat{p}=0.73,\; p_0=0.80$<br>
+          $Z = -2.255$, p‑value $= 0.0122$ → reject $H_0$.</p>
+          <div class="check-row">
+            <input type="checkbox"> <span>proportion z‑test</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Critical value vs p-value -->
+      <div class="card">
+        <div class="card-header">
+          <span>⚖️ CV vs p‑value</span>
+          <span class="badge">decision</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Critical value:</strong> compare $TS$ to $z_{\alpha}$ (or $z_{\alpha/2}$).<br>
+          <strong>p‑value:</strong> compare area to $\alpha$.</p>
+          <div class="formula-block">
+            Right‑tailed: reject if $TS > z_{\alpha}$ <br>
+            Left‑tailed: reject if $TS < -z_{\alpha}$ <br>
+            Two‑tailed: reject if $|TS| > z_{\alpha/2}$
+          </div>
+          <p>Both methods lead to same conclusion.</p>
+          <div class="check-row">
+            <input type="checkbox"> <span>CV & p‑value</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Example walk-through (mean) -->
+      <div class="card">
+        <div class="card-header">
+          <span>🧪 Mean example</span>
+          <span class="badge">p‑value</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Claim:</strong> machine should be stopped if $\mu \ne 8$ oz.<br>
+          $n=36,\; \bar{x}=7.91,\; s=0.2$ (variance $0.04$)<br>
+          $H_0: \mu=8$ vs $H_a: \mu \ne 8$ (two‑tailed)</p>
+          <div class="formula-block">
+            $TS = \frac{7.91-8}{0.2/\sqrt{36}} = -2.7$ <br>
+            p‑value $= 2 \times 0.0035 = 0.007 < 0.05$ → reject $H_0$.
+          </div>
+          <p>Conclusion: machine should be stopped.</p>
+          <div class="check-row">
+            <input type="checkbox"> <span>mean example</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: Proportion example -->
+      <div class="card">
+        <div class="card-header">
+          <span>🧪 Proportion example</span>
+          <span class="badge">left‑tailed</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Claim:</strong> at least 80% satisfied ($p \ge 0.8$).<br>
+          $n=166,\; \hat{p}=0.73,\; p_0=0.80$<br>
+          $H_0: p \ge 0.8$ vs $H_a: p < 0.8$</p>
+          <div class="formula-block">
+            $TS = \frac{0.73-0.80}{\sqrt{0.80(0.20)/166}} = -2.255$ <br>
+            p‑value $= 0.0122 < 0.05$ → reject $H_0$.
+          </div>
+          <p>Evidence supports CEO’s claim.</p>
+          <div class="check-row">
+            <input type="checkbox"> <span>proportion example</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Conditions & CLT -->
+      <div class="card">
+        <div class="card-header">
+          <span>📐 Conditions</span>
+          <span class="badge">CLT</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Mean test:</strong> $n \ge 30$ (or normal population).<br>
+          <strong>Proportion test:</strong> $n p_0 > 5$ and $n(1-p_0) > 5$.</p>
+          <div class="formula-block">
+            $\bar{x} \sim N(\mu, \sigma/\sqrt{n})$ <br>
+            $\hat{p} \sim N(p, \sqrt{p(1-p)/n})$
+          </div>
+          <p>Both test statistics follow standard normal under $H_0$.</p>
+          <div class="check-row">
+            <input type="checkbox"> <span>conditions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+     <center> 
+       <div class="copyright">
+       <p>© 2019-<span id="currentYear"></span>  C. Peng @ West Chester University, USA. All rights reserved.</p>
+            <!-- Copyright Statement -->
+ 
+      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script><a href='http://www.freevisitorcounters.com'><img src="img/blackdot.jpg" width="1" height="1"></a><br>
+    
+           <div class="license">
+              <p>📄 Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer"><font color = "red">Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</font></a></p>
+              <p>You are free to share and adapt for non-commercial purposes with appropriate credit.</p>
+            </div>
+         </div>
+       </center> 
+  </footer>
+</div>
+
+<script>
+  
+         // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear(); 
+
+    (function() {
+      const toggleBtn = document.getElementById('darkToggleBtn');
+      const body = document.body;
+
+      // Check for saved preference
+      if (localStorage.getItem('darkMode') === 'true') {
+        body.classList.add('dark');
+        toggleBtn.textContent = '☀️ Light / Dark';
+      } else {
+        toggleBtn.textContent = '🌙 Dark / Light';
+      }
+
+      toggleBtn.addEventListener('click', function() {
+        body.classList.toggle('dark');
+        const isDark = body.classList.contains('dark');
+        localStorage.setItem('darkMode', isDark);
+        toggleBtn.textContent = isDark ? '☀️ Light / Dark' : '🌙 Dark / Light';
+      });
+
+      // ensure checkboxes are interactive and preserved across print
+      // no additional logic needed – they work natively.
+      // Also re-run MathJax after any dynamic change? not needed since content static.
+    })();
+  </script>
+  <!-- ensure MathJax renders after load -->
+  <script>
+    if (window.MathJax && MathJax.typesetPromise) {
+      window.addEventListener('load', () => {
+        MathJax.typesetPromise();
+      });
+    }
+  </script>
+</body>
+</html>
